@@ -23,4 +23,7 @@ INSERT INTO user_roles (user_id, role) VALUES
 
 INSERT INTO clients (company_id, firstname, lastname, middlename, telnumber, city, created_by) VALUES
 (10000, 'Олег', 'Иванов', 'Иванович', '+7(911)111-11-14', 'Анапа', 10002),
-(10000, 'Александр', 'Иванов', 'Иванович', '+7(911)111-11-15', 'Новороссийск', 10002)
+(10000, 'Александр', 'Иванов', 'Иванович', '+7(911)111-11-15', 'Новороссийск', 10002);
+
+INSERT INTO companys (name, contact_name, contact_phone) VALUES
+('WakeBroTest', 'ООО ТестКомпани', '+7(921)111-11-11');

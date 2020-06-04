@@ -63,6 +63,8 @@ CREATE TABLE clients
     city        VARCHAR(30),
     created_on  TIMESTAMP DEFAULT now() NOT NULL,
     created_by  INTEGER   NULL,
+    changed_on  TIMESTAMP NULL,
+    changed_by  INTEGER   NULL,
 
     FOREIGN KEY (company_id) REFERENCES companys(id) ON DELETE CASCADE,
     FOREIGN KEY (created_by) REFERENCES users(id),
@@ -74,7 +76,6 @@ CREATE TABLE tickets
 (
     id          INTEGER PRIMARY KEY DEFAULT nextval('GLOBAL_SEQ'),
     company_id  INTEGER                   NOT NULL ,
-    date_create TIMESTAMP DEFAULT now()   NOT NULL,
     pass        VARCHAR(30)               NOT NULL,
     name        VARCHAR(30)               NOT NULL,
     enable      BOOLEAN DEFAULT TRUE      NOT NULL,

@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import ru.project.wakepark.repository.CrudClientCommonRepository;
+import ru.project.wakepark.repository.CrudClientRepository;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = {"ru.project.wakepark.**.repository"})
@@ -19,11 +19,15 @@ public class WakeParkApplication {
     }
 
     @Bean
-    public CommandLineRunner demo (CrudClientCommonRepository repository) {
-        log.info("Start query exist");
-        return args -> {
-            repository.getAllByCompanyId(10000).forEach(System.out::println);
-        };
+    public CommandLineRunner demo (CrudClientRepository clientRepository) {
+//        log.info("Start query exist");
+//        return args -> {
+//            System.out.println("====== Get clients ======");
+//            clientRepository.getAll(10000).forEach(System.out::println);
+//            clientRepository.delete(10004, 10005);
+//            clientRepository.getAll(10000).forEach(System.out::println);
+//        };
+        return null;
     }
 
 }

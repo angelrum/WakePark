@@ -2,10 +2,11 @@ package ru.project.wakepark.model;
 
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotBlank;
-import java.util.Objects;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 
 @MappedSuperclass
-public abstract class AbstractNamedEntity extends AbstractBaseEntity {
+public abstract class AbstractNamedEntity extends AbstractDateChangedEntity {
 
     @NotBlank
     protected String firstname;
@@ -19,8 +20,8 @@ public abstract class AbstractNamedEntity extends AbstractBaseEntity {
     @NotBlank
     protected String telnumber;
 
-    public AbstractNamedEntity(Integer id, Integer companyId, @NotBlank String firstname, @NotBlank String lastname, @NotBlank String middlename, @NotBlank String telnumber) {
-        super(id, companyId);
+    public AbstractNamedEntity(Integer id, Integer companyId, @NotNull LocalDateTime createdOn, User createdBy, LocalDateTime changedOn, User changedBy, @NotBlank String firstname, @NotBlank String lastname, @NotBlank String middlename, @NotBlank String telnumber) {
+        super(id, companyId, createdOn, createdBy, changedOn, changedBy);
         this.firstname = firstname;
         this.lastname = lastname;
         this.middlename = middlename;
@@ -62,29 +63,5 @@ public abstract class AbstractNamedEntity extends AbstractBaseEntity {
         this.telnumber = telnumber;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        AbstractNamedEntity that = (AbstractNamedEntity) o;
-        return firstname.equals(that.firstname) &&
-                lastname.equals(that.lastname) &&
-                middlename.equals(that.middlename) &&
-                telnumber.equals(that.telnumber);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), firstname, lastname, middlename, telnumber);
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() +
-                "firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", middlename='" + middlename + '\'' +
-                ", telnumber='" + telnumber;
-    }
 }

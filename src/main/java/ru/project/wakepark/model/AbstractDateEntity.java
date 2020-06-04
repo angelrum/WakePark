@@ -1,22 +1,38 @@
 package ru.project.wakepark.model;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.Nullable;
+import ru.project.wakepark.util.DateTimeUtil;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @MappedSuperclass
-public abstract class AbstractDateEntity extends AbstractNamedEntity {
+public abstract class AbstractDateEntity extends AbstractBaseEntity {
 
-    @Column(name = "created_on")
     @NotNull
+    @Column(name = "created_on")
+    @DateTimeFormat(pattern = DateTimeUtil.DATE_TIME_PATTERN)
     protected LocalDateTime createdOn;
 
-    @Column(name = "created_by")
-    protected Integer createdBy;
+    @Nullable
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
+//   Позволяет делать выборку по двум полям, но игнорирует запись данных в поле
+//   Без параметров insertable = false, updatable = false не позволяет использовать соединение
+//    @JoinColumns({
+//            @JoinColumn(
+//                    name = "created_by",
+//                    referencedColumnName = "id", nullable = true, insertable = false, updatable = false),
+//            @JoinColumn(
+//                    name = "company_id",
+//                    referencedColumnName = "company_id", insertable = false, updatable = false)
+//    })
+    @JoinColumn(name = "created_by", referencedColumnName = "id")
+    protected User createdBy;
 
-    public AbstractDateEntity(@NotNull LocalDateTime createdOn, Integer createdBy) {
+    public AbstractDateEntity(Integer id, Integer companyId, @NotNull LocalDateTime createdOn, User createdBy) {
+        super(id, companyId);
         this.createdOn = createdOn;
         this.createdBy = createdBy;
     }
@@ -32,31 +48,11 @@ public abstract class AbstractDateEntity extends AbstractNamedEntity {
         this.createdOn = createdOn;
     }
 
-    public Integer getCreatedBy() {
+    public User getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(Integer createdBy) {
+    public void setCreatedBy(User createdBy) {
         this.createdBy = createdBy;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AbstractDateEntity that = (AbstractDateEntity) o;
-        return createdOn.equals(that.createdOn) &&
-                Objects.equals(createdBy, that.createdBy);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(createdOn, createdBy);
-    }
-
-    @Override
-    public String toString() {
-        return "createdOn=" + createdOn +
-                ", createdBy=" + createdBy;
     }
 }
