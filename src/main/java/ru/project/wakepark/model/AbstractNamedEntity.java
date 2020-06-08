@@ -20,7 +20,9 @@ public abstract class AbstractNamedEntity extends AbstractDateChangedEntity {
     @NotBlank
     protected String telnumber;
 
-    public AbstractNamedEntity(Integer id, Integer companyId, @NotNull LocalDateTime createdOn, User createdBy, LocalDateTime changedOn, User changedBy, @NotBlank String firstname, @NotBlank String lastname, @NotBlank String middlename, @NotBlank String telnumber) {
+    public AbstractNamedEntity(Integer id, Integer companyId,
+                               @NotBlank String firstname, @NotBlank String lastname, @NotBlank String middlename, @NotBlank String telnumber,
+                               @NotNull LocalDateTime createdOn, User createdBy, LocalDateTime changedOn, User changedBy) {
         super(id, companyId, createdOn, createdBy, changedOn, changedBy);
         this.firstname = firstname;
         this.lastname = lastname;

@@ -13,9 +13,16 @@ public class Client extends AbstractNamedEntity{
 
     protected String city;
 
-    public Client(Integer id, Integer companyId, @NotNull LocalDateTime createdOn, User createdBy, LocalDateTime changedOn, User changedBy, @NotBlank String firstname, @NotBlank String lastname, @NotBlank String middlename, @NotBlank String telnumber, String city) {
-        super(id, companyId, createdOn, createdBy, changedOn, changedBy, firstname, lastname, middlename, telnumber);
+    public Client(Integer id, Integer companyId,
+                  @NotBlank String firstname, @NotBlank String lastname, @NotBlank String middlename,
+                  @NotBlank String telnumber, String city,
+                  @NotNull LocalDateTime createdOn, User createdBy, LocalDateTime changedOn, User changedBy) {
+        super(id, companyId, firstname, lastname, middlename, telnumber, createdOn, createdBy, changedOn, changedBy);
         this.city = city;
+    }
+
+    public Client(Client c) {
+        super(c.id, c.companyId, c.firstname, c.lastname, c.middlename, c.telnumber, c.createdOn, c.createdBy, c.changedOn, c.changedBy);
     }
 
     public Client() {

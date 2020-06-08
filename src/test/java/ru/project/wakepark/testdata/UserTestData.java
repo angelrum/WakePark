@@ -1,7 +1,10 @@
-package ru.project.wakepark;
+package ru.project.wakepark.testdata;
 
+import ru.project.wakepark.TestMatcher;
 import ru.project.wakepark.model.Role;
 import ru.project.wakepark.model.User;
+import ru.project.wakepark.testdata.CompanyTestData;
+import ru.project.wakepark.testdata.TestData;
 
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -9,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class UserTestData {
+public class UserTestData implements TestData<User> {
 
     public static TestMatcher USER_MATCHER = TestMatcher.usingFieldsComparator(User.class, "createdBy", "changedBy");
 
@@ -28,16 +31,46 @@ public class UserTestData {
 
     public static final ArrayList<User> USERS = new ArrayList(List.of(USER1, USER2, USER3));
 
-    public static User getNew() {
+    @Override
+    public User getNew() {
         return new User(null, CompanyTestData.WAKE_ID1, "testNew", "1234567", "Anton", "Ivanov", "Ivanovich", "+7(911)111-11-16", "test4@test.ru", true,
                 LocalDateTime.of(2020, Month.JUNE, 2, 10, 0, 0), USER1, null, null, Role.USER);
     }
 
-    public static User getUpdate() {
+    public User getUpdate() {
         User user = new User(USER2);
         user.setEmail("upd@test.ru");
         user.setRoles(Set.of(Role.MANAGER));
         return user;
     }
 
+    @Override
+    public List<User> getAll() {
+        return USERS;
+    }
+
+    @Override
+    public User getOne() {
+        return USER1;
+    }
+
+    @Override
+    public int getId() {
+        return USER_ID1;
+    }
+
+    @Override
+    public int getCreatedId() {
+        return USER_ID1;
+    }
+
+    @Override
+    public int getIdDelete() {
+        return USER_ID2;
+    }
+
+    @Override
+    public List<User> getAllWithoutDelete() {
+        return List.of(USER1, USER3);
+    }
 }

@@ -54,7 +54,7 @@ public class User extends AbstractNamedEntity implements Serializable {
                 @NotBlank String telnumber, @Email @NotBlank String email, boolean enabled,
                 @NotNull LocalDateTime createdOn, User createdBy,
                 LocalDateTime changedOn, User changedBy, Collection<Role> roles) {
-        super(id, companyId, createdOn, createdBy, changedOn, changedBy, firstname, lastname, middlename, telnumber);
+        super(id, companyId, firstname, lastname, middlename, telnumber, createdOn, createdBy, changedOn, changedBy);
         this.login = login;
         this.password = password;
         this.email = email;

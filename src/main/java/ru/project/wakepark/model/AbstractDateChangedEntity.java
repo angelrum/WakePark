@@ -16,7 +16,7 @@ public abstract class AbstractDateChangedEntity extends AbstractDateEntity{
     protected LocalDateTime changedOn;
 
     @Nullable
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
 //   Позволяет делать выборку по двум полям, но игнорирует запись данных в поле
 //   Без параметров insertable = false, updatable = false не позволяет использовать соединение
 //    @JoinColumns({

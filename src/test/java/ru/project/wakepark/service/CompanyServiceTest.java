@@ -11,7 +11,7 @@ import ru.project.wakepark.util.exception.NotFoundException;
 
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static ru.project.wakepark.CompanyTestData.*;
+import static ru.project.wakepark.testdata.CompanyTestData.*;
 
 @SpringBootTest
 @Sql(scripts = "classpath:db/data-test.sql", config = @SqlConfig(encoding = "UTF-8"))
