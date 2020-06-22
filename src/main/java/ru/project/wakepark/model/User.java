@@ -24,10 +24,6 @@ public class User extends AbstractNamedEntity implements Serializable {
     @NotBlank
     private String password;
 
-    @Email
-    @NotBlank
-    private String email;
-
     private boolean enabled = true;
 
     @Enumerated(EnumType.STRING)
@@ -54,10 +50,9 @@ public class User extends AbstractNamedEntity implements Serializable {
                 @NotBlank String telnumber, @Email @NotBlank String email, boolean enabled,
                 @NotNull LocalDateTime createdOn, User createdBy,
                 LocalDateTime changedOn, User changedBy, Collection<Role> roles) {
-        super(id, companyId, firstname, lastname, middlename, telnumber, createdOn, createdBy, changedOn, changedBy);
+        super(id, companyId, firstname, lastname, middlename, telnumber, email, createdOn, createdBy, changedOn, changedBy);
         this.login = login;
         this.password = password;
-        this.email = email;
         this.enabled = enabled;
         setRoles(roles);
     }
@@ -84,14 +79,6 @@ public class User extends AbstractNamedEntity implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public boolean isEnabled() {

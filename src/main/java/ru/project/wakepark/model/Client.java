@@ -2,6 +2,7 @@ package ru.project.wakepark.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -15,14 +16,14 @@ public class Client extends AbstractNamedEntity{
 
     public Client(Integer id, Integer companyId,
                   @NotBlank String firstname, @NotBlank String lastname, @NotBlank String middlename,
-                  @NotBlank String telnumber, String city,
+                  @NotBlank String telnumber, String email, String city,
                   @NotNull LocalDateTime createdOn, User createdBy, LocalDateTime changedOn, User changedBy) {
-        super(id, companyId, firstname, lastname, middlename, telnumber, createdOn, createdBy, changedOn, changedBy);
+        super(id, companyId, firstname, lastname, middlename, telnumber, email, createdOn, createdBy, changedOn, changedBy);
         this.city = city;
     }
 
     public Client(Client c) {
-        super(c.id, c.companyId, c.firstname, c.lastname, c.middlename, c.telnumber, c.createdOn, c.createdBy, c.changedOn, c.changedBy);
+        super(c.id, c.companyId, c.firstname, c.lastname, c.middlename, c.telnumber, c.email, c.createdOn, c.createdBy, c.changedOn, c.changedBy);
     }
 
     public Client() {
@@ -34,6 +35,14 @@ public class Client extends AbstractNamedEntity{
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

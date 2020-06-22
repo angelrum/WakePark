@@ -33,11 +33,17 @@ public abstract class AbstractBaseRepository <T extends AbstractDateEntity> {
 
         Company company = companyRepository.getOne(companyId);
         User created = userRepository.findOneByCompanyIdAndId(companyId, createdBy);
+
         if (Objects.isNull(company)
                 || Objects.isNull(created))
             return null;
+
         t.setCompanyId(companyId);
-        if (t.isNew()) t.setCreatedBy(created);
+
+        if (t.isNew()) {
+            t.setCreatedBy(created);
+            t.setCreatedOn(LocalDateTime.now());
+        }
 
         return repository.save(t);
     }

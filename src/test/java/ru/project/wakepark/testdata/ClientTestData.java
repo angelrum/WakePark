@@ -23,11 +23,11 @@ public class ClientTestData implements TestData<Client> {
 
     public static String NOT_FOUND_PHONE = "+7(912)111-11-18";
 
-    public static Client CLIENT1 = new Client(CLIENT_ID1, CompanyTestData.WAKE_ID1, "Олег", "Иванов", "Иванович", "+7(911)111-11-16", "Анапа", LocalDateTime.of(2020, Month.JUNE, 2, 11, 0, 0), UserTestData.USER3, null, null);
+    public static Client CLIENT1 = new Client(CLIENT_ID1, CompanyTestData.WAKE_ID1, "Олег", "Иванов", "Иванович", "+7(911)111-11-16",null, "Анапа", LocalDateTime.of(2020, Month.JUNE, 2, 11, 0, 0), UserTestData.USER3, null, null);
 
-    public static Client CLIENT2 = new Client(CLIENT_ID2, CompanyTestData.WAKE_ID1, "Александр", "Иванов", "Иванович", "+7(911)111-11-17", "Новороссийск", LocalDateTime.of(2020, Month.JUNE, 2, 10, 0, 0), UserTestData.USER3, null, null);
+    public static Client CLIENT2 = new Client(CLIENT_ID2, CompanyTestData.WAKE_ID1, "Александр", "Иванов", "Иванович", "+7(911)111-11-17", null,"Новороссийск",  LocalDateTime.of(2020, Month.JUNE, 2, 10, 0, 0), UserTestData.USER3, null, null);
 
-    public static Client CLIENT3 = new Client(CLIENT_ID3, CompanyTestData.WAKE_ID1, "Сергей", "Иванов", "Иванович", "+7(911)111-11-18", "Новороссийск", LocalDateTime.of(2020, Month.JUNE, 2, 12, 0, 0), UserTestData.USER3, null, null);
+    public static Client CLIENT3 = new Client(CLIENT_ID3, CompanyTestData.WAKE_ID1, "Сергей", "Иванов", "Иванович", "+7(911)111-11-18", null,"Новороссийск",  LocalDateTime.of(2020, Month.JUNE, 2, 12, 0, 0), UserTestData.USER3, null, null);
 
     @Override
     public List<Client> getAll() {
@@ -65,6 +65,7 @@ public class ClientTestData implements TestData<Client> {
     public Client getUpdate() {
         Client upd = new Client(CLIENT1);
         upd.setCity("Краснодар");
+        upd.setCreatedBy(null);
         return upd;
     }
 

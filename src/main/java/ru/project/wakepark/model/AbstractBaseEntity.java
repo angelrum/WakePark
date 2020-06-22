@@ -1,5 +1,7 @@
 package ru.project.wakepark.model;
 
+import ru.project.wakepark.View;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -7,7 +9,7 @@ import javax.validation.constraints.NotNull;
 @Access(AccessType.FIELD)
 public abstract class AbstractBaseEntity extends AbstractKeyEntity {
 
-    @NotNull
+    @NotNull(groups = {View.Persist.class})
     @Column(name = "company_id")
     protected Integer companyId;
 

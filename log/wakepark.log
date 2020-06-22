@@ -16998,3 +16998,1029 @@ ns         %     Task name
 2020-06-08 23:52:02,864 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-2 - Shutdown initiated...
 2020-06-08 23:52:02,873 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
 2020-06-08 23:52:02,873 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-2 - Shutdown completed.
+2020-06-16 22:44:51,359 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.ClientServiceTest], using SpringBootContextLoader
+2020-06-16 22:44:51,369 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.ClientServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-16 22:44:51,370 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.ClientServiceTest]: ClientServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-16 22:44:51,543 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.ClientServiceTest
+2020-06-16 22:44:51,686 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-16 22:44:51,707 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7db534f2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@44a2b17b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a56812e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2a76b80a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7eb01b12, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2f4854d6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@61d9efe0, org.springframework.test.context.event.EventPublishingTestExecutionListener@7e70bd39, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@e6516e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@43ed0ff3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@388ffbc2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@a50b09c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4da855dd]
+2020-06-16 22:44:52,039 INFO  ru.project.wakepark.service.ClientServiceTest.logStarting:55 - Starting ClientServiceTest on MBP-Vladimir-2.Home with PID 16163 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-16 22:44:52,040 INFO  ru.project.wakepark.service.ClientServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-16 22:44:52,647 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-16 22:44:52,737 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 68ms. Found 3 JPA repository interfaces.
+2020-06-16 22:44:53,397 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-16 22:44:53,504 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-16 22:44:53,825 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-16 22:44:53,953 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-16 22:44:54,158 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-16 22:44:54,325 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-16 22:44:55,453 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-16 22:44:55,468 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 22:44:56,537 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-16 22:44:56,731 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-16 22:44:56,897 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-16 22:44:57,054 INFO  ru.project.wakepark.service.ClientServiceTest.logStarted:61 - Started ClientServiceTest in 5.297 seconds (JVM running for 7.291)
+2020-06-16 22:44:57,245 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-16 22:44:57,432 WARN  o.h.persister.entity.AbstractEntityPersister.getTableUpdateNeeded:535 - HHH000502: The [createdBy] property of the [ru.project.wakepark.model.Client] entity was modified, but it won't be updated because the property is immutable.
+2020-06-16 22:44:57,643 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of ClientServiceTest': running time = 379108294 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+379108294  100 %  update()
+
+
+2020-06-16 22:44:57,648 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-16 22:44:57,650 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 22:44:57,655 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-16 22:44:57,656 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-16 22:44:57,663 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-16 22:45:42,203 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.ClientServiceTest], using SpringBootContextLoader
+2020-06-16 22:45:42,213 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.ClientServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-16 22:45:42,215 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.ClientServiceTest]: ClientServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-16 22:45:42,421 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.ClientServiceTest
+2020-06-16 22:45:42,611 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-16 22:45:42,638 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7db534f2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@44a2b17b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a56812e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2a76b80a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7eb01b12, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2f4854d6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@61d9efe0, org.springframework.test.context.event.EventPublishingTestExecutionListener@7e70bd39, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@e6516e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@43ed0ff3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@388ffbc2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@a50b09c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4da855dd]
+2020-06-16 22:45:43,031 INFO  ru.project.wakepark.service.ClientServiceTest.logStarting:55 - Starting ClientServiceTest on MBP-Vladimir-2.Home with PID 16182 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-16 22:45:43,032 INFO  ru.project.wakepark.service.ClientServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-16 22:45:43,699 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-16 22:45:43,776 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 68ms. Found 3 JPA repository interfaces.
+2020-06-16 22:45:44,480 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-16 22:45:44,596 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-16 22:45:44,870 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-16 22:45:44,932 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-16 22:45:45,057 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-16 22:45:45,175 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-16 22:45:45,944 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-16 22:45:45,950 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 22:45:47,037 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-16 22:45:47,226 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-16 22:45:47,389 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-16 22:45:47,548 INFO  ru.project.wakepark.service.ClientServiceTest.logStarted:61 - Started ClientServiceTest in 4.841 seconds (JVM running for 6.471)
+2020-06-16 22:45:47,697 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-16 22:45:47,865 WARN  o.h.persister.entity.AbstractEntityPersister.getTableUpdateNeeded:535 - HHH000502: The [createdBy] property of the [ru.project.wakepark.model.Client] entity was modified, but it won't be updated because the property is immutable.
+2020-06-16 22:45:48,005 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of ClientServiceTest': running time = 291378926 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+291378926  100 %  update()
+
+
+2020-06-16 22:45:48,012 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-16 22:45:48,014 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 22:45:48,021 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-16 22:45:48,022 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-16 22:45:48,030 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-16 23:38:25,811 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.UserServiceTest], using SpringBootContextLoader
+2020-06-16 23:38:25,822 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-16 23:38:25,824 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-16 23:38:26,066 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.UserServiceTest
+2020-06-16 23:38:26,231 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-16 23:38:26,253 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@18cc679e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2e77b8cf, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2c4ca0f9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@67ef029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7df587ef, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6e57e95e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2755d705, org.springframework.test.context.event.EventPublishingTestExecutionListener@56db847e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@740abb5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@560cbf1a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5fe8b721, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@551a20d6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@578524c3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@64c2b546]
+2020-06-16 23:38:26,596 INFO  ru.project.wakepark.service.UserServiceTest.logStarting:55 - Starting UserServiceTest on MBP-Vladimir-2.Home with PID 16791 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-16 23:38:26,597 INFO  ru.project.wakepark.service.UserServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-16 23:38:27,218 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-16 23:38:27,304 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 75ms. Found 3 JPA repository interfaces.
+2020-06-16 23:38:27,982 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-16 23:38:28,079 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-16 23:38:28,341 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-16 23:38:28,404 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-16 23:38:28,541 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-16 23:38:28,657 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-16 23:38:29,487 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-16 23:38:29,495 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 23:38:30,538 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-16 23:38:30,757 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-16 23:38:30,930 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-16 23:38:31,087 INFO  ru.project.wakepark.service.UserServiceTest.logStarted:61 - Started UserServiceTest in 4.773 seconds (JVM running for 6.428)
+2020-06-16 23:38:31,247 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-16 23:38:31,403 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-16 23:38:31,587 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-16 23:38:31,679 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-16 23:38:31,699 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-16 23:38:31,737 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-16 23:38:31,755 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-16 23:38:31,765 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of UserServiceTest': running time = 410312431 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+130072787  032 %  updateNotFound()
+167089959  041 %  create()
+075165406  018 %  delete()
+006715459  002 %  getAll()
+023447199  006 %  update()
+002727326  001 %  getNotFound()
+005094295  001 %  get()
+
+
+2020-06-16 23:38:31,768 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.ClientServiceTest], using SpringBootContextLoader
+2020-06-16 23:38:31,769 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.ClientServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-16 23:38:31,770 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.ClientServiceTest]: ClientServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-16 23:38:31,773 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.ClientServiceTest
+2020-06-16 23:38:31,775 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-16 23:38:31,776 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3d0697da, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4b99f2ed, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@723081a2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@481f698f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@41ae9f11, org.springframework.test.context.transaction.TransactionalTestExecutionListener@45a40353, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@33efa7d4, org.springframework.test.context.event.EventPublishingTestExecutionListener@fe337, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@356cb230, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@50b78155, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1e284d90, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@61c11339, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@31ecd003, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5d3d5242]
+2020-06-16 23:38:31,792 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-16 23:38:31,821 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-16 23:38:31,877 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-16 23:38:31,946 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-16 23:38:31,965 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-16 23:38:31,994 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-16 23:38:32,014 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-16 23:38:32,035 INFO  result.beforeTestExecution:23 - 
+Start getByPhoneNotFound()
+2020-06-16 23:38:32,060 INFO  result.beforeTestExecution:23 - 
+Start getByPhone()
+2020-06-16 23:38:32,069 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of ClientServiceTest': running time = 89056845 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+013631532  015 %  updateNotFound()
+028522938  032 %  create()
+012150929  014 %  delete()
+003738017  004 %  getAll()
+009194077  010 %  update()
+002710059  003 %  getNotFound()
+004797272  005 %  get()
+009330957  010 %  getByPhoneNotFound()
+004981064  006 %  getByPhone()
+
+
+2020-06-16 23:38:32,075 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-16 23:38:32,077 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 23:38:32,082 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-16 23:38:32,083 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-16 23:38:32,091 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-16 23:40:49,622 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.ClientServiceTest], using SpringBootContextLoader
+2020-06-16 23:40:49,630 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.ClientServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-16 23:40:49,637 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.ClientServiceTest]: ClientServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-16 23:40:49,798 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.ClientServiceTest
+2020-06-16 23:40:49,962 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-16 23:40:49,981 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@21ec5d87, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@25f9407e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@552518c3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1a69561c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@59aa20b3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@363f6148, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b21844c, org.springframework.test.context.event.EventPublishingTestExecutionListener@1b28f282, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@138fe6ec, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5e77f0f4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@19b30c92, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@455351c4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@29876704, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4816c290]
+2020-06-16 23:40:50,407 INFO  ru.project.wakepark.service.ClientServiceTest.logStarting:55 - Starting ClientServiceTest on MBP-Vladimir-2.Home with PID 16825 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-16 23:40:50,408 INFO  ru.project.wakepark.service.ClientServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-16 23:40:51,014 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-16 23:40:51,086 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 64ms. Found 3 JPA repository interfaces.
+2020-06-16 23:40:51,790 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-16 23:40:51,885 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-16 23:40:52,116 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-16 23:40:52,173 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-16 23:40:52,287 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-16 23:40:52,395 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-16 23:40:53,163 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-16 23:40:53,169 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 23:40:54,127 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-16 23:40:54,319 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-16 23:40:54,474 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-16 23:40:54,639 INFO  ru.project.wakepark.service.ClientServiceTest.logStarted:61 - Started ClientServiceTest in 4.602 seconds (JVM running for 5.942)
+2020-06-16 23:40:54,802 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-16 23:40:54,978 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-16 23:40:55,124 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-16 23:40:55,167 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-16 23:40:55,187 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-16 23:40:55,205 WARN  o.h.persister.entity.AbstractEntityPersister.getTableUpdateNeeded:535 - HHH000502: The [createdBy] property of the [ru.project.wakepark.model.Client] entity was modified, but it won't be updated because the property is immutable.
+2020-06-16 23:40:55,233 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-16 23:40:55,254 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-16 23:40:55,276 INFO  result.beforeTestExecution:23 - 
+Start getByPhoneNotFound()
+2020-06-16 23:40:55,304 INFO  result.beforeTestExecution:23 - 
+Start getByPhone()
+2020-06-16 23:40:55,315 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of ClientServiceTest': running time = 355419714 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+148857177  042 %  updateNotFound()
+126282758  036 %  create()
+027982724  008 %  delete()
+004541050  001 %  getAll()
+024799297  007 %  update()
+003364072  001 %  getNotFound()
+004768445  001 %  get()
+010685823  003 %  getByPhoneNotFound()
+004138368  001 %  getByPhone()
+
+
+2020-06-16 23:40:55,324 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-16 23:40:55,326 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-16 23:40:55,331 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-16 23:40:55,332 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-16 23:40:55,341 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 17:34:25,285 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.TicketServiceTest], using SpringBootContextLoader
+2020-06-18 17:34:25,298 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.TicketServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 17:34:25,301 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.TicketServiceTest]: TicketServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 17:34:25,492 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.TicketServiceTest
+2020-06-18 17:34:25,642 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 17:34:25,665 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7e70bd39, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@e6516e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@43ed0ff3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@388ffbc2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a50b09c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4da855dd, org.springframework.test.context.event.EventPublishingTestExecutionListener@6691490c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2187fff7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2e5c7f0b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@21d5c1a0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4de025bf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@538613b3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1eef9aef]
+2020-06-18 17:34:30,999 INFO  ru.project.wakepark.service.TicketServiceTest.logStarting:55 - Starting TicketServiceTest on MacBook-Pro-Vladimir-2.local with PID 60751 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 17:34:31,000 INFO  ru.project.wakepark.service.TicketServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 17:34:31,642 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 17:34:31,739 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 73ms. Found 4 JPA repository interfaces.
+2020-06-18 17:34:32,533 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 17:34:32,686 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 17:34:33,097 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 17:34:33,208 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 17:34:33,443 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 17:34:33,614 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 17:34:34,827 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 17:34:34,837 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 17:34:35,975 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 17:34:36,240 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 17:34:36,457 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 17:34:36,679 INFO  ru.project.wakepark.service.TicketServiceTest.logStarted:61 - Started TicketServiceTest in 10.958 seconds (JVM running for 12.909)
+2020-06-18 17:34:36,937 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 17:34:37,205 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 17:34:37,432 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 17:34:37,513 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 17:34:37,546 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 17:34:37,630 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 17:34:37,652 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 17:34:37,664 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of TicketServiceTest': running time = 516969869 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+222986367  043 %  updateNotFound()
+170539912  033 %  create()
+037714847  007 %  delete()
+010201758  002 %  getAll()
+066490349  013 %  update()
+003865179  001 %  getNotFound()
+005171457  001 %  get()
+
+
+2020-06-18 17:34:37,674 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 17:34:37,676 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 17:34:37,682 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 17:34:37,684 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 17:34:37,692 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 17:38:58,101 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.UserServiceTest], using SpringBootContextLoader
+2020-06-18 17:38:58,116 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 17:38:58,118 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 17:38:58,472 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.UserServiceTest
+2020-06-18 17:38:58,670 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 17:38:58,698 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7e70bd39, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@e6516e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@43ed0ff3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@388ffbc2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a50b09c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4da855dd, org.springframework.test.context.event.EventPublishingTestExecutionListener@6691490c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2187fff7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2e5c7f0b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@21d5c1a0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4de025bf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@538613b3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1eef9aef]
+2020-06-18 17:39:04,016 INFO  ru.project.wakepark.service.UserServiceTest.logStarting:55 - Starting UserServiceTest on MacBook-Pro-Vladimir-2.local with PID 60798 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 17:39:04,017 INFO  ru.project.wakepark.service.UserServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 17:39:04,671 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 17:39:04,769 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 76ms. Found 4 JPA repository interfaces.
+2020-06-18 17:39:05,503 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 17:39:05,644 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 17:39:06,010 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 17:39:06,081 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 17:39:06,218 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 17:39:06,346 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 17:39:07,281 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 17:39:07,287 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 17:39:08,537 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 17:39:08,757 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 17:39:08,911 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 17:39:09,092 INFO  ru.project.wakepark.service.UserServiceTest.logStarted:61 - Started UserServiceTest in 10.339 seconds (JVM running for 12.186)
+2020-06-18 17:39:09,281 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 17:39:09,489 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 17:39:09,838 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 17:39:09,926 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 17:39:09,947 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 17:39:09,989 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 17:39:10,007 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 17:39:10,017 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of UserServiceTest': running time = 566437707 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+144862857  026 %  updateNotFound()
+316876926  056 %  create()
+071750578  013 %  delete()
+006200354  001 %  getAll()
+019136244  003 %  update()
+003020117  001 %  getNotFound()
+004590631  001 %  get()
+
+
+2020-06-18 17:39:10,023 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 17:39:10,026 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 17:39:10,031 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 17:39:10,033 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 17:39:10,040 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 19:21:03,276 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.UserServiceTest], using SpringBootContextLoader
+2020-06-18 19:21:03,292 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:21:03,293 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:21:03,530 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.UserServiceTest
+2020-06-18 19:21:03,693 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:21:03,726 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7db534f2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@44a2b17b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a56812e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2a76b80a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7eb01b12, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2f4854d6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@61d9efe0, org.springframework.test.context.event.EventPublishingTestExecutionListener@7e70bd39, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@e6516e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@43ed0ff3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@388ffbc2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@a50b09c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4da855dd]
+2020-06-18 19:21:09,089 INFO  ru.project.wakepark.service.UserServiceTest.logStarting:55 - Starting UserServiceTest on MacBook-Pro-Vladimir-2.local with PID 62280 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 19:21:09,090 INFO  ru.project.wakepark.service.UserServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 19:21:09,633 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 19:21:09,705 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 58ms. Found 4 JPA repository interfaces.
+2020-06-18 19:21:10,327 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 19:21:10,421 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 19:21:10,708 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 19:21:10,780 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 19:21:10,912 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 19:21:11,021 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 19:21:11,881 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 19:21:11,888 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:21:13,004 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 19:21:13,240 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:21:13,413 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 19:21:13,581 INFO  ru.project.wakepark.service.UserServiceTest.logStarted:61 - Started UserServiceTest in 9.79 seconds (JVM running for 11.383)
+2020-06-18 19:21:13,763 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:21:14,068 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of UserServiceTest': running time = 286353745 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+286353745  100 %  create()
+
+
+2020-06-18 19:21:14,074 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:21:14,077 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:21:14,082 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 19:21:14,083 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 19:21:14,091 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 19:21:19,884 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.UserServiceTest], using SpringBootContextLoader
+2020-06-18 19:21:19,891 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:21:19,892 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:21:20,039 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.UserServiceTest
+2020-06-18 19:21:20,161 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:21:20,182 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2f2bf0e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1eba372c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@21ec5d87, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@25f9407e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@552518c3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a69561c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@59aa20b3, org.springframework.test.context.event.EventPublishingTestExecutionListener@363f6148, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4b21844c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1b28f282, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@138fe6ec, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5e77f0f4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@19b30c92, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@455351c4]
+2020-06-18 19:21:25,452 INFO  ru.project.wakepark.service.UserServiceTest.logStarting:55 - Starting UserServiceTest on MacBook-Pro-Vladimir-2.local with PID 62296 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 19:21:25,453 INFO  ru.project.wakepark.service.UserServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 19:21:25,896 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 19:21:25,966 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 53ms. Found 4 JPA repository interfaces.
+2020-06-18 19:21:26,503 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 19:21:26,599 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 19:21:26,822 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 19:21:26,891 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 19:21:27,038 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 19:21:27,168 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 19:21:28,125 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 19:21:28,133 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:21:29,213 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 19:21:29,417 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:21:29,586 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 19:21:29,752 INFO  ru.project.wakepark.service.UserServiceTest.logStarted:61 - Started UserServiceTest in 9.525 seconds (JVM running for 10.814)
+2020-06-18 19:21:29,887 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 19:21:30,058 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:21:30,215 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:21:30,268 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 19:21:30,293 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 19:21:30,336 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 19:21:30,353 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 19:21:30,364 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of UserServiceTest': running time = 357394390 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+141962716  040 %  updateNotFound()
+136993653  038 %  create()
+036526793  010 %  delete()
+008423117  002 %  getAll()
+025663009  007 %  update()
+002724561  001 %  getNotFound()
+005100541  001 %  get()
+
+
+2020-06-18 19:21:30,369 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:21:30,372 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:21:30,377 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 19:21:30,379 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 19:21:30,388 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 19:21:44,978 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.TicketServiceTest], using SpringBootContextLoader
+2020-06-18 19:21:44,989 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.TicketServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:21:44,991 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.TicketServiceTest]: TicketServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:21:45,168 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.TicketServiceTest
+2020-06-18 19:21:45,325 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:21:45,345 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7e70bd39, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@e6516e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@43ed0ff3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@388ffbc2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a50b09c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4da855dd, org.springframework.test.context.event.EventPublishingTestExecutionListener@6691490c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2187fff7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2e5c7f0b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@21d5c1a0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4de025bf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@538613b3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1eef9aef]
+2020-06-18 19:21:50,638 INFO  ru.project.wakepark.service.TicketServiceTest.logStarting:55 - Starting TicketServiceTest on MacBook-Pro-Vladimir-2.local with PID 62314 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 19:21:50,638 INFO  ru.project.wakepark.service.TicketServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 19:21:51,153 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 19:21:51,234 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 64ms. Found 4 JPA repository interfaces.
+2020-06-18 19:21:51,874 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 19:21:51,972 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 19:21:52,224 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 19:21:52,281 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 19:21:52,402 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 19:21:52,517 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 19:21:53,339 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 19:21:53,345 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:21:54,412 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 19:21:54,601 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:21:54,764 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 19:21:54,929 INFO  ru.project.wakepark.service.TicketServiceTest.logStarted:61 - Started TicketServiceTest in 9.532 seconds (JVM running for 10.964)
+2020-06-18 19:21:55,082 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 19:21:55,263 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:21:55,427 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:21:55,515 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 19:21:55,582 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 19:21:55,617 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 19:21:55,635 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 19:21:55,645 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of TicketServiceTest': running time = 357593514 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+155266212  043 %  updateNotFound()
+144702000  040 %  create()
+021949040  006 %  delete()
+008255506  002 %  getAll()
+019880095  006 %  update()
+003077372  001 %  getNotFound()
+004463289  001 %  get()
+
+
+2020-06-18 19:21:55,650 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:21:55,652 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:21:55,657 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 19:21:55,658 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 19:21:55,666 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 19:26:39,798 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.TicketServiceTest], using SpringBootContextLoader
+2020-06-18 19:26:39,811 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.TicketServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:26:39,812 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.TicketServiceTest]: TicketServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:26:40,013 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.TicketServiceTest
+2020-06-18 19:26:40,194 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:26:40,218 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7db534f2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@44a2b17b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a56812e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2a76b80a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7eb01b12, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2f4854d6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@61d9efe0, org.springframework.test.context.event.EventPublishingTestExecutionListener@7e70bd39, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@e6516e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@43ed0ff3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@388ffbc2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@a50b09c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4da855dd]
+2020-06-18 19:26:45,572 INFO  ru.project.wakepark.service.TicketServiceTest.logStarting:55 - Starting TicketServiceTest on MacBook-Pro-Vladimir-2.local with PID 62373 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 19:26:45,572 INFO  ru.project.wakepark.service.TicketServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 19:26:46,016 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 19:26:46,075 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 48ms. Found 4 JPA repository interfaces.
+2020-06-18 19:26:46,648 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 19:26:46,752 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 19:26:47,000 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 19:26:47,072 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 19:26:47,215 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 19:26:47,343 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 19:26:48,326 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 19:26:48,334 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:26:49,458 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 19:26:49,651 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:26:49,830 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 19:26:50,001 INFO  ru.project.wakepark.service.TicketServiceTest.logStarted:61 - Started TicketServiceTest in 9.724 seconds (JVM running for 11.235)
+2020-06-18 19:26:50,141 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:26:50,347 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of TicketServiceTest': running time = 187222334 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+187222334  100 %  delete()
+
+
+2020-06-18 19:26:50,353 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:26:50,356 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:26:50,361 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 19:26:50,363 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 19:26:50,371 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 19:27:58,129 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.TicketServiceTest], using SpringBootContextLoader
+2020-06-18 19:27:58,140 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.TicketServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:27:58,143 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.TicketServiceTest]: TicketServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:27:58,370 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.TicketServiceTest
+2020-06-18 19:27:58,513 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:27:58,531 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2f2bf0e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1eba372c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@21ec5d87, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@25f9407e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@552518c3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a69561c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@59aa20b3, org.springframework.test.context.event.EventPublishingTestExecutionListener@363f6148, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4b21844c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1b28f282, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@138fe6ec, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5e77f0f4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@19b30c92, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@455351c4]
+2020-06-18 19:28:03,836 INFO  ru.project.wakepark.service.TicketServiceTest.logStarting:55 - Starting TicketServiceTest on MacBook-Pro-Vladimir-2.local with PID 62400 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 19:28:03,837 INFO  ru.project.wakepark.service.TicketServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 19:28:04,323 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 19:28:04,403 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 69ms. Found 4 JPA repository interfaces.
+2020-06-18 19:28:05,055 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 19:28:05,155 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 19:28:05,368 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 19:28:05,430 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 19:28:05,548 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 19:28:05,651 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 19:28:06,500 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 19:28:06,507 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:28:07,529 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 19:28:07,716 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:28:07,879 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 19:28:08,040 INFO  ru.project.wakepark.service.TicketServiceTest.logStarted:61 - Started TicketServiceTest in 9.458 seconds (JVM running for 10.948)
+2020-06-18 19:28:08,182 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 19:28:08,362 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:28:08,509 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:28:08,565 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 19:28:08,587 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 19:28:08,625 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 19:28:08,642 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 19:28:08,653 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of TicketServiceTest': running time = 356483401 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+152857258  043 %  updateNotFound()
+126743786  036 %  create()
+039274978  011 %  delete()
+006506056  002 %  getAll()
+023629742  007 %  update()
+002699643  001 %  getNotFound()
+004771938  001 %  get()
+
+
+2020-06-18 19:28:08,659 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:28:08,662 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:28:08,665 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 19:28:08,667 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 19:28:08,674 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 19:28:42,222 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.TicketServiceTest], using SpringBootContextLoader
+2020-06-18 19:28:42,232 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.TicketServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:28:42,233 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.TicketServiceTest]: TicketServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:28:42,420 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.TicketServiceTest
+2020-06-18 19:28:42,587 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:28:42,610 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7e70bd39, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@e6516e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@43ed0ff3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@388ffbc2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a50b09c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4da855dd, org.springframework.test.context.event.EventPublishingTestExecutionListener@6691490c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2187fff7, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2e5c7f0b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@21d5c1a0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4de025bf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@538613b3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1eef9aef]
+2020-06-18 19:28:47,937 INFO  ru.project.wakepark.service.TicketServiceTest.logStarting:55 - Starting TicketServiceTest on MacBook-Pro-Vladimir-2.local with PID 62419 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 19:28:47,938 INFO  ru.project.wakepark.service.TicketServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 19:28:48,496 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 19:28:48,582 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 68ms. Found 4 JPA repository interfaces.
+2020-06-18 19:28:49,203 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 19:28:49,300 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 19:28:49,529 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 19:28:49,586 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 19:28:49,706 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 19:28:49,817 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 19:28:50,643 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 19:28:50,650 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:28:51,715 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 19:28:51,908 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:28:52,090 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 19:28:52,266 INFO  ru.project.wakepark.service.TicketServiceTest.logStarted:61 - Started TicketServiceTest in 9.592 seconds (JVM running for 11.038)
+2020-06-18 19:28:52,411 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 19:28:52,593 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:28:52,726 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:28:52,778 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 19:28:52,801 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 19:28:52,847 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 19:28:52,868 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 19:28:52,881 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of TicketServiceTest': running time = 348610009 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+153958795  044 %  updateNotFound()
+113977136  033 %  create()
+034963281  010 %  delete()
+006966704  002 %  getAll()
+029298824  008 %  update()
+003335632  001 %  getNotFound()
+006109637  002 %  get()
+
+
+2020-06-18 19:28:52,887 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:28:52,889 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:28:52,893 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 19:28:52,894 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 19:28:52,901 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-18 19:31:36,877 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.TicketServiceTest], using SpringBootContextLoader
+2020-06-18 19:31:36,892 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.TicketServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:31:36,894 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.TicketServiceTest]: TicketServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:31:37,140 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.TicketServiceTest
+2020-06-18 19:31:37,284 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:31:37,303 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7a11c4c7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4cc547a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7555b920, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4152d38d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3591009c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5398edd0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@b5cc23a, org.springframework.test.context.event.EventPublishingTestExecutionListener@5cc5b667, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@61edc883, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@758f4f03, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@182f1e9a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6928f576, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@660e9100, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@69f63d95]
+2020-06-18 19:31:42,625 INFO  ru.project.wakepark.service.TicketServiceTest.logStarting:55 - Starting TicketServiceTest on MacBook-Pro-Vladimir-2.local with PID 62461 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-18 19:31:42,626 INFO  ru.project.wakepark.service.TicketServiceTest.logStartupProfileInfo:655 - The following profiles are active: test
+2020-06-18 19:31:43,106 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-18 19:31:43,182 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 68ms. Found 4 JPA repository interfaces.
+2020-06-18 19:31:43,816 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-18 19:31:43,909 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-18 19:31:44,133 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-18 19:31:44,193 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-18 19:31:44,320 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-18 19:31:44,432 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-18 19:31:45,222 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-18 19:31:45,228 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:31:46,267 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-18 19:31:46,450 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:31:46,621 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-18 19:31:46,793 INFO  ru.project.wakepark.service.TicketServiceTest.logStarted:61 - Started TicketServiceTest in 9.432 seconds (JVM running for 11.01)
+2020-06-18 19:31:46,953 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 19:31:47,162 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:31:47,321 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:31:47,378 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 19:31:47,404 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 19:31:47,448 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 19:31:47,468 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 19:31:47,480 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of TicketServiceTest': running time = 364937125 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+179662957  049 %  updateNotFound()
+100048017  027 %  create()
+039836824  011 %  delete()
+009605879  003 %  getAll()
+026887482  007 %  update()
+003235818  001 %  getNotFound()
+005660148  002 %  get()
+
+
+2020-06-18 19:31:47,482 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.UserServiceTest], using SpringBootContextLoader
+2020-06-18 19:31:47,483 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:31:47,484 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:31:47,487 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.UserServiceTest
+2020-06-18 19:31:47,489 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:31:47,490 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1a916120, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2d732cda, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@755fdfad, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3c98eaa9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2d91147b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1930e8ef, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1299fed3, org.springframework.test.context.event.EventPublishingTestExecutionListener@69af938b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4cb87009, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@52518ee1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@fe38d1e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1a4564a2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@157267db, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4b8ac512]
+2020-06-18 19:31:47,508 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 19:31:47,544 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:31:47,607 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:31:47,644 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 19:31:47,665 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 19:31:47,701 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 19:31:47,723 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 19:31:47,731 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of UserServiceTest': running time = 114287377 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+014361463  013 %  updateNotFound()
+045024893  039 %  create()
+021274224  019 %  delete()
+006602152  006 %  getAll()
+018897664  017 %  update()
+002991310  003 %  getNotFound()
+005135671  004 %  get()
+
+
+2020-06-18 19:31:47,734 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.service.ClientServiceTest], using SpringBootContextLoader
+2020-06-18 19:31:47,736 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.service.ClientServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-18 19:31:47,737 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.service.ClientServiceTest]: ClientServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-18 19:31:47,739 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.service.ClientServiceTest
+2020-06-18 19:31:47,741 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-18 19:31:47,742 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6f5f892c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1b2e841, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3a75d9a1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@698daff6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a085d02, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6cee52e2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7842260f, org.springframework.test.context.event.EventPublishingTestExecutionListener@7cb4d4ee, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@44ec6637, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5a0b550a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3390621a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@69d9d322, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4e23ddf0, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4e00723b]
+2020-06-18 19:31:47,758 INFO  result.beforeTestExecution:23 - 
+Start updateNotFound()
+2020-06-18 19:31:47,805 INFO  result.beforeTestExecution:23 - 
+Start create()
+2020-06-18 19:31:47,840 INFO  result.beforeTestExecution:23 - 
+Start delete()
+2020-06-18 19:31:47,876 INFO  result.beforeTestExecution:23 - 
+Start getAll()
+2020-06-18 19:31:47,899 INFO  result.beforeTestExecution:23 - 
+Start update()
+2020-06-18 19:31:47,911 WARN  o.h.persister.entity.AbstractEntityPersister.getTableUpdateNeeded:535 - HHH000502: The [createdBy] property of the [ru.project.wakepark.model.Client] entity was modified, but it won't be updated because the property is immutable.
+2020-06-18 19:31:47,933 INFO  result.beforeTestExecution:23 - 
+Start getNotFound()
+2020-06-18 19:31:47,953 INFO  result.beforeTestExecution:23 - 
+Start get()
+2020-06-18 19:31:47,971 INFO  result.beforeTestExecution:23 - 
+Start getByPhoneNotFound()
+2020-06-18 19:31:47,997 INFO  result.beforeTestExecution:23 - 
+Start getByPhone()
+2020-06-18 19:31:48,002 INFO  result.afterAll:34 - 
+StopWatch 'Execution time of ClientServiceTest': running time = 92867491 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+015863359  017 %  updateNotFound()
+016653524  018 %  create()
+017261065  019 %  delete()
+007186645  008 %  getAll()
+016662624  018 %  update()
+002538504  003 %  getNotFound()
+003352905  004 %  get()
+009954722  011 %  getByPhoneNotFound()
+003394143  004 %  getByPhone()
+
+
+2020-06-18 19:31:48,008 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-18 19:31:48,010 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-18 19:31:48,014 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-18 19:31:48,016 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-18 19:31:48,022 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-22 11:00:34,166 INFO  ru.project.wakepark.WakeParkApplication.logStarting:55 - Starting WakeParkApplication on MBP-Vladimir-2.Home with PID 96967 (/Users/vladimirvolkov/Documents/JavaProject/WakePark/target/classes started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-22 11:00:34,175 INFO  ru.project.wakepark.WakeParkApplication.logStartupProfileInfo:651 - No active profile set, falling back to default profiles: default
+2020-06-22 11:00:34,880 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-22 11:00:34,965 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 70ms. Found 4 JPA repository interfaces.
+2020-06-22 11:00:35,480 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-22 11:00:35,532 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-22 11:00:35,635 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-22 11:00:35,916 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-22 11:00:36,019 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-22 11:00:36,184 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-22 11:00:36,331 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-22 11:00:37,248 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-22 11:00:37,258 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:00:38,184 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2020-06-22 11:00:38,201 INFO  org.apache.coyote.http11.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-22 11:00:38,202 INFO  org.apache.catalina.core.StandardService.log:173 - Starting service [Tomcat]
+2020-06-22 11:00:38,202 INFO  org.apache.catalina.core.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-22 11:00:38,301 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log:173 - Initializing Spring embedded WebApplicationContext
+2020-06-22 11:00:38,302 INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext:284 - Root WebApplicationContext: initialization completed in 4041 ms
+2020-06-22 11:00:38,452 INFO  ru.project.wakepark.WakeParkApplication.demo:106 - Start query exist
+2020-06-22 11:00:38,519 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:00:38,606 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'resourceHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method 'resourceHandlerMapping' threw exception; nested exception is java.lang.IllegalStateException: No ServletContext set
+2020-06-22 11:00:38,607 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:00:38,608 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:00:38,610 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-22 11:00:38,611 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-22 11:00:38,617 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-22 11:00:38,619 INFO  org.apache.catalina.core.StandardService.log:173 - Stopping service [Tomcat]
+2020-06-22 11:00:38,629 INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-22 11:00:38,638 ERROR org.springframework.boot.SpringApplication.reportFailure:837 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'resourceHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method 'resourceHandlerMapping' threw exception; nested exception is java.lang.IllegalStateException: No ServletContext set
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:895)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at ru.project.wakepark.WakeParkApplication.main(WakeParkApplication.java:47)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerMapping]: Factory method 'resourceHandlerMapping' threw exception; nested exception is java.lang.IllegalStateException: No ServletContext set
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalStateException: No ServletContext set
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.resourceHandlerMapping(WebMvcConfigurationSupport.java:534)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 21 common frames omitted
+2020-06-22 11:00:38,641 WARN  org.springframework.boot.SpringApplication.handleRunFailure:819 - Unable to close ApplicationContext
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'applicationAvailability' defined in class path resource [org/springframework/boot/autoconfigure/availability/ApplicationAvailabilityAutoConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at ru.project.wakepark.WakeParkApplication.main(WakeParkApplication.java:47)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 40 common frames omitted
+2020-06-22 11:02:37,928 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.WakeParkApplicationTests], using SpringBootContextLoader
+2020-06-22 11:02:37,940 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.WakeParkApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-22 11:02:37,942 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.WakeParkApplicationTests]: WakeParkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-22 11:02:38,107 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.WakeParkApplicationTests
+2020-06-22 11:02:38,246 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-22 11:02:38,264 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@47428937, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b9d6699, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7caa550, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21694e53, org.springframework.test.context.support.DirtiesContextTestExecutionListener@72b16078, org.springframework.test.context.transaction.TransactionalTestExecutionListener@22c86919, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@70fab835, org.springframework.test.context.event.EventPublishingTestExecutionListener@1b0a7baf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@62417a16, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@32057e6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@26be6ca7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ea1bcdc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@759fad4, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@64712be]
+2020-06-22 11:02:38,545 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarting:55 - Starting WakeParkApplicationTests on MBP-Vladimir-2.Home with PID 96999 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-22 11:02:38,547 INFO  ru.project.wakepark.WakeParkApplicationTests.logStartupProfileInfo:651 - No active profile set, falling back to default profiles: default
+2020-06-22 11:02:39,119 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-22 11:02:39,201 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 71ms. Found 4 JPA repository interfaces.
+2020-06-22 11:02:39,793 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-22 11:02:39,879 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-22 11:02:39,975 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-22 11:02:40,204 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-22 11:02:40,272 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-22 11:02:40,413 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-22 11:02:40,531 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-22 11:02:41,477 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-22 11:02:41,486 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:02:42,822 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:02:42,992 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 11:02:43,146 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarted:61 - Started WakeParkApplicationTests in 4.837 seconds (JVM running for 6.405)
+2020-06-22 11:02:43,300 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:02:43,302 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:02:43,307 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-22 11:02:43,308 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-22 11:02:43,315 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-22 11:07:24,957 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.WakeParkApplicationTests], using SpringBootContextLoader
+2020-06-22 11:07:24,965 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.WakeParkApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-22 11:07:24,966 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.WakeParkApplicationTests]: WakeParkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-22 11:07:25,118 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.WakeParkApplicationTests
+2020-06-22 11:07:25,288 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-22 11:07:25,310 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@47428937, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b9d6699, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7caa550, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21694e53, org.springframework.test.context.support.DirtiesContextTestExecutionListener@72b16078, org.springframework.test.context.transaction.TransactionalTestExecutionListener@22c86919, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@70fab835, org.springframework.test.context.event.EventPublishingTestExecutionListener@1b0a7baf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@62417a16, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@32057e6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@26be6ca7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ea1bcdc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@759fad4, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@64712be]
+2020-06-22 11:07:25,650 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarting:55 - Starting WakeParkApplicationTests on MBP-Vladimir-2.Home with PID 97060 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-22 11:07:25,651 INFO  ru.project.wakepark.WakeParkApplicationTests.logStartupProfileInfo:651 - No active profile set, falling back to default profiles: default
+2020-06-22 11:07:26,166 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-22 11:07:26,254 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 79ms. Found 4 JPA repository interfaces.
+2020-06-22 11:07:26,881 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-22 11:07:26,964 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-22 11:07:27,067 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-22 11:07:27,287 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-22 11:07:27,366 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-22 11:07:27,515 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-22 11:07:27,640 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-22 11:07:28,500 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-22 11:07:28,508 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:07:29,799 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:07:29,964 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 11:07:30,134 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarted:61 - Started WakeParkApplicationTests in 4.765 seconds (JVM running for 6.129)
+2020-06-22 11:07:30,248 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:07:30,250 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:07:30,254 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-22 11:07:30,255 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-22 11:07:30,262 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-22 11:08:06,130 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.WakeParkApplicationTests], using SpringBootContextLoader
+2020-06-22 11:08:06,142 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.WakeParkApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-22 11:08:06,144 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.WakeParkApplicationTests]: WakeParkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-22 11:08:06,289 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.WakeParkApplicationTests
+2020-06-22 11:08:06,409 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-22 11:08:06,426 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@588ab592, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@c8b96ec, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4cc61eb1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2d8f2f3a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2024293c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7048f722, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@c074c0c, org.springframework.test.context.event.EventPublishingTestExecutionListener@58a55449, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5949eba8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6e0ff644, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@58dea0a5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2a2bb0eb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3c291aad, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2d0566ba]
+2020-06-22 11:08:06,690 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarting:55 - Starting WakeParkApplicationTests on MBP-Vladimir-2.Home with PID 97083 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-22 11:08:06,691 INFO  ru.project.wakepark.WakeParkApplicationTests.logStartupProfileInfo:651 - No active profile set, falling back to default profiles: default
+2020-06-22 11:08:07,242 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-22 11:08:07,337 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 86ms. Found 4 JPA repository interfaces.
+2020-06-22 11:08:07,878 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-22 11:08:07,951 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-22 11:08:08,058 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-22 11:08:08,251 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-22 11:08:08,323 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-22 11:08:08,501 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-22 11:08:08,657 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-22 11:08:09,685 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-22 11:08:09,756 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:08:11,139 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:08:11,358 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 11:08:11,539 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarted:61 - Started WakeParkApplicationTests in 5.077 seconds (JVM running for 7.469)
+2020-06-22 11:10:47,932 WARN  com.zaxxer.hikari.pool.HikariPool.run:787 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m39s773ms).
+2020-06-22 11:10:47,959 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:10:47,961 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:10:47,964 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-22 11:10:47,965 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-22 11:10:47,975 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-22 11:15:27,505 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.WakeParkApplicationTests], using SpringBootContextLoader
+2020-06-22 11:15:27,524 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.WakeParkApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-22 11:15:27,527 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.WakeParkApplicationTests]: WakeParkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-22 11:15:27,716 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.WakeParkApplicationTests
+2020-06-22 11:15:27,905 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-22 11:15:27,929 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@47428937, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b9d6699, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7caa550, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21694e53, org.springframework.test.context.support.DirtiesContextTestExecutionListener@72b16078, org.springframework.test.context.transaction.TransactionalTestExecutionListener@22c86919, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@70fab835, org.springframework.test.context.event.EventPublishingTestExecutionListener@1b0a7baf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@62417a16, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@32057e6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@26be6ca7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ea1bcdc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@759fad4, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@64712be]
+2020-06-22 11:15:28,285 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarting:55 - Starting WakeParkApplicationTests on MBP-Vladimir-2.Home with PID 97166 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-22 11:15:28,286 INFO  ru.project.wakepark.WakeParkApplicationTests.logStartupProfileInfo:651 - No active profile set, falling back to default profiles: default
+2020-06-22 11:15:28,903 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-22 11:15:28,986 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 74ms. Found 4 JPA repository interfaces.
+2020-06-22 11:15:29,616 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-22 11:15:29,696 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-22 11:15:29,787 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-22 11:15:30,001 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-22 11:15:30,064 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-22 11:15:30,199 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-22 11:15:30,317 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-22 11:15:31,191 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-22 11:15:31,198 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:15:32,422 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:15:32,589 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 11:15:32,767 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarted:61 - Started WakeParkApplicationTests in 4.783 seconds (JVM running for 6.252)
+2020-06-22 11:15:32,885 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:15:32,887 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:15:32,891 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-22 11:15:32,892 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-22 11:15:32,900 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-06-22 11:16:03,824 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ru.project.wakepark.WakeParkApplicationTests], using SpringBootContextLoader
+2020-06-22 11:16:03,835 INFO  o.s.test.context.support.AbstractContextLoader.generateDefaultLocations:264 - Could not detect default resource locations for test class [ru.project.wakepark.WakeParkApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-06-22 11:16:03,837 INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses:83 - Could not detect default configuration classes for test class [ru.project.wakepark.WakeParkApplicationTests]: WakeParkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-06-22 11:16:04,011 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses:237 - Found @SpringBootConfiguration ru.project.wakepark.WakeParkApplication for test class ru.project.wakepark.WakeParkApplicationTests
+2020-06-22 11:16:04,195 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-06-22 11:16:04,216 INFO  o.s.b.t.context.SpringBootTestContextBootstrapper.getTestExecutionListeners:177 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@47428937, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b9d6699, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7caa550, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21694e53, org.springframework.test.context.support.DirtiesContextTestExecutionListener@72b16078, org.springframework.test.context.transaction.TransactionalTestExecutionListener@22c86919, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@70fab835, org.springframework.test.context.event.EventPublishingTestExecutionListener@1b0a7baf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@62417a16, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@32057e6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@26be6ca7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ea1bcdc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@759fad4, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@64712be]
+2020-06-22 11:16:04,585 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarting:55 - Starting WakeParkApplicationTests on MBP-Vladimir-2.Home with PID 97183 (started by vladimirvolkov in /Users/vladimirvolkov/Documents/JavaProject/WakePark)
+2020-06-22 11:16:04,587 INFO  ru.project.wakepark.WakeParkApplicationTests.logStartupProfileInfo:651 - No active profile set, falling back to default profiles: default
+2020-06-22 11:16:05,160 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-22 11:16:05,248 INFO  o.s.d.r.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 67ms. Found 4 JPA repository interfaces.
+2020-06-22 11:16:05,873 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-22 11:16:05,959 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-06-22 11:16:06,060 INFO  com.zaxxer.hikari.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-06-22 11:16:06,283 INFO  org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-22 11:16:06,352 INFO  org.hibernate.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-06-22 11:16:06,482 INFO  org.hibernate.annotations.common.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-22 11:16:06,590 INFO  org.hibernate.dialect.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-06-22 11:16:07,409 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-22 11:16:07,415 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:16:08,592 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:16:08,774 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache:297 - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 11:16:08,983 INFO  ru.project.wakepark.WakeParkApplicationTests.logStarted:61 - Started WakeParkApplicationTests in 4.712 seconds (JVM running for 6.092)
+2020-06-22 11:16:09,108 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-22 11:16:09,109 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-22 11:16:09,114 WARN  org.hibernate.orm.cache.stop:122 - HHH90001002: Attempt to restop an already stopped JCacheRegionFactory.
+2020-06-22 11:16:09,115 INFO  com.zaxxer.hikari.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-06-22 11:16:09,122 INFO  com.zaxxer.hikari.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.

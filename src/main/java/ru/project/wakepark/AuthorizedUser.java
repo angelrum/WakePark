@@ -2,11 +2,11 @@ package ru.project.wakepark;
 
 public class AuthorizedUser {
 
-    static int getCompanyId() {
+    public static int getCompanyId() {
         return 10_000;
     }
 
-    static int getId() {
-        return 0;
+    public static int getId() {
+        return 10_001;
     }
 }

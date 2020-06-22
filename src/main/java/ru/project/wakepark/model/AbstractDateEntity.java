@@ -11,8 +11,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public abstract class AbstractDateEntity extends AbstractBaseEntity {
 
-    @NotNull
-    @Column(name = "created_on")
+    @Column(name = "created_on", updatable = false)
     @DateTimeFormat(pattern = DateTimeUtil.DATE_TIME_PATTERN)
     protected LocalDateTime createdOn;
 
@@ -28,7 +27,7 @@ public abstract class AbstractDateEntity extends AbstractBaseEntity {
 //                    name = "company_id",
 //                    referencedColumnName = "company_id", insertable = false, updatable = false)
 //    })
-    @JoinColumn(name = "created_by", referencedColumnName = "id")
+    @JoinColumn(name = "created_by", referencedColumnName = "id", updatable = false)
     protected User createdBy;
 
     public AbstractDateEntity(Integer id, Integer companyId, @NotNull LocalDateTime createdOn, User createdBy) {

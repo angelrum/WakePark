@@ -29,13 +29,12 @@ public abstract class AbstractDateChangedRepository <T extends AbstractDateChang
     @Transactional
     public T save(T t, int companyId, int changedBy) {
         if (!t.isNew()) {
-            User user = userRepository.findOneByCompanyIdAndId(companyId, changedBy);
-            if (Objects.isNull(user))
+            User chBy = userRepository.findOneByCompanyIdAndId(companyId, changedBy);
+            if (Objects.isNull(chBy))
                 return null;
-            t.setChangedBy(user);
+            t.setChangedBy(chBy);
             t.setChangedOn(LocalDateTime.now());
         }
-
         return super.save(t, companyId, changedBy);
     }
 
