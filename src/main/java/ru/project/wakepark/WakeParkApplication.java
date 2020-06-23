@@ -54,11 +54,11 @@ public class WakeParkApplication extends SpringBootServletInitializer {
 //        return null;
 //    }
 
-    @Bean
-    @Profile("test")
-    public CacheManager getNoOpCacheManager() {
-        return new NoOpCacheManager();
-    }
+//    @Bean
+//    @Profile("test")
+//    public CacheManager getNoOpCacheManager() {
+//        return new NoOpCacheManager();
+//    }
 
     @Bean
     public MappingJackson2HttpMessageConverter jackson2HttpMessageConverter() {
