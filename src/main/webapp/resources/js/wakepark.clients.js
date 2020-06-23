@@ -1,4 +1,4 @@
-var clientAjaxUrl = "/wakepark/ajax/controller/clients/";
+var clientAjaxUrl = "/ajax/controller/clients/";
 var phone = document.getElementById("telnumber");
 
 $(function () {

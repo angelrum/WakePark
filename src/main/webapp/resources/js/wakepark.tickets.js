@@ -1,4 +1,4 @@
-var ticketAjaxUrl = "/wakepark/ajax/controller/tickets/";
+var ticketAjaxUrl = "/ajax/controller/tickets/";
 var buttons = document.querySelectorAll(".btn-inactive");
 var duration = $('#duration');
 
