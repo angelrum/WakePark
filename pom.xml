@@ -34,7 +34,7 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
+    <!--
     <build>
         <finalName>wakepark</finalName>
         <defaultGoal>package</defaultGoal>
@@ -45,8 +45,8 @@
             </plugin>
         </plugins>
     </build>
-
-    <!-- heroku
+    -->
+    <!-- heroku -->
     <build>
         <plugins>
             <plugin>
@@ -75,7 +75,7 @@
             </plugin>
         </plugins>
     </build>
--->
+<!-- end heroku -->
     <dependencies>
         <!-- DB -->
         <dependency>
