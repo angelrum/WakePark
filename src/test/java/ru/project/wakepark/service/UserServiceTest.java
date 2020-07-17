@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.project.wakepark.testdata.UserTestData;
 import ru.project.wakepark.model.User;
+import ru.project.wakepark.to.BaseTo;
+
 import static ru.project.wakepark.testdata.UserTestData.*;
 
 @SpringBootTest

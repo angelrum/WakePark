@@ -23,4 +23,5 @@ public interface CommonDateRepository <T extends AbstractDateEntity> extends Jpa
     List<T> findByCompanyIdAndHalfCreatedOn(@Param("companyId") int companyId,
                                             @Param("startDateTime") LocalDateTime start,
                                             @Param("endDateTime") LocalDateTime end);
+
 }

@@ -70,7 +70,7 @@ CREATE TABLE clients
     FOREIGN KEY (company_id) REFERENCES companys(id) ON DELETE CASCADE,
     FOREIGN KEY (created_by) REFERENCES users(id),
 
-    CONSTRAINT client_idx UNIQUE (company_id, firstname, lastname, middlename, telnumber)
+    CONSTRAINT client_idx UNIQUE (company_id, telnumber)
 );
 
 CREATE TABLE tickets
@@ -117,7 +117,7 @@ CREATE TABLE client_ticket
 
     FOREIGN KEY (created_by) REFERENCES users(id),
     FOREIGN KEY (changed_by) REFERENCES users(id),
-    FOREIGN KEY (client_id) REFERENCES clients(id),
+    FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE,
     FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE,
     FOREIGN KEY (company_id) REFERENCES companys(id) ON DELETE CASCADE
 );

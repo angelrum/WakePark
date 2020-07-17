@@ -10,8 +10,25 @@
 <div class="container">
     <main class="content">
         <div class="container-fluid">
-            <c:set var="instance" value="${thead}" scope="request"/>
-            <jsp:include page="fragments/table.jsp"/>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Default</h5>
+                            <h6 class="card-subtitle text-muted">Highly flexible tool that many advanced features to any HTML table.</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="col text-left mb-2">
+                                <!-- параметр data-target ссылается на модальное окно -->
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#create" onclick="add()">Добавить</button>
+                            </div>
+                            <c:set var="instance" value="${thead}" scope="request"/>
+                            <jsp:include page="fragments/table.jsp"/>
+                        </div>
+                    </div>
+                    <jsp:include page="fragments/client_tickets.jsp"/>
+                </div>
+            </div>
         </div>
         <!-- Модальное окно для создания объекта -->
         <div class="modal fade" id="create" role="dialog" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
@@ -32,7 +49,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">+7</span>
                                             </div>
-                                            <input type="text" id="telnumber" name="telnumber" class="form-control" onkeypress="return checkPhoneKey(key)" onblur="phoneblur()" placeholder="(9XX) XXX-XX-XX">
+                                            <input type="text" id="telnumber" name="telnumber" class="form-control" onkeyup="return checkPhoneKey(key)" onblur="phoneblur()" placeholder="(9XX) XXX-XX-XX">
                                         </div>
                                     </div>
                                 </div>
@@ -83,10 +100,16 @@
                 </form>
             </div>
         </div>
+        <jsp:include page="fragments/choice_ticket.jsp"/>
     </main>
 </div>
 
-<script src="resources/js/wakepark.clients.js" defer></script>
+<script src="resources/js/wakepark.const.js"></script>
+<script src="resources/js/wakepark.common_render.js"></script>
 <script src="resources/js/wakepark.common.js" defer></script>
+
+<script src="resources/js/wakepark.clients.js" defer></script>
+<script src="resources/js/wakepark.ch_ticket.js" defer></script>
+<script src="resources/js/wakepark.client_tickets.js"></script>
 </body>
 </html>

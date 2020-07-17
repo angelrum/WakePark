@@ -12,17 +12,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import ru.project.wakepark.web.converter.DateTimeFormatters;
 import ru.project.wakepark.web.converter.StringToEnumConverter;
 import ru.project.wakepark.web.json.JacksonObjectMapper;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
 
@@ -78,6 +81,8 @@ public class WakeParkApplication extends SpringBootServletInitializer {
     @Autowired
     public void addFormaters(FormatterRegistry registry) {
         registry.addConverter(new StringToEnumConverter());
+        registry.addFormatter(new DateTimeFormatters.LocalDateFormatter());
+        registry.addFormatter(new DateTimeFormatters.LocalTimeFormatter());
     }
 
     @Bean(name = "messageSource")

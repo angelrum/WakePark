@@ -1,12 +1,15 @@
 package ru.project.wakepark.util;
 
 import org.slf4j.Logger;
+import org.springframework.util.Assert;
+import org.springframework.util.CollectionUtils;
 import ru.project.wakepark.util.exception.ErrorType;
 import ru.project.wakepark.util.exception.IllegalRequestDataException;
 import ru.project.wakepark.util.exception.NotFoundException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.*;
+import java.util.List;
 import java.util.Set;
 
 public class ValidationUtil {
@@ -14,13 +17,19 @@ public class ValidationUtil {
     private ValidationUtil() {
     }
 
-    public static <T> T checkNotFoundWithId(T object, int id) {
-        checkNotFoundWithId(object != null, id);
+    public static <T> T checkNotFoundWithId(T object, int id, int companyId) {
+        checknotfoundwithid(object != null, id, companyId);
         return object;
     }
 
-    public static void checkNotFoundWithId(boolean found, int id) {
-        checkNotFound(found, "id=" + id);
+    public static <T> List<T> checkNotFoundWithId(List<T> objects, int id, int companyId) {
+        checknotfoundwithid(!CollectionUtils.isEmpty(objects), id, companyId);
+        return objects;
+    }
+
+    public static void checknotfoundwithid(boolean found, int id, int companyId) {
+        checkNotFound(found, String.format("id=%s and companyId=%s", id, companyId));
+
     }
 
     public static <T> T checkNotFound(T object, String msg) {
@@ -32,6 +41,10 @@ public class ValidationUtil {
         if (!found) {
             throw new NotFoundException(arg);
         }
+    }
+
+    public static <T> void checkNotNull(T object) {
+        Assert.notNull(object, String.format("%s, must not be null", object.getClass().getName()));
     }
 
     public static void checkNew(HasId bean) {

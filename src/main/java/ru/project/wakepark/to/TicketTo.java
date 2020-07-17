@@ -12,9 +12,11 @@ public class TicketTo extends BaseTo {
 
     protected String name;
 
-    protected boolean enable = true;
+    protected boolean enable;
 
-    protected boolean equipment = true;
+    protected boolean equipment;
+
+    protected boolean countEdit;
 
     protected Integer duration;
 
@@ -36,14 +38,15 @@ public class TicketTo extends BaseTo {
 
     protected Double weekendcost;
 
-    @ConstructorProperties({"id", "pass", "name", "enable", "equipment", "duration", "startDate", "endDate", "startTime", "endTime", "month", "day", "year", "cost", "weekendcost",})
-    public TicketTo(Integer id, Pass pass, String name, boolean enable, boolean equipment, Integer duration, LocalDate startDate, LocalDate endDate,
+    @ConstructorProperties({"id", "pass", "name", "enable", "equipment", "countEdit", "duration", "startDate", "endDate", "startTime", "endTime", "month", "day", "year", "cost", "weekendcost",})
+    public TicketTo(Integer id, Pass pass, String name, boolean enable, boolean equipment, boolean countEdit, Integer duration, LocalDate startDate, LocalDate endDate,
                     LocalTime startTime, LocalTime endTime, Integer month, Integer day, Integer year, Double cost, Double weekendcost) {
         super(id);
         this.pass = pass.toString();
         this.name = name;
         this.enable = enable;
         this.equipment = equipment;
+        this.countEdit = countEdit;
         this.duration = duration;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -64,7 +67,8 @@ public class TicketTo extends BaseTo {
         TicketTo ticketTo = (TicketTo) o;
         return enable == ticketTo.enable &&
                 equipment == ticketTo.equipment &&
-                pass == ticketTo.pass &&
+                countEdit == ticketTo.countEdit &&
+                pass.equals(ticketTo.pass) &&
                 name.equals(ticketTo.name) &&
                 duration.equals(ticketTo.duration) &&
                 Objects.equals(startDate, ticketTo.startDate) &&

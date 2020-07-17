@@ -5,12 +5,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
 @Table(name = "clients")
-public class Client extends AbstractNamedEntity{
+public class Client extends AbstractNamedEntity implements Serializable {
 
     protected String city;
 

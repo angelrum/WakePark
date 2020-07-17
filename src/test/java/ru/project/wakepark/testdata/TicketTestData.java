@@ -28,7 +28,7 @@ public class TicketTestData implements TestData<Ticket> {
             null, null, LocalTime.of(10, 0), LocalTime.of(18, 0), 0, 0,
             2020, 10.0, 11.0, LocalDateTime.of(LocalDate.of(2020, Month.JUNE, 2), LocalTime.of(12, 0)), USER3, null, null );
 
-    public static Ticket TICKET3 = new Ticket(TICKET_ID3, WAKE_ID1, Pass.SEASON, "Абонемент на месяц", true, false, 5,
+    public static Ticket TICKET3 = new Ticket(TICKET_ID3, WAKE_ID1, Pass.SEASON, "Абонемент на месяц", false, false, 5,
             null, null, LocalTime.of(9, 0), LocalTime.of(18, 0), 1, 0,
             2020, 90.0, 95.0, LocalDateTime.of(LocalDate.of(2020, Month.JUNE, 2), LocalTime.of(13, 0)), USER3, null, null );
 

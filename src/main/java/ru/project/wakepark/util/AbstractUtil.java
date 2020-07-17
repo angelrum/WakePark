@@ -10,6 +10,6 @@ public abstract class AbstractUtil <S, To> {
         return s.stream().map(sl -> createTo(sl)).collect(Collectors.toList());
     }
 
-    abstract To createTo(S s);
+    public abstract To createTo(S s);
 
 }

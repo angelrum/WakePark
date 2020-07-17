@@ -11,6 +11,93 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
+                <!-- Фильтр старт -->
+                <div class="card" id="accordion">
+                    <div class="card-header" id="headingOne">
+                        <button class="btn collapsed btn-custom" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <h5 class="card-title">Фильтр</h5>
+                        </button>
+                    </div>
+                    <!--чтобы скрыть надо убрать класс show-->
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <form id="filter">
+                                <div class="row">
+                                    <div class="col-md-4 text-left">
+                                        <h6>По параметрам:</h6>
+                                        <div class="form-group">
+                                            <div class="row custom-switch custom-control">
+                                                <div class="col-md-12">
+                                                    <input type="checkbox" id="filt_active" name="active" class="custom-control-input">
+                                                    <label class="custom-control-label text-muted" for="filt_active">Только активные</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row custom-switch custom-control">
+                                                <div class="col-md-12">
+                                                    <input type="checkbox" id="filt_equipment" name="equipment" class="custom-control-input">
+                                                    <label class="custom-control-label text-muted" for="filt_equipment">Только со снаряжением</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-left">
+                                        <h6>По времени:</h6>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-5 mt-auto mb-auto">
+                                                    <label class="form-label text-muted m-auto">Начало</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input class="form-control" name="timeStart" type="time">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-5 mt-auto mb-auto">
+                                                    <label class="form-label text-muted m-auto">Окончание</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input class="form-control" name="timeEnd" type="time">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-left">
+                                        <h6>По дате:</h6>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-3 mt-auto mb-auto">
+                                                    <label class="form-label text-muted m-auto">Начало</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input class="form-control" name="dateStart" type="date">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-3 mt-auto mb-auto">
+                                                    <label class="form-label text-muted m-auto">Окончание</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input class="form-control" name="dateEnd" type="date">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="col text-left mb-2">
+                                <button class="btn btn-primary" onclick="updateFilteredTable();">Применить</button>
+                                <button class="btn btn-danger"onclick="clearFilter();">Очистить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Фильтр конец -->
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">Default</h5>
@@ -22,7 +109,7 @@
                             <button class="btn btn-primary" data-toggle="modal" data-target="#create" onclick="add()">Добавить</button>
                         </div>
                         <div class="col">
-                            <table class="dataTables_wrapper dt-bootstrap4 fl-table" id="datatable" style="font-size: 12px">
+                            <table class="dataTables_wrapper dt-bootstrap4 fl-table" id="datatable">
                                 <thead>
                                 <tr>
                                     <th scope="col" rowspan="2">Тип билета</th>
@@ -86,7 +173,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="h6">Параметры</label>
-                                    <div class="custom-switch custom-control"><input type="checkbox" id="onlyActive" name="enable" class="custom-control-input" checked><label class="custom-control-label" for="onlyActive">Билет активен</label></div>
+                                    <div class="custom-switch custom-control"><input type="checkbox" id="onlyActive" name="enable" class="custom-control-input"><label class="custom-control-label" for="onlyActive">Билет активен</label></div>
                                     <div class="custom-switch custom-control"><input type="checkbox" id="onlyWithEquipment" name="equipment" class="custom-control-input"><label class="custom-control-label" for="onlyWithEquipment">Снаряжение включено</label></div>
                                 </div>
                             </div>
@@ -190,7 +277,11 @@
         </div>
     </div>
 </main>
-<script src="resources/js/wakepark.tickets.js" defer></script>
+<script src="resources/js/wakepark.const.js"></script>
+<script src="resources/js/wakepark.common_render.js"></script>
 <script src="resources/js/wakepark.common.js" defer></script>
+
+<script src="resources/js/wakepark.tickets.js" defer></script>
+<script src="resources/js/wakepark.ch_ticket.js" defer></script>
 </body>
 </html>

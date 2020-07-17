@@ -1,8 +1,6 @@
 package ru.project.wakepark.testdata;
 
-import org.assertj.core.util.Strings;
 import ru.project.wakepark.TestMatcher;
-import ru.project.wakepark.model.AbstractDateEntity;
 import ru.project.wakepark.model.Client;
 
 import java.time.LocalDateTime;
@@ -67,6 +65,13 @@ public class ClientTestData implements TestData<Client> {
         upd.setCity("Краснодар");
         upd.setCreatedBy(null);
         return upd;
+    }
+
+    public static Client getDublicatePhone() {
+        Client cl = new Client(CLIENT1);
+        cl.setId(null);
+        cl.setFirstname("Антон");
+        return cl;
     }
 
     @Override

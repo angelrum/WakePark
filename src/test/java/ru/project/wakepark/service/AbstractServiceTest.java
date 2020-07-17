@@ -15,16 +15,17 @@ import static ru.project.wakepark.testdata.CompanyTestData.*;
 import static ru.project.wakepark.testdata.UserTestData.USER_ID2;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@Sql(scripts = "classpath:db/data-test.sql", config = @SqlConfig(encoding = "UTF-8"))
+
 @ActiveProfiles("test")
 @ExtendWith(TimingExtension.class)
+@Sql(scripts = "classpath:db/data-test.sql", config = @SqlConfig(encoding = "UTF-8"))
 abstract class AbstractServiceTest <S extends AbstractDateChangedEntity> {
 
     private AbstractService<S> service;
 
     private TestMatcher<S> matcher;
 
-    private TestData<S> testData;
+    protected TestData<S> testData;
 
     AbstractServiceTest(AbstractService<S> service, TestMatcher<S> matcher, TestData<S> testData) {
         this.service = service;

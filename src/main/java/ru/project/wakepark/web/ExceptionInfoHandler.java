@@ -36,10 +36,12 @@ public class ExceptionInfoHandler {
 
     public static final String EXCEPTION_DUPLICATE_EMAIL = "exception.user.duplicateEmail";
     public static final String EXCEPTION_DUPLICATE_DATETIME = "exception.meal.duplicateDateTime";
+    public static final String EXCEPTION_DUPLICATE_PHONENUMBER = "exception.client.duplicatePhonenumber";
 
     private static final Map<String, String> CONSTRAINS_I18N_MAP = Map.of(
             "users_unique_email_idx", EXCEPTION_DUPLICATE_EMAIL,
-            "meals_unique_user_datetime_idx", EXCEPTION_DUPLICATE_DATETIME);
+            "meals_unique_user_datetime_idx", EXCEPTION_DUPLICATE_DATETIME,
+            "client_idx", EXCEPTION_DUPLICATE_PHONENUMBER);
 
     private final MessageSourceAccessor messageSourceAccessor;
 

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class ClientUtil extends AbstractUtil<Client, ClientTo> {
+public class ClientUtil extends AbstractUtil<Client, ClientTo> implements ValidationInputData<Client> {
 
     private static ClientUtil instance;
 
@@ -36,7 +36,8 @@ public class ClientUtil extends AbstractUtil<Client, ClientTo> {
                 "Email");
     }
 
-    public void checkPhone(Client cl) {
+    @Override
+    public void checkInputData(Client cl) {
         if (!cl.getTelnumber().startsWith("+7")) {
             cl.setTelnumber("+7".concat(cl.getTelnumber()));
         }

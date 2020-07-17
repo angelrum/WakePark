@@ -4,6 +4,7 @@ var duration = $('#duration');
 
 $(function () {
         makeEditable({
+            datatable_id: '#datatable',
             ajaxUrl: ticketAjaxUrl,
             datatableOpts: {
                 "columns": [
@@ -67,14 +68,14 @@ $(function () {
             updateTable: function () {
                 $.get(ticketAjaxUrl, updateTableByData);
             },
-            synchronyzeButtons: function (value) {
-                clearClass(buttons, 'btn-secondary', 'btn-success');
-                for (let button of buttons) {
-                    if (button.outerText===String(value)) {
-                        button.classList.add('btn-success');
-                    }
-                }
-            },
+            // synchronyzeButtons: function (value) {
+            //     clearClass(buttons, 'btn-secondary', 'btn-success');
+            //     for (let button of buttons) {
+            //         if (button.outerText===String(value)) {
+            //             button.classList.add('btn-success');
+            //         }
+            //     }
+            // },
             presave: function (form) {
                 form.find('input[type=checkbox]').each(function () {
                     if (!this.checked) {
@@ -97,41 +98,32 @@ $(function () {
                 form.find('#year').val(new Date().getFullYear());
             }
         });
-        datatableCustom();
-        modalButtonEvent();
+        datatableCustomStyle('#datatable');
+        //modalButtonEvent(); блок кнопок для установки продолжительности. Исключили.
     }
 );
 
-function renderCheckBox(data, type, row) {
-    if (type === "display") {
-        var check = (data === true) ? 'checked' : '';
-        return "<div class='custom-control custom-checkbox'>" +
-                    "<input type='checkbox' class='custom-control-input' disabled " + check +">" +
-                    "<span class='custom-control-label'>" +
-                "</span></div>";
-    }
-}
-
-function modalButtonEvent() {
-    duration.val("5");
-    for (let button of buttons) {
-        button.addEventListener("click", function (evt) {
-            // Отменяем действие по умолчанию
-            evt.preventDefault();
-            clearClass(buttons, 'btn-secondary', 'btn-success');
-            this.classList.add('btn-success');
-            duration.val(this.outerText);
-        });
-    }
-}
-
-function convertTime(data, type, row) {
-    if (type === "display"
-        && typeof data != "undefined" && data.length === 8) {
-        return data.substring(0, 5); //убираем секунды
-    }
-
-}
+// function renderCheckBox(data, type, row) {
+//     if (type === "display") {
+//         var check = (data === true) ? 'checked' : '';
+//         return "<div class='custom-control custom-checkbox'>" +
+//                     "<input type='checkbox' class='custom-control-input' disabled " + check +">" +
+//                     "<span class='custom-control-label'>" +
+//                 "</span></div>";
+//     }
+// }
+//
+// function modalButtonEvent() {
+//     for (let button of buttons) {
+//         button.addEventListener("click", function (evt) {
+//             // Отменяем действие по умолчанию
+//             evt.preventDefault();
+//             clearClass(buttons, 'btn-secondary', 'btn-success');
+//             this.classList.add('btn-success');
+//             duration.val(this.outerText);
+//         });
+//     }
+// }
 
 var clearClass = function(elements, addClass, remClass) {
     for(let element of elements) {

@@ -19,11 +19,11 @@ public class CompanyService {
     }
 
     public Company get(int id) {
-        return checkNotFoundWithId(repository.get(id), id);
+        return checkNotFoundWithId(repository.get(id), id, 0);
     }
 
     public void delete(int id) {
-        checkNotFoundWithId(repository.delete(id), id);
+        checknotfoundwithid(repository.delete(id), id, 0);
     }
 
     public Company create(Company company) {
@@ -33,7 +33,7 @@ public class CompanyService {
 
     public Company update(Company company) {
         Assert.notNull(company, "company must not be null");
-        return checkNotFoundWithId(repository.save(company), company.getId());
+        return checkNotFoundWithId(repository.save(company), company.getId(), 0);
     }
 
     public List<Company> getAll() {

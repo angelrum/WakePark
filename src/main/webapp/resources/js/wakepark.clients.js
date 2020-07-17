@@ -1,15 +1,19 @@
 var clientAjaxUrl = "/ajax/controller/clients/";
 var phone = document.getElementById("telnumber");
 
+
 $(function () {
         makeEditable({
+            datatable_id: '#datatable',
             ajaxUrl: clientAjaxUrl,
             datatableOpts: {
                 "columns": [
                     {
                         "data": "id",
                         "orderable": false,
-                        "render": renderRadioId,
+                        "render": function (data, type, row) {
+                            return renderRadioId(data, type, row, "cl_select");
+                        },
                         "defaultContent": ""
                     },
                     {
@@ -56,11 +60,16 @@ $(function () {
             },
             updateTable: function () {
                 $.get(clientAjaxUrl, updateTableByData);
+            },
+            convertModalValue: function(key, value) {
+                if (key === 'telnumber') {
+                    return  convertPhoneNumber(value);
+                }
+                return value;
             }
         });
-        datatableCustom();
         phoneConvertFunction();
-        radioEvent();
+        startModal()
     }
 );
 
@@ -78,10 +87,6 @@ function phoneConvertFunction() {
     }
 }
 
-function radioEvent() {
-
-}
-
 
 var phoneblur = function () {
     if(phone.value === "(") {
@@ -96,17 +101,36 @@ var checkPhoneKey = function (key) {
         key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Delete' || key === 'Backspace';
 };
 
-function renderRadioId(data, type, row) {
-    if (type === "display") {
-        return "<input type='radio' id='radio"+ row.id +"' value='"+ data +"' name='select'>";
+function handleOnChange(ev, flag) {
+    $('tr input[id^="radio"]')
+        .parent().parent().removeClass("tr-hover");
+    $('tr input[id="radio'+ ev.value + '"').parent().parent().addClass("tr-hover");
+    if (flag) {
+        downloadTickets(ev.value);
+        $('#collapse_cl_tickets').collapse('show');
     }
 }
 
-function renderLabelRadio(data, type, row) {
-    if (type === "display") {
-        if (data === undefined) {
-            return null;
+function convertPhoneNumber(telnumber) {
+    telnumber = telnumber.replace('+7', '');
+    var phonenumber = "";
+    for(let num of telnumber) {
+        if (/\d/i.test(num) && phonenumber.length < 15) {
+            if (phonenumber.length === 0) {
+                phonenumber = "(";
+            }
+            switch (phonenumber.length) {
+                case 4:
+                    phonenumber+=") ";
+                    break;
+                case 9:
+                case 12:
+                    phonenumber+="-";
+                    break;
+
+            }
+            phonenumber += num;
         }
-        return "<label for='radio"+ row.id +"'>"+ data +"</label>"
     }
+    return phonenumber;
 }

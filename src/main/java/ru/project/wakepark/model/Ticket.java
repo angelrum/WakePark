@@ -8,13 +8,15 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "tickets")
-public class Ticket extends AbstractDateChangedEntity {
+public class Ticket extends AbstractDateChangedEntity implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "pass")
@@ -208,6 +210,34 @@ public class Ticket extends AbstractDateChangedEntity {
 
     public void setWeekendcost(Double weekendcost) {
         this.weekendcost = weekendcost;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ticket)) return false;
+        Ticket ticket = (Ticket) o;
+        return  super.id.equals(ticket.id) &&
+                super.companyId.equals(ticket.companyId) &&
+                enable == ticket.enable &&
+                equipment == ticket.equipment &&
+                pass == ticket.pass &&
+                name.equals(ticket.name) &&
+                duration.equals(ticket.duration) &&
+                Objects.equals(startDate, ticket.startDate) &&
+                Objects.equals(endDate, ticket.endDate) &&
+                Objects.equals(startTime, ticket.startTime) &&
+                Objects.equals(endTime, ticket.endTime) &&
+                Objects.equals(month, ticket.month) &&
+                Objects.equals(day, ticket.day) &&
+                Objects.equals(year, ticket.year) &&
+                cost.equals(ticket.cost) &&
+                weekendcost.equals(ticket.weekendcost);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pass, name, enable, equipment, duration, startDate, endDate, startTime, endTime, month, day, year, cost, weekendcost);
     }
 
     @Override

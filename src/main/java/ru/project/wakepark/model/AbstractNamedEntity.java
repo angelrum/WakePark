@@ -16,7 +16,6 @@ public abstract class AbstractNamedEntity extends AbstractDateChangedEntity {
     @NotBlank
     protected String lastname;
 
-    @NotBlank
     protected String middlename;
 
     @NotBlank

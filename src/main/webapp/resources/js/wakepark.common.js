@@ -1,40 +1,8 @@
 var context, form;
 
-var languageDatatable = {
-    "language" : {
-        processing: "Подождите...",
-        search: "",
-        lengthMenu: "<h6>Показать _MENU_ записей</h6>",
-        info: "Записи с _START_ до _END_ из _TOTAL_ записей",
-        infoEmpty: "Записи с 0 до 0 из 0 записей",
-        infoFiltered: "(отфильтровано из _MAX_ записей)",
-        infoPostFix: "",
-        loadingRecords: "Загрузка записей...",
-        zeroRecords: "Записи отсутствуют.",
-        emptyTable: "В таблице отсутствуют данные",
-        paginate: {
-            first: "Первая",
-            previous: "Предыдущая",
-            next: "Следующая",
-            last: "Последняя"
-        },
-        aria: {
-            sortAscending: ": активировать для сортировки столбца по возрастанию",
-            sortDescendin: ": активировать для сортировки столбца по убыванию"
-        },
-        select: {
-            rows: {
-                "0": "Кликните по записи для выбора",
-                "1": "Выбрана одна запись",
-                "_": "Выбрано записей: %d"
-            }
-        }
-    }
-};
-
 function makeEditable(ctx) {
     context = ctx;
-    context.datatableApi = $('#datatable').DataTable (
+    context.datatableApi = $(ctx.datatable_id).DataTable (
         $.extend(true, ctx.datatableOpts, {
                 "info": false,
                 "scrollX": true,
@@ -44,7 +12,7 @@ function makeEditable(ctx) {
                 }
             }, languageDatatable)
     );
-
+    datatableCustomStyle(ctx.datatable_id);
     form = $('#detailsForm');
     $(document).ajaxError(function (event, jqXHR, options, jsExc) {
         failNoty(jqXHR);
@@ -54,17 +22,15 @@ function makeEditable(ctx) {
     $.ajaxSetup({cache: false});
 }
 
-function datatableCustom() {
-    var dt_filter = $('#datatable_filter > label > input');
+function datatableCustomStyle(dt_id) {
+    let dt_filter = $(dt_id + '_filter input');
     dt_filter.addClass('form-control');
     dt_filter.removeClass('form-control-sm');
 
-    document.querySelector('#datatable_filter > label > input')
-        .setAttribute('placeholder', 'Поиск...');
-
+    $(dt_id + '_filter input').attr('placeholder', 'Поиск...');
     $('.dataTables_length').addClass('bs-select');
-    $('#datatable_length > label').addClass('text-muted');
-    $('#datatable_paginate > ul').addClass('text-muted');
+    $(dt_id + '_length label').addClass('text-muted');
+    $(dt_id + '_paginate ul').addClass('text-muted');
 }
 
 function renderEditBtn(data, type, row) {
@@ -104,9 +70,6 @@ function updateRow(id) {
     $.get(context.ajaxUrl + id, function (data) {
         form.find(":input").val("");
         $.each(data, function (key, value) {
-            if (key === 'telnumber') {
-                value = convertPhoneNumber(value);
-            }
             setElementValue(key, value);
         });
         $('#create').modal();
@@ -114,14 +77,18 @@ function updateRow(id) {
 }
 
 function setElementValue(key, value) {
+    if (typeof context.convertModalValue != "undefined") {
+        value = context.convertModalValue(key, value);
+    }
     var el = form.find("input[name='" + key + "']");
     if (el.length === 0) {
         el = form.find("select[name='" + key + "']");
     }
     if (el.length > 0) {
-        el.val(value);
-        if (el[0].id === "duration") {
-            context.synchronyzeButtons(value);
+        if (el.is(':checkbox')) {
+            el.prop('checked', value)
+        } else {
+            el.val(value);
         }
     }
 }
@@ -134,6 +101,16 @@ function add() {
     }
 
     $("#create").modal();
+}
+
+function clearFilter() {
+    $("#filter")[0].reset();
+}
+
+function updateFilteredTable() {
+    $.get(context.ajaxUrl + 'filter', $('#filter').serialize()).done(function (data) {
+        updateTableByData(data);
+    });
 }
 
 function deleteRow(id) {
@@ -182,26 +159,43 @@ function failNoty(jqXHR) {
     }).show();
 }
 
-function convertPhoneNumber(telnumber) {
-    telnumber = telnumber.replace('+7', '');
-    var phonenumber = "";
-    for(let num of telnumber) {
-        if (/\d/i.test(num) && phonenumber.length < 15) {
-            if (phonenumber.length === 0) {
-                phonenumber = "(";
-            }
-            switch (phonenumber.length) {
-                case 4:
-                    phonenumber+=") ";
-                    break;
-                case 9:
-                case 12:
-                    phonenumber+="-";
-                    break;
+// Type = 'alert' | 'success' | 'warning' | 'error' | 'info' | 'information';
+function failNotyWithText(text, type = 'error') {
+    failedNote = new Noty({
+        text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp; Ошибка проверки данных <br>" + text,
+        type: type,
+        layout: "bottomRight",
+        timeout: 1000
+    }).show();
+}
 
-            }
-            phonenumber += num;
-        }
+/*
+* Основные комбинации:
+* $('tr input[name='+ name +']:radio:checked')
+* $('tr input[id='+ name +'][type=number]');
+* */
+function getSingleTrValue(name, type = null, htmlType = HtmlType.NAME) {
+    var sel = 'tr input['+ htmlType +'='+ name +']';
+    sel += (type==='radio') ? ':radio:checked' : ((type != null) ? '[type='+ type + ']' : '');
+    var $value = $(sel);
+    if ($value.length > 0)
+        return $value[0].value;
+    return null;
+}
+
+/* старые данные
+function getRadioCheckedVal(name) {
+    var sel = $('tr input[name='+ name +']:radio:checked');
+    if (sel.length === 1) {
+        return sel[0].value;
     }
-    return phonenumber;
-};
+    return null;
+}
+
+function getCountByName(name) {
+    var sel = $('tr input[id='+ name +'][type=number]');
+    if (sel.length === 1) {
+        return sel[0].value;
+    }
+    return null;
+} */
