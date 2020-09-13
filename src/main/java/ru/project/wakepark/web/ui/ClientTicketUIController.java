@@ -22,7 +22,7 @@ import java.util.Objects;
 
 import static ru.project.wakepark.util.ClientTicketUtil.*;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 @RestController
 @RequestMapping("/ajax/controller/client/tickets")
 public class ClientTicketUIController {
