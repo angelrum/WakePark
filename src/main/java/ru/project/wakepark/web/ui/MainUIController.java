@@ -18,15 +18,15 @@ import ru.project.wakepark.util.ControlQueue;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-//@RestController
-//@RequestMapping("/ajax/controller/queue")
+@RestController
+@RequestMapping("/ajax/controller/queue")
 public class MainUIController {
 
     private QueueService service;
 
     protected final Logger log = LoggerFactory.getLogger(getClass());
 
-    //@Autowired
+    @Autowired
     public MainUIController(QueueService service) {
         this.service = service;
         service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
