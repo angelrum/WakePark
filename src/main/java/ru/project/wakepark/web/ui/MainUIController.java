@@ -13,7 +13,6 @@ import ru.project.wakepark.service.QueueService;
 import ru.project.wakepark.to.ClientTicketTo;
 import ru.project.wakepark.to.ControlQueueRow;
 import ru.project.wakepark.to.QueueRowTo;
-import ru.project.wakepark.util.ControlQueue;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -29,8 +28,8 @@ public class MainUIController {
     @Autowired
     public MainUIController(QueueService service) {
         this.service = service;
-        service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
-        service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
+        //service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
+        //service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

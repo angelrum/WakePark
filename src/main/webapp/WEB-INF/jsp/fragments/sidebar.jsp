@@ -13,19 +13,19 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-header">Меню</li>
                 <li class="sidebar-item active">
-                    <a class="sidebar-link" href="/wakepark/main">
+                    <a class="sidebar-link" href="/main">
                         <span class='align-middle mr-2 fas fa fa-table'></span>
                         <span class="align-middle">Очередь</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/wakepark/clients">
+                    <a class="sidebar-link" href="/clients">
                         <span class='align-middle mr-2 fas fa fa-book'></span>
                         <span class="align-middle">Клиенты</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/wakepark/tickets">
+                    <a class="sidebar-link" href="/tickets">
                         <span class='align-middle mr-2 fas fa fa-ticket'></span>
                         <span class="align-middle">Билеты</span>
                     </a>
