@@ -67,4 +67,12 @@ public class TicketUtil extends AbstractUtil<Ticket, TicketTo> implements Valida
     public boolean getBooleanFromString(String bool) {
         return "on".equals(bool);
     }
+
+
+    public LocalDate getTicketExpirationDate(LocalDate start, Ticket ticket) {
+        if (Objects.nonNull(ticket.getEndDate())) return ticket.getEndDate();
+        return start
+                .plusMonths(ticket.getMonth())
+                .plusDays(ticket.getDay());
+    }
 }

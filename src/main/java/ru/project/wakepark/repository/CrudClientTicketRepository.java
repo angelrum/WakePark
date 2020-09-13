@@ -25,12 +25,16 @@ public class CrudClientTicketRepository extends AbstractDateChangedRepository <C
         this.repository = repository;
     }
 
-    public List<ClientTicket> getAllByClient(int companyId, int clientId) {
+    public List<ClientTicket> getAll(int companyId, int clientId) {
         return repository.findWithClientAndTicketByClient(companyId, clientId);
     }
 
-    public List<ClientTicket> getAllByClientAndActive(int companyId, int clientId) {
+    public List<ClientTicket> getAllActive(int companyId, int clientId) {
         return repository.findWithClientAndTicketByClientAndActive(companyId, clientId);
+    }
+
+    public List<ClientTicket> getAllActive(int companyId, int clientId, int ticketId) {
+        return repository.findByClientAndTicket(companyId, clientId, ticketId);
     }
 
     public ClientTicket getOneByIdAndClient(int companyId, int id, int clientId) {

@@ -34,7 +34,7 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <!--
+    <!-- dev
     <build>
         <finalName>wakepark</finalName>
         <defaultGoal>package</defaultGoal>
@@ -45,7 +45,8 @@
             </plugin>
         </plugins>
     </build>
-    -->
+    end dev-->
+    
     <!-- heroku -->
     <build>
         <plugins>
@@ -75,8 +76,13 @@
             </plugin>
         </plugins>
     </build>
-<!-- end heroku -->
+    <!-- end heroku -->
     <dependencies>
+        <!-- webflux reactive -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
         <!-- DB -->
         <dependency>
             <groupId>org.postgresql</groupId>

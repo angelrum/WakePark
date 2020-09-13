@@ -3,10 +3,10 @@ package ru.project.wakepark.util;
 import org.springframework.util.CollectionUtils;
 import ru.project.wakepark.model.Client;
 import ru.project.wakepark.model.ClientTicket;
-import ru.project.wakepark.model.Pass;
 import ru.project.wakepark.model.Ticket;
 import ru.project.wakepark.to.ClientTicketTo;
 
+import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -40,12 +40,24 @@ public class ClientTicketUtil extends AbstractUtil<ClientTicket, ClientTicketTo>
         Map<Ticket, Long> cnCtl = ctl.stream()
                 .collect(Collectors.groupingBy(ClientTicket::getTicket, Collectors.counting()));
 
-        cnCtl.forEach((k, v)-> {
-            ClientTicket ctb = ctl.stream()
-                    .filter(ct -> ct.getTicket().equals(k)).findFirst().get();
-            tos.add(createToWithCount(ctb, v));
-        });
+//        cnCtl.forEach((k, v)-> {
+//            ClientTicket ctb = ctl.stream()
+//                    .filter(ct -> ct.getTicket().equals(k)).findFirst().get();
+//            tos.add(createToWithCount(ctb, v));
+//        });
+
+        cnCtl.forEach((k, v)->ctl.stream()
+                .filter(ct->ct.getTicket().equals(k))
+                .findFirst()
+                .ifPresent(clientTicket -> tos.add(createToWithCount(clientTicket, v))));
         return tos;
+    }
+
+    public List<ClientTicketTo> getTosWithFilter(List<ClientTicket> ctl, LocalTime startTime, LocalTime endTime) {
+        return getTos(ctl)
+                .stream()
+                .filter(ct -> Util.isBetweenHalfOpen(ct.getStartTime(), startTime, endTime) || Util.isBetweenHalfOpen(ct.getEndTime(), startTime, endTime))
+                .collect(Collectors.toList());
     }
 
     public ClientTicket createModel(ClientTicketTo to, Client cl, Ticket t) {
@@ -82,5 +94,13 @@ public class ClientTicketUtil extends AbstractUtil<ClientTicket, ClientTicketTo>
             step++;
         } while (step < count);
         return list;
+    }
+
+    public List<ClientTicket> filterList(List<ClientTicket> tickets, LinkedList<Set<ClientTicket>> queue) {
+        queue.stream()
+                .flatMap(Collection::stream)
+                .filter(tickets::contains)
+                .forEach(tickets::remove);
+        return tickets;
     }
 }

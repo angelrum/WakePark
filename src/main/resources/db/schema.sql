@@ -132,6 +132,8 @@ CREATE TABLE client_ticket_story
     time_end          TIME,
     created_on        TIMESTAMP DEFAULT now() NOT NULL,
     created_by        INTEGER   NOT NULL,
+    changed_on        TIMESTAMP NULL,
+    changed_by        INTEGER   NULL,
     FOREIGN KEY (client_ticket_id) REFERENCES client_ticket(id) ON DELETE CASCADE,
     FOREIGN KEY (created_by) REFERENCES users(id),
     FOREIGN KEY (company_id) REFERENCES companys(id) ON DELETE CASCADE

@@ -3,31 +3,28 @@ package ru.project.wakepark;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.cache.CacheManager;
-import org.springframework.cache.support.NoOpCacheManager;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import ru.project.wakepark.model.ClientTicket;
 import ru.project.wakepark.web.converter.DateTimeFormatters;
-import ru.project.wakepark.web.converter.StringToEnumConverter;
+import ru.project.wakepark.web.converter.StringToPassEnumConverter;
 import ru.project.wakepark.web.json.JacksonObjectMapper;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.nio.charset.Charset;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Future;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = {"ru.project.wakepark.**.repository"})
@@ -80,7 +77,7 @@ public class WakeParkApplication extends SpringBootServletInitializer {
 
     @Autowired
     public void addFormaters(FormatterRegistry registry) {
-        registry.addConverter(new StringToEnumConverter());
+        registry.addConverter(new StringToPassEnumConverter());
         registry.addFormatter(new DateTimeFormatters.LocalDateFormatter());
         registry.addFormatter(new DateTimeFormatters.LocalTimeFormatter());
     }
@@ -100,6 +97,26 @@ public class WakeParkApplication extends SpringBootServletInitializer {
         MessageSourceAccessor messageSourceAccessor = new MessageSourceAccessor(messageSource);
         return messageSourceAccessor;
     }
+
+    @Bean(name = "activeQueue")
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+    public Map<Integer, LinkedList<Set<ClientTicket>>> getActiveQueue() {
+        Map<Integer, LinkedList<Set<ClientTicket>>> activeQueue = new HashMap<>();
+        return activeQueue;
+    }
+
+    @Bean(name = "stoppedQueue")
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+    public Map<Integer, LinkedList<Set<ClientTicket>>> getStoppedQueue() {
+        Map<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue = new HashMap<>();
+        return stoppedQueue;
+    }
+
+//    @Bean(name = "watchs")
+//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//    public ConcurrentHashMap<Integer, Map<Future, TimerService.Task>> getWatch() {
+//        return new ConcurrentHashMap<Integer, Map<Future, TimerService.Task>>();
+//    }
 
 //    public CommandLineRunner demo (ReloadableResourceBundleMessageSource messageSource) {
 //        log.info("Start query exist");

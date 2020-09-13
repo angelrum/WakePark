@@ -30,4 +30,13 @@ public interface JpaClientTicketRepository extends CommonDateRepository<ClientTi
     List<ClientTicket> findByIdAndClient(@Param("company_id") int companyId,
                                          @Param("client_id") int clientId,
                                          @Param("id") int id);
+
+    @Query("SELECT ct FROM ClientTicket ct " +
+                "JOIN FETCH ct.client " +
+                "JOIN FETCH ct.ticket " +
+            "WHERE ct.companyId=:company_id AND ct.ticket.id=:ticket_id AND ct.client.id=:client_id AND ct.active = true " +
+            "ORDER BY ct.createdOn")
+    List<ClientTicket> findByClientAndTicket(@Param("company_id") int companyId,
+                                             @Param("client_id") int clientId,
+                                             @Param("ticket_id") int ticketId);
 }

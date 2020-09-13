@@ -3,6 +3,7 @@ package ru.project.wakepark.util;
 import org.springframework.lang.Nullable;
 import org.springframework.util.StringUtils;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -38,6 +39,12 @@ public class DateTimeUtil {
 
     public static LocalDateTime atStartOfNextDayTimeOrMax(LocalDate localDate) {
         return localDate != null ? localDate.plus(1, ChronoUnit.DAYS).atStartOfDay() : MAX_DATE_TIME;
+    }
+
+    public static LocalTime remainderOfTime(LocalTime start, LocalTime end, LocalTime from) {
+        Duration duration = Duration.between(start, end);
+        final LocalTime minus = from.minus(duration);
+        return minus;
     }
 
     private DateTimeUtil() {

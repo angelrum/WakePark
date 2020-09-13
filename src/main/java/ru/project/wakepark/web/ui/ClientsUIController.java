@@ -1,12 +1,14 @@
 package ru.project.wakepark.web.ui;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import ru.project.wakepark.AuthorizedUser;
 import ru.project.wakepark.model.Client;
 import ru.project.wakepark.service.ClientService;
 import ru.project.wakepark.to.ClientTo;
 import ru.project.wakepark.util.ClientUtil;
-import ru.project.wakepark.web.ui.AbstractUIController;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/ajax/controller/clients")
 public class ClientsUIController extends AbstractUIController<Client, ClientTo> {
@@ -16,6 +18,12 @@ public class ClientsUIController extends AbstractUIController<Client, ClientTo> 
     public ClientsUIController(ClientService service) {
         super(service, ClientUtil.getInstance());
         this.service = service;
+    }
+
+    @GetMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ClientTo getByTelnumber(@RequestParam String telnumber) {
+        log.info("get by phone {}", telnumber);
+        return ClientUtil.getInstance().createTo(service.getByPhone(telnumber, AuthorizedUser.getCompanyId()));
     }
 
 //    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

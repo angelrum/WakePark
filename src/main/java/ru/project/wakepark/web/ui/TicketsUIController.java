@@ -15,6 +15,7 @@ import java.util.List;
 
 import static ru.project.wakepark.util.TicketUtil.*;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/ajax/controller/tickets")
 public class TicketsUIController extends AbstractUIController<Ticket, TicketTo> {

@@ -10,9 +10,6 @@ import ru.project.wakepark.util.ClientUtil;
 @Controller
 public class RootController {
 
-    @Autowired
-    public CrudClientRepository repository;
-
     @GetMapping("/clients")
     public String getClientsPage(Model model) {
         model.addAttribute("thead", ClientUtil.getTableName());
@@ -24,7 +21,9 @@ public class RootController {
         return "tickets";
     }
 
-
-
+    @GetMapping("/main")
+    public String getMainPage(Model model) {
+        return "main";
+    }
 
 }

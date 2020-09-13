@@ -115,7 +115,9 @@ public class ClientTicket extends AbstractDateChangedEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ClientTicket that = (ClientTicket) o;
-        return active == that.active &&
+        return  companyId.compareTo(that.companyId) == 0 &&
+                id.compareTo(that.id)==0 &&
+                active == that.active &&
                 client.equals(that.client) &&
                 ticket.equals(that.ticket) &&
                 Objects.equals(dateStart, that.dateStart) &&
@@ -124,6 +126,6 @@ public class ClientTicket extends AbstractDateChangedEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(client, ticket, dateStart, dateEnd, active);
+        return Objects.hash(companyId, id, client, ticket, dateStart, dateEnd, active);
     }
 }

@@ -34,3 +34,19 @@ const HtmlType = {
     NAME: 'name',
     ID: 'id'
 };
+
+const MoveRow = {
+    UP:     'UP',
+    DOWN:   'DOWN',
+    PLAY:   'PLAY',
+    PAUSE:  'PAUSE',
+    DELETE: 'DELETE',
+    NONE:   'NONE',
+    ALL:    'ALL'
+};
+
+const QueueControl = {
+    PLAY: 'PLAY',
+    PAUSE: 'PAUSE',
+    STOP: 'STOP'
+};

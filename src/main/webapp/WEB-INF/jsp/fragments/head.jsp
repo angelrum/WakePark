@@ -12,12 +12,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="webjars/bootstrap/4.4.1/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://spark.bootlab.io/css/light.css">
     <!--Noty для отображения статусов и ошибок-->
     <link rel="stylesheet" href="webjars/noty/3.1.4/lib/noty.css"/>
     <!--Icon-->
     <link rel="stylesheet" href="webjars/noty/3.1.4/demo/font-awesome/css/font-awesome.min.css">
     <!-- Custom css-->
+    <link rel="stylesheet" href="resources/style/spark.bootlab.light.css">
     <link rel="stylesheet" href="resources/style/style.css">
 
     <!-- Optional JavaScript -->
