@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -DWAKEPARK_ROOT="." -Dserver.port=$PORT $JAVA_OPTS -jar target/*.war
+web: java $JAVA_OPTS MAVEN_CUSTOM_OPTS=-DskipTests -Dprofile-heroku -DWAKEPARK_ROOT="." -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
