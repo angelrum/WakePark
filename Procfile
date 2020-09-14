@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS MAVEN_SETTINGS_PATH=support/settings.xml -DWAKEPARK_ROOT="." -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
+web: java $JAVA_OPTS -Denv="heroku" -DWAKEPARK_ROOT="." -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
