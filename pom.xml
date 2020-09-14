@@ -187,7 +187,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
-                        <version>3.1.2</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
@@ -198,7 +197,7 @@
                                     <artifactItems>
                                         <artifactItem>
                                             <groupId>com.heroku</groupId>
-                                            <artifactId>webapp-runner-main</artifactId>
+                                            <artifactId>webapp-runner</artifactId>
                                             <version>9.0.31.0</version>
                                             <destFileName>webapp-runner.jar</destFileName>
                                         </artifactItem>
