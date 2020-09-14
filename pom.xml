@@ -178,6 +178,9 @@
     <profiles>
         <profile>
             <id>heroku</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <spring.profiles.active>heroku</spring.profiles.active>
             </properties>
@@ -211,9 +214,6 @@
         </profile>
         <profile>
             <id>development</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <spring.profiles.active>dev</spring.profiles.active>
             </properties>
