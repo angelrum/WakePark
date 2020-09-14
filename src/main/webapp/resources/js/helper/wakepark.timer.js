@@ -82,6 +82,7 @@ function tooglePlayAndPause(control) {
 
 function playToUpdate() {
     $('#play').addClass('d-none');
+    $('#pause').addClass('d-none');
     $('#update').removeClass('d-none');
 }
 
