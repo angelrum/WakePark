@@ -63,7 +63,7 @@ function startTimer(state) {
     timer_params.time_work = timer_minutes*60 + timer_seconds;
     timer_params.time_common_work = common_minutes*60 + common_seconds;
     // задаём интервал обновления — одна секунда
-    intervalVariable = setInterval(timerTick, 995, 'interval', timer_params);
+    intervalVariable = setInterval(timerTick, 985, 'interval', timer_params);
     tooglePlayAndPause(state.state.toLowerCase());
     return false;
 }
