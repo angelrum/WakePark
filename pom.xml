@@ -37,6 +37,9 @@
     <profiles>
         <profile>
             <id>heroku</id>
+            <properties>
+                <spring.profiles.active>heroku</spring.profiles.active>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -67,6 +70,12 @@
         </profile>
         <profile>
             <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
             <build>
                 <finalName>wakepark</finalName>
                 <defaultGoal>package</defaultGoal>
