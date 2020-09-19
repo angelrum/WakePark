@@ -23,7 +23,6 @@
         <webjars-datetimepicker.version>2.5.20</webjars-datetimepicker.version>
         <webjars-noty.version>3.1.4</webjars-noty.version>
         <webjars-datatables.version>1.10.20</webjars-datatables.version>
-        <endorsed.dir>endorsed</endorsed.dir>
 
         <jackson-json.version>2.10.2</jackson-json.version>
         <tomcat.version>9.0.31</tomcat.version>
@@ -209,12 +208,11 @@
                                 </configuration>
                                 -->
                                 <configuration>
-                                    <outputDirectory>${endorsed.dir}</outputDirectory>
                                     <artifactItems>
                                         <artifactItem>
                                             <groupId>com.github.jsimone</groupId>
                                             <artifactId>webapp-runner</artifactId>
-                                            <version>8.5.11.3</version>
+                                            <version>9.0.11.0</version>
                                             <destFileName>webapp-runner.jar</destFileName>
                                         </artifactItem>
                                     </artifactItems>
