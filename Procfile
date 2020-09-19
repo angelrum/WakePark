@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -DWAKEPARK_ROOT="." -jar myapp-ws/target/dependency/webapp-runner.jar --port $PORT myapp-ws/target/*.war
+web: java $JAVA_OPTS -DWAKEPARK_ROOT="." -jar wakepark-ws/target/dependency/webapp-runner.jar --port $PORT wakepark-ws/target/*.war
