@@ -40,8 +40,8 @@ public class MainUIController {
         em.subscribe("queue", new MailingOfQueue(message, service));
         em.subscribe("state", new MailingOfStateQueue(message, stateService));
 
-        service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
-        service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
+        //service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
+        //service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
