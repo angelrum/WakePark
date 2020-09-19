@@ -12,7 +12,6 @@ import ru.project.wakepark.service.QueueService;
 import ru.project.wakepark.service.QueueStateService;
 import ru.project.wakepark.to.QueueState;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/queue")
 public class QueueRestController {

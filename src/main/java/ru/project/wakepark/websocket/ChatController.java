@@ -3,11 +3,10 @@ package ru.project.wakepark.websocket;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 @Controller
 public class ChatController {
 

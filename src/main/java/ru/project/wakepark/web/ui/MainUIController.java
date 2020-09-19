@@ -24,7 +24,6 @@ import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/ajax/controller/queue")
 public class MainUIController {
