@@ -1,10 +1,12 @@
 package ru.project.wakepark.to;
 
+import ru.project.wakepark.util.ControlQueue;
+
 import java.beans.ConstructorProperties;
 
 public class QueueState {
 
-    private ControlQueueRow state;
+    private ControlQueue state;
 
     private int time;
 
@@ -13,7 +15,7 @@ public class QueueState {
     private int queueTime;
 
     @ConstructorProperties({"state", "time", "queueTime"})
-    public QueueState(ControlQueueRow state, int time, int queueTime, int endTime) {
+    public QueueState(ControlQueue state, int time, int queueTime, int endTime) {
         this.state = state;
         this.time = time;
         this.queueTime = queueTime;
@@ -23,7 +25,7 @@ public class QueueState {
     public QueueState() {
     }
 
-    public ControlQueueRow getState() {
+    public ControlQueue getState() {
         return state;
     }
 
@@ -35,7 +37,7 @@ public class QueueState {
         return queueTime;
     }
 
-    public void setState(ControlQueueRow state) {
+    public void setState(ControlQueue state) {
         this.state = state;
     }
 

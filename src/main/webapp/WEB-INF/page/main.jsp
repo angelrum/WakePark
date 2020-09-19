@@ -197,6 +197,10 @@
     </div>
 </div>
 
+<!--WebSocket-->
+<script src="resources/js/websocket/sockjs-0.3.4.js"></script>
+<script src="resources/js/websocket/stomp.js"></script>
+
 <script src="resources/js/helper/wakepark.const.js"></script>
 <script src="resources/js/helper/wakepark.render.js"></script>
 <script src="resources/js/helper/wakepark.common.js"></script>

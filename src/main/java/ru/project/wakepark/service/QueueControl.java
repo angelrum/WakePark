@@ -3,6 +3,7 @@ package ru.project.wakepark.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import ru.project.wakepark.event.EventManager;
 import ru.project.wakepark.model.ClientTicket;
 import ru.project.wakepark.model.ClientTicketStory;
 import ru.project.wakepark.model.Pass;
@@ -10,10 +11,8 @@ import ru.project.wakepark.repository.QueueRepository;
 import ru.project.wakepark.util.DateTimeUtil;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 
 import static ru.project.wakepark.util.ValidationUtil.checkNotFound;
 import static ru.project.wakepark.util.ValidationUtil.checkNotFoundWithId;
@@ -29,30 +28,13 @@ public class QueueControl {
 
     private ClientTicketService ctService;
 
-    private ConcurrentHashMap<String, Boolean> mapUUID = new ConcurrentHashMap<>();
+    private EventManager em;
 
-    public QueueControl(QueueRepository repository, StoryService storyService, ClientTicketService ctService) {
+    public QueueControl(QueueRepository repository, StoryService storyService, ClientTicketService ctService, EventManager em) {
         this.repository = repository;
         this.storyService = storyService;
         this.ctService = ctService;
-    }
-
-    public synchronized void register(String uuid) {
-        mapUUID.put(uuid, false);
-    }
-
-    public synchronized void unregister(String uuid) {
-        mapUUID.remove(uuid);
-    }
-
-    public synchronized void needUpdate() {
-        mapUUID.replaceAll((k, v)-> true);
-    }
-
-    public synchronized boolean check(String uuid) {
-        boolean upd = mapUUID.getOrDefault(uuid, false);
-        mapUUID.computeIfPresent(uuid, (k, v)-> v = false);
-        return upd;
+        this.em = em;
     }
 
     public ClientTicket queueStart(int companyId, int userId) {
@@ -60,14 +42,13 @@ public class QueueControl {
         ClientTicket ct = checkNotFound(repository.getFistTicket(companyId), "Not found first pass from queue");
         ctService.setExpirationDate(companyId, ct, LocalDate.now(), userId);
         storyService.setStoryStart(companyId, ct);
-        needUpdate();
         return ct;
     }
 
     public void queueStop(int companyId, int userId) {
         log.info("Stop queue row. Company {}", companyId);
         closeQueueRow(companyId, userId);
-        needUpdate();
+        em.send(companyId);
     }
 
     public LocalTime queueOnPause(int companyId, int duration) {
@@ -81,10 +62,8 @@ public class QueueControl {
             LocalTime from = LocalTime.ofSecondOfDay(duration);
             final LocalTime time = DateTimeUtil.remainderOfTime(start, end, from);
             log.info("time start {}, time end {}, left {}", start, end, time);
-            needUpdate();
             return time;
         }
-        needUpdate();
         return null;
     }
 

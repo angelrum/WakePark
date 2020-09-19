@@ -52,7 +52,8 @@ var queueTable = {
             "url": queueAjaxUrl,
             "dataSrc": ''
         }
-    }
+    },
+    webSocket: new wsQueue()
 };
 
 function addInQueue() {
@@ -80,14 +81,14 @@ function closeAddInQueueModal() {
     removeField('search_telnumber', clearClientValue());
 }
 
-function renderDirection(data, type, row, imgname, move ) {
+function renderDirection(data, type, row, imgname, move = null) {
     var img = 'resources/img/' + imgname + '.png';
     var disabled = "style='opacity:0.5' disabled";
     var oncl = '';
     if (!row.disControl && (typeof data!== "undefined" || ( row.upOrDown === MoveRow.ALL || move === row.upOrDown || move === MoveRow.DELETE ))) {
         disabled = "onmouseover='imgover(this)' onmouseout='imgout(this)'";
 
-        if (typeof move !== 'undefined' || move!==null) {
+        if (!Object.is(move, null)) {
             oncl = "imgclick("+row.id+",'"+move.toUpperCase()+"')";
         }
     }
@@ -149,7 +150,42 @@ function queueClick(control = '') {
     //     default:
     //         return false;
     // }
-    $.get(urlGetQueue, {'control' : control}).done(function () {
-        queueTable.updateTable();
-    })
+
+    queueTable.webSocket.send(JSON.stringify({'state' : control}));
+    // $.get(urlGetQueue, {'control' : control}).done(function () {
+    //     queueTable.updateTable();
+    // })
+}
+
+function wsQueue() {
+
+    var stompClient = null;
+
+    this.start = function() {
+        stompClient = Stomp.over(new SockJS('/event'));
+        stompClient.connect({}, function(frame) {
+            console.log('Connected: ' + frame);
+
+            stompClient.subscribe('/topic/state', function(messageOutput) {
+                var data = JSON.parse(messageOutput.body);
+                updateTimer(data);
+            });
+
+            stompClient.subscribe('/topic/queue', function (messageOutput) {
+                var data = JSON.parse(messageOutput.body);
+                queueTable.updateTableByData(data);
+            })
+        });
+    };
+
+    this.stop = function () {
+        if(stompClient != null) {
+            stompClient.disconnect();
+        }
+        console.log("Disconnected");
+    };
+
+    this.send = function (data) {
+        stompClient.send("/app/event", {}, data);
+    }
 }

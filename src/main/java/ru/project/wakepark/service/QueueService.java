@@ -2,6 +2,7 @@ package ru.project.wakepark.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.messaging.core.MessageSendingOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import ru.project.wakepark.model.ClientTicket;
@@ -43,7 +44,7 @@ public class QueueService {
         checkNotFoundWithId(all, companyId, clientId, ticketId);
         checkNotEqualByCount(all, count);
         repository.add(companyId, all.stream().limit(count).collect(Collectors.toSet()));
-        control.needUpdate();
+        //control.needUpdate();
     }
 
     public void delete(int companyId, int ctId) {
@@ -51,7 +52,7 @@ public class QueueService {
         ClientTicket ct = checkNotFoundWithId(ctService.get(ctId, companyId), ctId, companyId);
         if (!repository.removeFromActive(companyId, ct))
             repository.removeFromStopped(companyId, ct);
-        control.needUpdate();
+        //control.needUpdate();
     }
 
     public List<QueueRowTo> getAll(int companyId) {
@@ -68,28 +69,28 @@ public class QueueService {
     public boolean raiseUp(int companyId, int ctId) {
         log.info("raise the line up. Client ticket {} and company {}", ctId, companyId);
         ClientTicket ct = checkNotFoundWithId(ctService.get(ctId, companyId), ctId, companyId);
-        control.needUpdate();
+        //control.needUpdate();
         return repository.moveUp(companyId, ct);
     }
 
     public boolean raiseDown(int companyId, int ctId) {
         log.info("raise the line down. Client ticket {} and company {}", ctId, companyId);
         ClientTicket ct = checkNotFoundWithId(ctService.get(ctId, companyId), ctId, companyId);
-        control.needUpdate();
+        //control.needUpdate();
         return repository.moveDown(companyId, ct);
     }
 
     public boolean moveToStoppedQueue(int companyId, int ctId) {
         log.info("move to stopped list. Client ticket {} and company {}", ctId, companyId);
         ClientTicket ct = checkNotFoundWithId(ctService.get(ctId, companyId), ctId, companyId);
-        control.needUpdate();
+        //control.needUpdate();
         return repository.moveToStopped(companyId, ct);
     }
 
     public boolean moveToActiveQueue(int companyId, int ctId) {
         log.info("move to active list. Client ticket {} and company {}", ctId, companyId);
         ClientTicket ct = checkNotFoundWithId(ctService.get(ctId, companyId), ctId, companyId);
-        control.needUpdate();
+        //control.needUpdate();
         return repository.moveToActive(companyId, ct);
     }
 

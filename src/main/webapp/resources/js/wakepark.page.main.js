@@ -77,16 +77,20 @@ $(function () {
     //обновляем статус таймера
     updateTimerState();
 
-    queu = new loadQueue();
+    //queu = new loadQueue();
+    //wsQuqu = new wsQueue();
 
     window.onload = function() {
-        queu.start();
+        //queu.start();
+        queueTable.webSocket.start();
     };
 
-    // window.onbeforeunload = function() {
-    //     queu.stop();
-    //     return true;
-    // };
+    window.onbeforeunload = function() {
+        //queu.stop();
+        //wsQuqu.stop();
+        queueTable.webSocket.stop();
+        return true;
+    };
 
     $(document).ajaxError(function (event, jqXHR, options, jsExc) {
         failNoty(jqXHR, 1000);
@@ -199,14 +203,17 @@ function loadQueue() {
 
 function updateTimerState() {
     $.get(urlGetQueue + "/state").done(function (data) {
-        clearInterval(intervalVariable);
-        if (data.state === QueueControl.PAUSE) {
-            startTimer(data);
-        } else {
-            stopTimer();
-            renderTimerNums(data.time);
-            renderCommonTimer(data.queueTime);
-        }
+        updateTimer(data);
     });
+}
 
+function updateTimer(data) {
+    clearInterval(intervalVariable);
+    if (data.state === QueueControl.PAUSE) {
+        startTimer(data);
+    } else {
+        stopTimer();
+        renderTimerNums(data.time);
+        renderCommonTimer(data.queueTime);
+    }
 }

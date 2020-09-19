@@ -16,7 +16,13 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.messaging.core.MessageSendingOperations;
+import ru.project.wakepark.event.EventManager;
+import ru.project.wakepark.event.MailingOfQueue;
+import ru.project.wakepark.event.MailingOfStateQueue;
 import ru.project.wakepark.model.ClientTicket;
+import ru.project.wakepark.service.QueueService;
+import ru.project.wakepark.service.QueueStateService;
 import ru.project.wakepark.web.converter.DateTimeFormatters;
 import ru.project.wakepark.web.converter.StringToPassEnumConverter;
 import ru.project.wakepark.web.json.JacksonObjectMapper;
@@ -110,6 +116,14 @@ public class WakeParkApplication extends SpringBootServletInitializer {
     public Map<Integer, LinkedList<Set<ClientTicket>>> getStoppedQueue() {
         Map<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue = new HashMap<>();
         return stoppedQueue;
+    }
+
+    @Bean
+    public EventManager getEventManager() {
+        EventManager em = new EventManager(); //снова циркуляция
+        //em.subscribe("queue", new MailingOfQueue(message, service));
+        //em.subscribe("state", new MailingOfStateQueue(message, stateService));
+        return em;
     }
 
 //    @Bean(name = "watchs")

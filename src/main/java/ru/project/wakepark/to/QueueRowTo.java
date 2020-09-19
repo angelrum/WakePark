@@ -48,6 +48,30 @@ public class QueueRowTo extends BaseTo {
                 name.equals(that.name);
     }
 
+    public ControlQueueRow getUpOrDown() {
+        return upOrDown;
+    }
+
+    public ControlQueueRow getControl() {
+        return control;
+    }
+
+    public boolean isDisControl() {
+        return disControl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Pass getPass() {
+        return pass;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(upOrDown, control, name, count);

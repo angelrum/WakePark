@@ -11,6 +11,7 @@ import ru.project.wakepark.model.Ticket;
 import ru.project.wakepark.repository.QueueRepository;
 import ru.project.wakepark.to.ControlQueueRow;
 import ru.project.wakepark.to.QueueState;
+import ru.project.wakepark.util.ControlQueue;
 import ru.project.wakepark.util.DateTimeUtil;
 
 import java.time.LocalTime;
@@ -53,7 +54,7 @@ public class QueueStateService {
 
     public QueueState getState(int companyId) {
         LinkedList<Set<ClientTicket>> queue = repository.getActiveQueue(companyId);
-        QueueState state = new QueueState(ControlQueueRow.PLAY, 0, 0, 0);
+        QueueState state = new QueueState(ControlQueue.PLAY, 0, 0, 0);
         if (CollectionUtils.isEmpty(queue)) return state;
 
         ClientTicket first = repository.getFistTicket(companyId);
@@ -66,10 +67,10 @@ public class QueueStateService {
         state.setEndTime(time.toSecondOfDay());
 
         if (watch.onPause(companyId)) {
-            state.setState(ControlQueueRow.PLAY);
+            state.setState(ControlQueue.PLAY);
             time = LocalTime.ofSecondOfDay(watch.getDuration(companyId));
         } else if (watch.isStart(companyId)) {
-            state.setState(ControlQueueRow.PAUSE);
+            state.setState(ControlQueue.PAUSE);
             ClientTicketStory story = checkNotFoundWithId(storyService.getOpenStory(companyId, first.getId()), first.getId(), companyId);
             time = DateTimeUtil.remainderOfTime(story.getStartTime(), end, LocalTime.ofSecondOfDay(watch.getDuration(companyId)));
             log.info("calculate state time with start time {}, end time {}, duration {}", story.getStartTime(), end, LocalTime.ofSecondOfDay(watch.getDuration(companyId)));

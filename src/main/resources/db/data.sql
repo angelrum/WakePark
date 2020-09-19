@@ -29,7 +29,7 @@ INSERT INTO companys (name, contact_name, contact_phone) VALUES
 ('WakeBroTest', 'ООО ТестКомпани', '+7(921) 111-11-11');
 
 INSERT INTO tickets (company_id, pass, name, equipment, duration, start_date, end_date, start_time, end_time, month, day, year, cost, weekendcost, created_by, created_on) VALUES
-(10000, 'SEASON', 'Сезоный абонемент', true, 5, '2020-06-01', '2020-10-01', null, null, 0, 0, 2020, 100, 120, 10002, '2020-06-02 11:00:00'),
+(10000, 'SEASON', 'Сезоный абонемент', true, 1, '2020-06-01', '2020-10-01', null, null, 0, 0, 2020, 100, 120, 10002, '2020-06-02 11:00:00'),
 (10000, 'SINGLE', 'Разовый абонемент', true, 5, null, null, '10:00', '18:00', 0, 0, 2020, 10, 11, 10002, '2020-06-02 12:00:00'),
 (10000, 'SINGLE', 'Утренний сет', true, 5, null, null, '09:00', '13:00', 0, 0, 2020, 100, 110, 10002, '2020-06-02 12:00:00'),
 (10000, 'SEASON', 'Абонемент на месяц', false, 5, null, null, '09:00', '18:00', 1, 0, 2020, 90, 95, 10002, '2020-06-02 13:00:00');
