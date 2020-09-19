@@ -211,8 +211,8 @@
                                     <artifactItems>
                                         <artifactItem>
                                             <groupId>com.github.jsimone</groupId>
-                                            <artifactId>webapp-runner</artifactId>
-                                            <version>9.0.11.0</version>
+                                            <artifactId>webapp-runner-main</artifactId>
+                                            <version>9.0.27.1</version>
                                             <destFileName>webapp-runner.jar</destFileName>
                                         </artifactItem>
                                     </artifactItems>
@@ -223,6 +223,12 @@
                 </plugins>
             </build>
             <dependencies>
+                <!-- https://mvnrepository.com/artifact/com.github.jsimone/webapp-runner-main -->
+                <dependency>
+                    <groupId>com.github.jsimone</groupId>
+                    <artifactId>webapp-runner-main</artifactId>
+                    <version>9.0.27.1</version>
+                </dependency>
                 <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket -->
                 <dependency>
                     <groupId>org.apache.tomcat.embed</groupId>
