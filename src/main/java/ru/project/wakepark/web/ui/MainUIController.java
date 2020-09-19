@@ -3,6 +3,7 @@ package ru.project.wakepark.web.ui;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.messaging.core.MessageSendingOperations;
@@ -19,6 +20,7 @@ import ru.project.wakepark.to.ClientTicketTo;
 import ru.project.wakepark.to.ControlQueueRow;
 import ru.project.wakepark.to.QueueRowTo;
 
+import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -39,9 +41,13 @@ public class MainUIController {
         this.em = em;
         em.subscribe("queue", new MailingOfQueue(message, service));
         em.subscribe("state", new MailingOfStateQueue(message, stateService));
+    }
 
-        //service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
-        //service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
+    @PostConstruct
+    @Profile("dev")
+    public void init() {
+        service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
+        service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

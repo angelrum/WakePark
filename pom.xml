@@ -210,6 +210,13 @@
                     </plugin>
                 </plugins>
             </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.apache.tomcat.embed</groupId>
+                    <artifactId>tomcat-embed-websocket</artifactId>
+                    <version>8.5.11</version>
+                </dependency>
+            </dependencies>
         </profile>
         <profile>
             <id>development</id>
