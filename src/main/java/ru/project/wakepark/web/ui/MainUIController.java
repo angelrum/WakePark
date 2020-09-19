@@ -43,12 +43,12 @@ public class MainUIController {
         em.subscribe("state", new MailingOfStateQueue(message, stateService));
     }
 
-    @PostConstruct
-    @Profile("dev")
-    public void init() {
-        service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
-        service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
-    }
+//    @PostConstruct
+//    @Profile("dev")
+//    public void init() {
+//        service.add(AuthorizedUser.getCompanyId(), 10_003, 10_007, 2);
+//        service.add(AuthorizedUser.getCompanyId(), 10_004, 10_006, 1);
+//    }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<QueueRowTo> getAll() {
