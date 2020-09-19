@@ -195,7 +195,6 @@
                                 <goals>
                                     <goal>copy</goal>
                                 </goals>
-                                <!--
                                 <configuration>
                                     <artifactItems>
                                         <artifactItem>
@@ -206,29 +205,12 @@
                                         </artifactItem>
                                     </artifactItems>
                                 </configuration>
-                                -->
-                                <configuration>
-                                    <artifactItems>
-                                        <artifactItem>
-                                            <groupId>com.github.jsimone</groupId>
-                                            <artifactId>webapp-runner-main</artifactId>
-                                            <version>9.0.27.1</version>
-                                            <destFileName>webapp-runner.jar</destFileName>
-                                        </artifactItem>
-                                    </artifactItems>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
                 </plugins>
             </build>
             <dependencies>
-                <!-- https://mvnrepository.com/artifact/com.github.jsimone/webapp-runner-main -->
-                <dependency>
-                    <groupId>com.github.jsimone</groupId>
-                    <artifactId>webapp-runner-main</artifactId>
-                    <version>9.0.27.1</version>
-                </dependency>
                 <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket -->
                 <dependency>
                     <groupId>org.apache.tomcat.embed</groupId>
