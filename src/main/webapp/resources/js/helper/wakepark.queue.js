@@ -41,7 +41,14 @@ var queueTable = {
                 "defaultContent": ""
             },
             {"data": "name"},
-            {"data": "count"}
+            {
+                "data": "count",
+                "render": function (data, type, row) {
+                    if (row.pass==='SEASON') {
+                        return i18n["tickets.type.abonement.short"] }
+                    return data;
+                }
+            }
         ]
     },
     datatableParam: {

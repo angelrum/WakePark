@@ -78,7 +78,7 @@ var clTickets = {
     },
     //переопределяем ф-ии, устанавливаемые в common
     deleteRow: function (id) {
-        if (confirm('common.confirm')) {
+        if (confirm(i18n['common.confirm'])) {
             updateOrDeleteClTicket(id, 'DELETE', 'common.deleted', function () {
                 clTickets.updateTableWithParam(getSingleTrValue("cl_select",'radio'));
             });

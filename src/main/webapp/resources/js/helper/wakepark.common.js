@@ -63,7 +63,7 @@ function makeEditable(ctx, api = true) {
 // update row in table
 function updateRow(id) {
     var  ctx = this;
-    ctx.title.html("Изменить данные");
+    ctx.title.html(i18n['editTitle']);
     $.get(this.ajaxUrl + id, function (data) {
         ctx.form.find(":input").val("");
         $.each(data, function (key, value) { setElementValue(key, value, ctx);});
@@ -74,10 +74,10 @@ function updateRow(id) {
 // delete row in table
 function deleteRow(id) {
     var ctx = this;
-    if (confirm('common.confirm')) {
+    if (confirm(i18n['common.confirm'])) {
         $.ajax({url: this.ajaxUrl + id, type: "DELETE" }).done(function () {
             ctx.updateTable();
-            successNoty("common.deleted");
+            successNoty(i18n['common.deleted']);
             if (typeof ctx.postDelete != "undefined") {
                 ctx.postDelete();
             }
@@ -86,7 +86,7 @@ function deleteRow(id) {
 }
 // отображение модального окна для добавления записи
 function add() {
-    this.title.html("Добавить данные");
+    this.title.html(i18n["addTitle"]);
     this.form.find(":input").val("");
     if (typeof this.defModalValue != "undefined") {
         this.defModalValue(this.form);
@@ -108,7 +108,7 @@ function save() {
         if (typeof ctx.postSave != "undefined") {
             ctx.postSave();
         }
-        successNoty("common.saved");
+        successNoty(i18n['common.saved']);
     });
 }
 
@@ -191,10 +191,10 @@ function closeNoty() {
     }
 }
 
-function successNoty(text) {
+function successNoty(key) {
     closeNoty();
     new Noty({
-        text: "<span class='fa fa-lg fa-check'></span> &nbsp;" + text,
+        text: "<span class='fa fa-lg fa-check'></span> &nbsp;" + i18n[key],
         type: 'success',
         layout: "bottomRight",
         timeout: 1000
@@ -205,13 +205,32 @@ function failNoty(jqXHR, timeout = 2000) {
     closeNoty();
     if (jqXHR.responseText !== '') {
         var errorInfo = JSON.parse(jqXHR.responseText);
+        errorInfo.details = substitution(errorInfo.details);
         failedNote = new Noty({
             text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + errorInfo.typeMessage + "<br>" + errorInfo.details.join("<br>"),
-            type: "error",
+            type: !Object.is(errorInfo.info, undefined) ? errorInfo.info : "error",
             layout: "bottomRight",
             timeout: timeout
         }).show();
     }
+}
+
+function substitution(details) {
+    for (let i = 0; i < details.length; i++) {
+        let message = details[i];
+        let start = message.indexOf('[') + 1;
+        let end = message.indexOf(']');
+        if (start > 0 && end > 0 ) {
+            let name = message.substring(start, end);
+            let page = window.location.pathname.replace("/", '');
+            page = page === 'main' ? 'clients' : page;
+            name = page + "." + name;
+            if (!Object.is(i18n[name], undefined)) {
+                details[i] = "'" + i18n[name] + "'" + message.substring(end + 1);
+            }
+        }
+    }
+    return details;
 }
 
 // Type = 'alert' | 'success' | 'warning' | 'error' | 'info' | 'information';

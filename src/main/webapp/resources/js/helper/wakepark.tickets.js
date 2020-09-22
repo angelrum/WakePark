@@ -5,7 +5,7 @@ var ticketsTable = {
     ajaxUrl: ticketAjaxUrl,
     form:   $('#ticketForm'),
     create: $('#ticketCreate'),
-    title:  $("#ticketTitle"),
+    title:  $("#modalTitle"),
     datatableOpts: {
         "columns": [
             {"data": "pass"},

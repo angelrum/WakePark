@@ -6,7 +6,7 @@ var clientsTable = {
     ajaxUrl: clientAjaxUrl,
     form:   $('#clientForm'),
     create: $('#clientCreate'),
-    title:  $("#clientTitle"),
+    title:  $("#modalTitle"),
     datatableOpts: {
         "columns": [
             {"data": "id",

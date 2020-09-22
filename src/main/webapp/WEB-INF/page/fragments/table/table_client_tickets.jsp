@@ -6,20 +6,20 @@
 <table class="dataTables_wrapper dt-bootstrap4 fl-table table-hover" id="dt_cl_tickets" style="width:100%">
     <thead>
     <tr>
-        <th scope="col" rowspan="2">Тип билета</th>
-        <th scope="col" rowspan="2">Название</th>
-        <th scope="col" rowspan="2">Снаряжение</th>
-        <th scope="col" colspan="2">Интервал</th>
-        <th scope="col" rowspan="2">Срок действия, дни</th>
-        <th scope="col" rowspan="2">Срок действия, мес.</th>
-        <th scope="col" rowspan="2">Длит.сета, мин.</th>
-        <th scope="col" rowspan="2">Кол-во</th>
+        <th scope="col" rowspan="2"><spring:message code="tickets.type"/></th>
+        <th scope="col" rowspan="2"><spring:message code="tickets.name"/></th>
+        <th scope="col" rowspan="2"><spring:message code="tickets.equipment"/></th>
+        <th scope="col" colspan="2"><spring:message code="tickets.interval"/></th>
+        <th scope="col" rowspan="2"><spring:message code="tickets.day.long"/></th>
+        <th scope="col" rowspan="2"><spring:message code="tickets.month.long"/></th>
+        <th scope="col" rowspan="2"><spring:message code="tickets.duration"/></th>
+        <th scope="col" rowspan="2"><spring:message code="common.count"/></th>
         <th scope="col" rowspan="2"></th>
         <th scope="col" rowspan="2"></th>
     </tr>
     <tr>
-        <th>с</th>
-        <th>по</th>
+        <th><spring:message code="tickets.from"/></th>
+        <th><spring:message code="tickets.to"/></th>
     </tr>
     </thead>
 </table>

@@ -9,14 +9,14 @@
         <form class="" id="clientForm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Добавить клиента</h5>
+                    <h5 class="modal-title" id="modalTitle"></h5>
                     <button type="button" class="close" aria-label="Close" data-dismiss="modal"><span aria-hidden="true" onclick="closeNoty()">×</span></button>
                 </div>
                 <div class="m-3 modal-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6">Номер телефона</label>
+                                <label class="h6"><spring:message code="clients.telnumber"/></label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">+7</span>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6">Город</label>
+                                <label class="h6"><spring:message code="clients.city"/></label>
                                 <input name="city" id="city" type="text" class="form-control">
                             </div>
                         </div>
@@ -35,13 +35,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6">Фамилия</label>
+                                <label class="h6"><spring:message code="clients.lastname"/></label>
                                 <input name="lastname" type="text" id="lastname" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6">Имя</label>
+                                <label class="h6"><spring:message code="clients.firstname"/></label>
                                 <input name="firstname" type="text" id="firstname" class="form-control">
                             </div>
                         </div>
@@ -49,13 +49,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6">Отчество</label>
+                                <label class="h6"><spring:message code="clients.middlename"/></label>
                                 <input name="middlename" type="text" id="middlename" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6">Почта</label>
+                                <label class="h6"><spring:message code="clients.email"/></label>
                                 <div class="mb-3 input-group"><div class="input-group-prepend">
                                     <span class="input-group-text">@</span>
                                 </div>
@@ -65,8 +65,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeNoty()">Закрыть</button>
-                    <button type="button" class="btn btn-primary" onclick=clientsTable.save()>Сохранить</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeNoty()"><spring:message code="common.cancel"/></button>
+                    <button type="button" class="btn btn-primary" onclick=clientsTable.save()><spring:message code="common.save"/></button>
                 </div>
             </div>
         </form>

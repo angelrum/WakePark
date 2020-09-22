@@ -19,13 +19,13 @@
                         <div class="col-lg-4">
                             <div class="flex-fill mb-3 card">
                                 <div class="card-header">
-                                    <h5 class="mb-0 card-title">Регистрация клиента</h5>
+                                    <h5 class="mb-0 card-title"><spring:message code="queue.register"/></h5>
                                 </div>
                                 <div class="d-flex card-body">
                                     <form style="width: 95%">
                                         <input type="text" id="client_id" disabled class="d-none">
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted">Телефон клиента:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.telnumber"/>:</label>
                                             <div class="col-sm-7 input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">+7</span>
@@ -37,33 +37,33 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted">Фамилия:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.lastname"/>:</label>
                                             <div class="col-sm-7">
-                                                <input name="lastname" id="fr_lastname" class="form-control" placeholder="Фамилия" disabled>
+                                                <input name="lastname" id="fr_lastname" class="form-control" placeholder="<spring:message code="clients.lastname"/>" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted">Имя:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.firstname"/>:</label>
                                             <div class="col-sm-7">
-                                                <input name="firstname" id="fr_firstname" class="form-control" placeholder="Имя" disabled>
+                                                <input name="firstname" id="fr_firstname" class="form-control" placeholder="<spring:message code="clients.firstname"/>" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted">Отчество:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.middlename"/>:</label>
                                             <div class="col-sm-7">
-                                                <input name="middlename" id="fr_middlename" class="form-control" placeholder="Отчество" disabled>
+                                                <input name="middlename" id="fr_middlename" class="form-control" placeholder="<spring:message code="clients.middlename"/>" disabled>
                                             </div>
                                         </div>
                                         <div class="mb-3 text-center">
-                                            <button class="btn btn-success d-none" id="add_in_queue">Добавить в очередь</button>
-                                            <button class="btn btn-success" id="registration">Зарегистрировать</button>
+                                            <button class="btn btn-success d-none" id="add_in_queue"><spring:message code="queue.add"/></button>
+                                            <button class="btn btn-success" id="registration"><spring:message code="app.register"/></button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="flex-fill mb-3 card">
                                 <div class="card-header">
-                                    <h5 class="mb-0 card-title">Задачи на текущий день</h5>
+                                    <h5 class="mb-0 card-title"><spring:message code="task.title"/></h5>
                                 </div>
                                 <div class="d-flex card-body">
                                     <div class="align-self-center w-100">
@@ -91,18 +91,18 @@
                         <div class="col-lg-8">
                             <div class="flex-fill w-100 card">
                                 <div class="card-header">
-                                    <h3>Активная очередь</h3>
+                                    <h3><spring:message code="query.active.title"/></h3>
                                 </div>
                                 <div class="d-flex card-body">
                                     <table class="my-0 table table-striped" id="dt_queue" style="width: 100%">
                                         <thead>
                                         <tr>
-                                            <th width="32px" scope="col">Вв</th>
-                                            <th width="32px" scope="col">Вн</th>
-                                            <th width="32px" scope="col">Ост</th>
-                                            <th width="32px" scope="col">Уд</th>
-                                            <th scope="col">Очередь</th>
-                                            <th width="10%" scope="col">Кол-во сетов</th>
+                                            <th width="32px" scope="col"></th>
+                                            <th width="32px" scope="col"></th>
+                                            <th width="32px" scope="col"></th>
+                                            <th width="32px" scope="col"></th>
+                                            <th scope="col"><spring:message code="query.title"/></th>
+                                            <th width="15%" scope="col"><spring:message code="query.count"/></th>
                                         </tr>
                                         </thead>
                                     </table>
@@ -141,7 +141,7 @@
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col col-md-auto align-self-center">
-                                            <h5>Длительность очереди <span class="timer_common minutes" >00</span>
+                                            <h5><spring:message code="query.duration"/><span class="timer_common minutes" >00</span>
                                                 <span>:</span>
                                                 <span class="timer_common seconds" >00</span>
                                             </h5>
@@ -161,7 +161,7 @@
                         <input type="hidden" id="cl_id" name="id">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Билеты клиента</h5>
+                                <h5 class="modal-title"><spring:message code="clients.ticket.title"/></h5>
                                 <button type="button" class="close" aria-label="Close" data-dismiss="modal"><span aria-hidden="true" onclick="closeAddInQueueModal()">×</span></button>
                             </div>
                             <div class="m-3 modal-body">
@@ -170,7 +170,7 @@
                                         <div class="row custom-switch custom-control">
                                             <div class="col-md-12">
                                                 <input type="checkbox" id="filt_actual" name="filt_actual" class="custom-control-input" checked onclick="updateClTickectTable()">
-                                                <label class="custom-control-label text-muted" for="filt_actual">Актуальные по интервалу</label>
+                                                <label class="custom-control-label text-muted" for="filt_actual"><spring:message code="clients.ticket.actual"/></label>
                                             </div>
                                         </div>
                                     </div>
@@ -178,13 +178,13 @@
                                 <div class="row">
                                     <div class="col">
                                         <jsp:include page="fragments/table/table_client_tickets.jsp"></jsp:include>
-                                        <button class="btn btn-primary" id="tickets">Добавить билет</button>
+                                        <button class="btn btn-primary" id="tickets"><spring:message code="tickets.add"/></button>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeAddInQueueModal()">Закрыть</button>
-                                <button type="button" class="btn btn-primary" onclick="addInQueue()">Добавить</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeAddInQueueModal()"><spring:message code="common.cancel"/></button>
+                                <button type="button" class="btn btn-primary" onclick="addInQueue()"><spring:message code="common.add"/></button>
                             </div>
                         </div>
                     </form>
@@ -212,4 +212,7 @@
 
 <script src="resources/js/wakepark.page.main.js"></script>
 </body>
+<jsp:include page="fragments/i18n.jsp">
+    <jsp:param name="page" value="clients"/>
+</jsp:include>
 </html>

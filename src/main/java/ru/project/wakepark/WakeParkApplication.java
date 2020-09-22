@@ -126,20 +126,6 @@ public class WakeParkApplication extends SpringBootServletInitializer {
         return em;
     }
 
-//    @Bean(name = "watchs")
-//    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-//    public ConcurrentHashMap<Integer, Map<Future, TimerService.Task>> getWatch() {
-//        return new ConcurrentHashMap<Integer, Map<Future, TimerService.Task>>();
-//    }
 
-//    public CommandLineRunner demo (ReloadableResourceBundleMessageSource messageSource) {
-//        log.info("Start query exist");
-//        return args -> {
-//            System.out.println("====== Check bundle ======");
-//            String test = messageSource.getMessage("userTo.name", null, "Default", new Locale("ru"));
-//            System.out.println(test);
-//        };
-//
-//    }
 
 }

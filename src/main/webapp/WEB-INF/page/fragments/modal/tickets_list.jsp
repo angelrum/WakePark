@@ -9,7 +9,7 @@
         <form class="">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ticket_title">Выбрать билет</h5>
+                    <h5 class="modal-title" id="ticket_title"><spring:message code="tickets.choice"/></h5>
                     <button type="button" class="close" aria-label="Close" onclick="closeAllModal()"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="m-3 modal-body">
@@ -19,16 +19,16 @@
                                 <thead>
                                 <tr>
                                     <th scope="col" rowspan="2"></th>
-                                    <th scope="col" rowspan="2">Тип билета</th>
-                                    <th scope="col" rowspan="2">Название</th>
-                                    <th scope="col" rowspan="2" width=5%>Снаряжение</th>
-                                    <th scope="col" colspan="2">Период</th>
-                                    <th scope="col" rowspan="2">Кол-во<br>дней</th>
-                                    <th scope="col" rowspan="2">Кол-во<br>месяцев</th>
-                                    <th scope="col" rowspan="2">Стоимость<br>в будни</th>
-                                    <th scope="col" rowspan="2">Стоимость<br>в выходные</th>
-                                    <th scope="col" rowspan="2" width=5%>Длит.сета</th>
-                                    <th scope="col" rowspan="2" width=5%>Кол-во</th>
+                                    <th scope="col" rowspan="2"><spring:message code="tickets.type"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="tickets.name"/></th>
+                                    <th scope="col" rowspan="2" width=5%><spring:message code="tickets.equipment"/></th>
+                                    <th scope="col" colspan="2"><spring:message code="tickets.period"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="tickets.day.br"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="tickets.month.br"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="tickets.cost.br"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="tickets.cost.weekendcost.br"/></th>
+                                    <th scope="col" rowspan="2" width=5%><spring:message code="tickets.duration.short"/></th>
+                                    <th scope="col" rowspan="2" width=5%><spring:message code="common.count"/></th>
                                 </tr>
                                 <tr>
                                     <th width=5%>С</th>
@@ -40,8 +40,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="closeAllModal()">Закрыть</button>
-                    <button type="button" class="btn btn-success" id="saveTicket" onclick="saveClTicket()">Сохранить</button></div>
+                    <button type="button" class="btn btn-secondary" onclick="closeAllModal()"><spring:message code="common.cancel"/></button>
+                    <button type="button" class="btn btn-success" id="saveTicket" onclick="saveClTicket()"><spring:message code="common.save"/></button></div>
             </div>
         </form>
     </div>
