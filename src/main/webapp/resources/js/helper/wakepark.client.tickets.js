@@ -79,7 +79,7 @@ var clTickets = {
     //переопределяем ф-ии, устанавливаемые в common
     deleteRow: function (id) {
         if (confirm(i18n['common.confirm'])) {
-            updateOrDeleteClTicket(id, 'DELETE', 'common.deleted', function () {
+            updateOrDeleteClTicket(id, 'DELETE', i18n['common.deleted'], function () {
                 clTickets.updateTableWithParam(getSingleTrValue("cl_select",'radio'));
             });
         }
@@ -119,7 +119,7 @@ function renderDeleteBtn(data, type, row) {
     }
 }
 
-function updateOrDeleteClTicket(id, type = 'PUT', successText = 'common.saved', successFunction = function () {}) {
+function updateOrDeleteClTicket(id, type = 'PUT', successText = i18n['common.saved'], successFunction = function () {}) {
     var client = getSingleTrValue("cl_select",'radio');                //getRadioCheckedVal("cl_select");
     var count = getSingleTrValue("count_" + id,'number', HtmlType.ID); //getCountByName("count_" + id);
 
@@ -132,6 +132,6 @@ function updateOrDeleteClTicket(id, type = 'PUT', successText = 'common.saved', 
             }).done(function () {
                 successNoty(successText);
                 successFunction();
-            }).fail(function () {failNotyWithText("common.error")});
-        }).fail(function () {failNotyWithText("common.error")});
+            }).fail(function () {failNotyWithText(i18n['common.errorStatus'])});
+        }).fail(function () {failNotyWithText(i18n['common.errorStatus'])});
 }
