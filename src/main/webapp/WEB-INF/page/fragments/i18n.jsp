@@ -13,9 +13,7 @@
         i18n["editTitle"] = '<spring:message code="common.edit"/>';
     }
 
-    <c:forEach var='key' items='<%=new String[]{"common.deleted", "common.saved", "common.enabled", "common.disabled", "common.errorStatus", "common.search", "common.confirm",
-    "tickets.cost", "tickets.day", "tickets.equipment", "tickets.from", "tickets.interval", "tickets.month", "tickets.name", "tickets.period", "tickets.start", "tickets.weekendcost",
-    "clients.city", "clients.firstname", "clients.lastname", "clients.middlename", "clients.telnumber", "tickets.type.abonement.short"}%>'>
+    <c:forEach var='key' items='<%=new String[]{"common.deleted", "common.saved", "common.enabled", "common.disabled", "common.errorStatus", "common.search", "common.confirm"}%>'>
         i18n['${key}'] = '<spring:message code="${key}"/>';
     </c:forEach>
 </script>

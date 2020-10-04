@@ -1,3 +1,5 @@
+var telnumber = $('#telnumber');
+
 function datatableCustomStyle(dt_id) {
     let dt_filter = $(dt_id + '_filter input');
     dt_filter.addClass('form-control');
@@ -77,7 +79,7 @@ function deleteRow(id) {
     if (confirm(i18n['common.confirm'])) {
         $.ajax({url: this.ajaxUrl + id, type: "DELETE" }).done(function () {
             ctx.updateTable();
-            successNoty(i18n['common.deleted']);
+            successNoty('common.deleted');
             if (typeof ctx.postDelete != "undefined") {
                 ctx.postDelete();
             }
@@ -98,17 +100,26 @@ function save() {
     var ctx = this;
     if (typeof ctx.presave != "undefined") { ctx.presave(ctx.form);}
 
-    var $ser = ctx.form.serialize();
-    if ($ser.endsWith('&email=')) {
-        $ser = $ser.replace('&email=', '');
-    }
+    //var $ser = ctx.form.serialize();
+    // if ($ser.endsWith('&email=')) {
+    //     $ser = $ser.replace('&email=', '');
+    // }
+
+    var $ser = ctx.form.serializeArray();
+    if (typeof ctx.presavedata != "undefined") { ctx.presavedata($ser);}
+    // for (var i = 0; i < $ser.length; i++) {
+    //     if ($ser[i].name === 'telnumber') {
+    //         $ser[i].value = $ser[i].value.startsWith('+7') ? $ser[i].value : '+7' + $ser[i].value;
+    //     }
+    // }
+
     $.ajax({ type: "POST", url: ctx.ajaxUrl, data: $ser }).done(function () {
         closeAllModal();
         ctx.updateTable();
         if (typeof ctx.postSave != "undefined") {
             ctx.postSave();
         }
-        successNoty(i18n['common.saved']);
+        successNoty('common.saved');
     });
 }
 
@@ -175,6 +186,18 @@ function convertPhoneNumber(telnumber) {
     }
     return phonenumber;
 }
+
+telnumber.keypress(function (evt) {
+    return checkPhoneKey(evt.key, this.id);
+});
+
+telnumber.click(function (evt) {
+    if (this.value.length === 0) { this.value = "("; }
+});
+
+telnumber.keyup(function (evt) {
+    this.value = convertPhoneNumber(this.value);
+});
 
 function removeField(id, clearVal = null) {
     $('#'+id).val(''); //each(function () { this.value = '';});

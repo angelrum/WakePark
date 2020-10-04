@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6"><spring:message code="clients.telnumber"/></label>
+                                <label class="h6"><spring:message code="client.telnumber"/></label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">+7</span>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6"><spring:message code="clients.city"/></label>
+                                <label class="h6"><spring:message code="client.city"/></label>
                                 <input name="city" id="city" type="text" class="form-control">
                             </div>
                         </div>
@@ -35,13 +35,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6"><spring:message code="clients.lastname"/></label>
+                                <label class="h6"><spring:message code="client.lastname"/></label>
                                 <input name="lastname" type="text" id="lastname" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6"><spring:message code="clients.firstname"/></label>
+                                <label class="h6"><spring:message code="client.firstname"/></label>
                                 <input name="firstname" type="text" id="firstname" class="form-control">
                             </div>
                         </div>
@@ -49,13 +49,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6"><spring:message code="clients.middlename"/></label>
+                                <label class="h6"><spring:message code="client.middlename"/></label>
                                 <input name="middlename" type="text" id="middlename" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="h6"><spring:message code="clients.email"/></label>
+                                <label class="h6"><spring:message code="client.email"/></label>
                                 <div class="mb-3 input-group"><div class="input-group-prepend">
                                     <span class="input-group-text">@</span>
                                 </div>

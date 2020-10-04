@@ -50,3 +50,21 @@ const QueueControl = {
     PAUSE: 'PAUSE',
     STOP: 'STOP'
 };
+
+const Role = {
+    ADMIN: "Администратор",
+    MANAGER: "Менеджер",
+    USER: "Оператор",
+
+};
+
+function getRoleCode(name) {
+    switch (name) {
+        case 'ADMIN':
+            return Role.ADMIN;
+        case 'MANAGER':
+            return Role.MANAGER;
+        case 'USER':
+            return Role.USER
+    }
+}

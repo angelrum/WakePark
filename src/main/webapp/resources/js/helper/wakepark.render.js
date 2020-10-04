@@ -51,3 +51,9 @@ function renderCount(data, type, row, enable, max = '99') {
     data = (typeof data != "undefined") ? data : 1;
     return "<input id='count_"+ row.id + "' name='count' type='number' value = "+ data +" min='1' max="+ max +" "+ disabled +">";
 }
+
+function renderPassword(data, type, row) {
+    if (type === "display") {
+        return "<input type='password' disabled value=" + data +" id='password' name='password' class='clear_input'/>"
+    }
+}

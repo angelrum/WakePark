@@ -25,6 +25,7 @@ import ru.project.wakepark.service.QueueService;
 import ru.project.wakepark.service.QueueStateService;
 import ru.project.wakepark.web.converter.DateTimeFormatters;
 import ru.project.wakepark.web.converter.StringToPassEnumConverter;
+import ru.project.wakepark.web.converter.StringToRoleConverter;
 import ru.project.wakepark.web.json.JacksonObjectMapper;
 
 import java.nio.charset.Charset;

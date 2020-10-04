@@ -24,4 +24,9 @@ public class RootController {
         return "main";
     }
 
+    @GetMapping("/users")
+    public String getUserPage(Model model) {
+        return "users";
+    }
+
 }

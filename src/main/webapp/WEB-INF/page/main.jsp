@@ -9,7 +9,9 @@
 </head>
 <body>
 <div class="wrapper">
-    <jsp:include page="fragments/sidebar.jsp"></jsp:include>
+    <jsp:include page="fragments/sidebar.jsp">
+        <jsp:param name="page" value="main"/>
+    </jsp:include>
     <div class="main">
         <jsp:include page="fragments/navbar.jsp"></jsp:include>
         <main class="content" style="font-family:Jost,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif">
@@ -19,13 +21,13 @@
                         <div class="col-lg-4">
                             <div class="flex-fill mb-3 card">
                                 <div class="card-header">
-                                    <h5 class="mb-0 card-title"><spring:message code="queue.register"/></h5>
+                                    <h5 class="mb-0 card-title"><spring:message code="queue.register.long"/></h5>
                                 </div>
                                 <div class="d-flex card-body">
                                     <form style="width: 95%">
                                         <input type="text" id="client_id" disabled class="d-none">
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.telnumber"/>:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="client.telnumber"/>:</label>
                                             <div class="col-sm-7 input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">+7</span>
@@ -37,26 +39,26 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.lastname"/>:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="client.lastname"/>:</label>
                                             <div class="col-sm-7">
-                                                <input name="lastname" id="fr_lastname" class="form-control" placeholder="<spring:message code="clients.lastname"/>" disabled>
+                                                <input name="lastname" id="fr_lastname" class="form-control" placeholder="<spring:message code="client.lastname"/>" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.firstname"/>:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="client.firstname"/>:</label>
                                             <div class="col-sm-7">
-                                                <input name="firstname" id="fr_firstname" class="form-control" placeholder="<spring:message code="clients.firstname"/>" disabled>
+                                                <input name="firstname" id="fr_firstname" class="form-control" placeholder="<spring:message code="client.firstname"/>" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="clients.middlename"/>:</label>
+                                            <label class="col-form-label col-sm-5 text-sm-right text-muted"><spring:message code="client.middlename"/>:</label>
                                             <div class="col-sm-7">
-                                                <input name="middlename" id="fr_middlename" class="form-control" placeholder="<spring:message code="clients.middlename"/>" disabled>
+                                                <input name="middlename" id="fr_middlename" class="form-control" placeholder="<spring:message code="client.middlename"/>" disabled>
                                             </div>
                                         </div>
                                         <div class="mb-3 text-center">
                                             <button class="btn btn-success d-none" id="add_in_queue"><spring:message code="queue.add"/></button>
-                                            <button class="btn btn-success" id="registration"><spring:message code="app.register"/></button>
+                                            <button class="btn btn-success" id="registration"><spring:message code="queue.register"/></button>
                                         </div>
                                     </form>
                                 </div>
@@ -161,7 +163,7 @@
                         <input type="hidden" id="cl_id" name="id">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title"><spring:message code="clients.ticket.title"/></h5>
+                                <h5 class="modal-title"><spring:message code="client.ticket.title"/></h5>
                                 <button type="button" class="close" aria-label="Close" data-dismiss="modal"><span aria-hidden="true" onclick="closeAddInQueueModal()">×</span></button>
                             </div>
                             <div class="m-3 modal-body">
@@ -170,7 +172,7 @@
                                         <div class="row custom-switch custom-control">
                                             <div class="col-md-12">
                                                 <input type="checkbox" id="filt_actual" name="filt_actual" class="custom-control-input" checked onclick="updateClTickectTable()">
-                                                <label class="custom-control-label text-muted" for="filt_actual"><spring:message code="clients.ticket.actual"/></label>
+                                                <label class="custom-control-label text-muted" for="filt_actual"><spring:message code="client.ticket.actual"/></label>
                                             </div>
                                         </div>
                                     </div>
@@ -178,7 +180,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <jsp:include page="fragments/table/table_client_tickets.jsp"></jsp:include>
-                                        <button class="btn btn-primary" id="tickets"><spring:message code="tickets.add"/></button>
+                                        <button class="btn btn-primary" id="tickets"><spring:message code="ticket.add"/></button>
                                     </div>
                                 </div>
                             </div>
@@ -213,6 +215,6 @@
 <script src="resources/js/wakepark.page.main.js"></script>
 </body>
 <jsp:include page="fragments/i18n.jsp">
-    <jsp:param name="page" value="clients"/>
+    <jsp:param name="page" value="client"/>
 </jsp:include>
 </html>

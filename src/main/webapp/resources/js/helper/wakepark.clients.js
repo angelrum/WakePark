@@ -1,5 +1,4 @@
 var clientAjaxUrl = "/ajax/controller/clients/";
-var telnumber = $('#telnumber');
 
 var clientsTable = {
     datatable_id: '#dt_clients',
@@ -67,18 +66,6 @@ var clientsTable = {
         }
     }
 };
-
-telnumber.keypress(function (evt) {
-    return checkPhoneKey(evt.key, this.id);
-});
-
-telnumber.click(function (evt) {
-    if (this.value.length === 0) { this.value = "("; }
-});
-
-telnumber.keyup(function (evt) {
-    this.value = convertPhoneNumber(this.value);
-});
 
 function handleOnChange(ev, flag) {
     $('tr input[id^="radio"]')

@@ -6,25 +6,25 @@
 <table class="dataTables_wrapper dt-bootstrap4 fl-table" id="dt_tickets">
     <thead>
     <tr>
-        <th scope="col" rowspan="2"><spring:message code="tickets.type"/></th>
-        <th scope="col" rowspan="2"><spring:message code="tickets.name"/></th>
-        <th scope="col" rowspan="2" width=5%><spring:message code="tickets.active"/></th>
-        <th scope="col" rowspan="2" width=5%><spring:message code="tickets.equipment"/></th>
-        <th scope="col" rowspan="2" width=5%><spring:message code="tickets.duration.short"/></th>
-        <th scope="col" colspan="2"><spring:message code="tickets.period"/></th>
-        <th scope="col" colspan="2"><spring:message code="tickets.fix.duration"/></th>
-        <th scope="col" rowspan="2"><spring:message code="tickets.day.br"/></th>
-        <th scope="col" rowspan="2"><spring:message code="tickets.month.br"/></th>
-        <th scope="col" rowspan="2"><spring:message code="tickets.cost.br"/></th>
-        <th scope="col" rowspan="2"><spring:message code="tickets.cost.weekendcost.br"/></th>
+        <th scope="col" rowspan="2"><spring:message code="ticket.pass"/></th>
+        <th scope="col" rowspan="2"><spring:message code="ticket.name"/></th>
+        <th scope="col" rowspan="2" width=5%><spring:message code="ticket.enable"/></th>
+        <th scope="col" rowspan="2" width=5%><spring:message code="ticket.equipment"/></th>
+        <th scope="col" rowspan="2" width=5%><spring:message code="ticket.duration.short"/></th>
+        <th scope="col" colspan="2"><spring:message code="ticket.period"/></th>
+        <th scope="col" colspan="2"><spring:message code="ticket.duration.fix"/></th>
+        <th scope="col" rowspan="2"><spring:message code="ticket.day.br"/></th>
+        <th scope="col" rowspan="2"><spring:message code="ticket.month.br"/></th>
+        <th scope="col" rowspan="2"><spring:message code="ticket.cost.br"/></th>
+        <th scope="col" rowspan="2"><spring:message code="ticket.weekendcost.br"/></th>
         <th scope="col" rowspan="2"></th>
         <th scope="col" rowspan="2"></th>
     </tr>
     <tr>
-        <th width=5%><spring:message code="tickets.from"/></th>
-        <th width=5%><spring:message code="tickets.to"/></th>
-        <th width=5% nowrap><spring:message code="tickets.start"/></th>
-        <th width=9% nowrap><spring:message code="tickets.end"/></th>
+        <th width=5%><spring:message code="ticket.period.from"/></th>
+        <th width=5%><spring:message code="ticket.period.to"/></th>
+        <th width=5% nowrap><spring:message code="ticket.start_date"/></th>
+        <th width=9% nowrap><spring:message code="ticket.end_date"/></th>
     </tr>
     </thead>
 </table>

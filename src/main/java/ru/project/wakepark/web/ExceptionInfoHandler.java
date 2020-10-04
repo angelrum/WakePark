@@ -35,13 +35,14 @@ public class ExceptionInfoHandler {
     private static final Logger log = LoggerFactory.getLogger(ExceptionInfoHandler.class);
 
     public static final String EXCEPTION_DUPLICATE_EMAIL = "exception.user.duplicateEmail";
-    public static final String EXCEPTION_DUPLICATE_DATETIME = "exception.meal.duplicateDateTime";
-    public static final String EXCEPTION_DUPLICATE_PHONENUMBER = "exception.client.duplicatePhonenumber";
+    public static final String EXCEPTION_DUPLICATE_PHONENUMBER = "exception.duplicate.telnumber";
+    public static final String EXCEPTION_DUPLICATE_LOGIN = "exception.duplicate.login";
 
     private static final Map<String, String> CONSTRAINS_I18N_MAP = Map.of(
             "users_unique_email_idx", EXCEPTION_DUPLICATE_EMAIL,
-            "meals_unique_user_datetime_idx", EXCEPTION_DUPLICATE_DATETIME,
-            "client_idx", EXCEPTION_DUPLICATE_PHONENUMBER);
+            "client_idx", EXCEPTION_DUPLICATE_PHONENUMBER,
+            "user_telnumber_idx", EXCEPTION_DUPLICATE_PHONENUMBER,
+            "user_idx", EXCEPTION_DUPLICATE_LOGIN);
 
     private final MessageSourceAccessor messageSourceAccessor;
 

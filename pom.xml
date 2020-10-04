@@ -23,6 +23,7 @@
         <webjars-datetimepicker.version>2.5.20</webjars-datetimepicker.version>
         <webjars-noty.version>3.1.4</webjars-noty.version>
         <webjars-datatables.version>1.10.20</webjars-datatables.version>
+        <lombok.version>1.18.12</lombok.version>
 
         <jackson-json.version>2.10.2</jackson-json.version>
         <tomcat.version>9.0.31</tomcat.version>
@@ -155,6 +156,13 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${jackson-json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!--Test-->

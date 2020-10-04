@@ -9,7 +9,7 @@
         <form class="">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ticket_title"><spring:message code="tickets.choice"/></h5>
+                    <h5 class="modal-title" id="ticket_title"><spring:message code="ticket.choice"/></h5>
                     <button type="button" class="close" aria-label="Close" onclick="closeAllModal()"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="m-3 modal-body">
@@ -19,15 +19,15 @@
                                 <thead>
                                 <tr>
                                     <th scope="col" rowspan="2"></th>
-                                    <th scope="col" rowspan="2"><spring:message code="tickets.type"/></th>
-                                    <th scope="col" rowspan="2"><spring:message code="tickets.name"/></th>
-                                    <th scope="col" rowspan="2" width=5%><spring:message code="tickets.equipment"/></th>
-                                    <th scope="col" colspan="2"><spring:message code="tickets.period"/></th>
-                                    <th scope="col" rowspan="2"><spring:message code="tickets.day.br"/></th>
-                                    <th scope="col" rowspan="2"><spring:message code="tickets.month.br"/></th>
-                                    <th scope="col" rowspan="2"><spring:message code="tickets.cost.br"/></th>
-                                    <th scope="col" rowspan="2"><spring:message code="tickets.cost.weekendcost.br"/></th>
-                                    <th scope="col" rowspan="2" width=5%><spring:message code="tickets.duration.short"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="ticket.pass"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="ticket.name"/></th>
+                                    <th scope="col" rowspan="2" width=5%><spring:message code="ticket.equipment"/></th>
+                                    <th scope="col" colspan="2"><spring:message code="ticket.period"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="ticket.day.br"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="ticket.month.br"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="ticket.cost.br"/></th>
+                                    <th scope="col" rowspan="2"><spring:message code="ticket.weekendcost.br"/></th>
+                                    <th scope="col" rowspan="2" width=5%><spring:message code="ticket.duration.short"/></th>
                                     <th scope="col" rowspan="2" width=5%><spring:message code="common.count"/></th>
                                 </tr>
                                 <tr>

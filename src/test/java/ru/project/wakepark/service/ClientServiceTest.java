@@ -12,8 +12,6 @@ import static ru.project.wakepark.testdata.ClientTestData.*;
 import ru.project.wakepark.testdata.ClientTestData;
 import ru.project.wakepark.testdata.CompanyTestData;
 import ru.project.wakepark.testdata.UserTestData;
-import ru.project.wakepark.to.BaseTo;
-import ru.project.wakepark.to.ClientTo;
 import ru.project.wakepark.util.exception.NotFoundException;
 
 @SpringBootTest

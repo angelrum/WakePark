@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.project.wakepark.model.Client;
 import ru.project.wakepark.repository.CrudClientRepository;
-import ru.project.wakepark.to.ClientTo;
 import ru.project.wakepark.util.ClientUtil;
 import ru.project.wakepark.util.ValidationUtil;
 

@@ -3,10 +3,8 @@ package ru.project.wakepark.util;
 import ru.project.wakepark.model.Client;
 import ru.project.wakepark.to.ClientTo;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class ClientUtil extends AbstractUtil<Client, ClientTo> implements ValidationInputData<Client> {
 

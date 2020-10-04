@@ -24,6 +24,7 @@ CREATE TABLE users
 (
     id          INTEGER PRIMARY KEY DEFAULT nextval('GLOBAL_SEQ'),
     company_id  INTEGER                 NOT NULL ,
+    avatar      VARCHAR                 NULL,
     firstname   VARCHAR(30)             NOT NULL,
     lastname    VARCHAR(30)             NOT NULL,
     middlename  VARCHAR(30)             NOT NULL,
@@ -41,7 +42,8 @@ CREATE TABLE users
     FOREIGN KEY (created_by) REFERENCES users(id),
     FOREIGN KEY (changed_by) REFERENCES users(id),
 
-    CONSTRAINT  user_idx UNIQUE (company_id, login)
+    CONSTRAINT  user_idx           UNIQUE (company_id, login),
+    CONSTRAINT  user_telnumber_idx UNIQUE (company_id, telnumber)
 );
 
 CREATE TABLE user_roles

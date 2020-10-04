@@ -12,22 +12,28 @@
             <small>Оператор</small>
             <ul class="sidebar-nav">
                 <li class="sidebar-header"><spring:message code="menu.title"/></li>
-                <li class="sidebar-item <c:if test="${pageContext.request.servletPath.endsWith('main.jsp')}">active</c:if>">
+                <li class="sidebar-item <c:if test="${param.page.equals('main')}">active</c:if>">
                     <a class="sidebar-link" href="/main">
                         <span class='align-middle mr-2 fas fa fa-table'></span>
                         <span class="align-middle"><spring:message code="query.title"/></span>
                     </a>
                 </li>
-                <li class="sidebar-item <c:if test="${pageContext.request.servletPath.endsWith('clients.jsp')}">active</c:if>">
+                <li class="sidebar-item <c:if test="${param.page.equals('client')}">active</c:if>">
                     <a class="sidebar-link" href="/clients">
                         <span class='align-middle mr-2 fas fa fa-book'></span>
-                        <span class="align-middle"><spring:message code="clients.title"/></span>
+                        <span class="align-middle"><spring:message code="client.title"/></span>
                     </a>
                 </li>
-                <li class="sidebar-item <c:if test="${pageContext.request.servletPath.endsWith('tickets.jsp')}">active</c:if>">
+                <li class="sidebar-item <c:if test="${param.page.equals('ticket')}">active</c:if>">
                     <a class="sidebar-link" href="/tickets">
                         <span class='align-middle mr-2 fas fa fa-ticket'></span>
-                        <span class="align-middle"><spring:message code="tickets.title"/></span>
+                        <span class="align-middle"><spring:message code="ticket.title"/></span>
+                    </a>
+                </li>
+                <li class="sidebar-item <c:if test="${param.page.equals('user')}">active</c:if>">
+                    <a class="sidebar-link" href="/users">
+                        <span class='align-middle mr-2 fas fa fa-user'></span>
+                        <span class="align-middle"><spring:message code="user.title"/></span>
                     </a>
                 </li>
             </ul>
