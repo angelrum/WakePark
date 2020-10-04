@@ -1,10 +1,13 @@
-function renderCheckBox(data, type, row) {
+function renderCheckBox(data, type, row, disabl = true, oncl = null) {
     if (type === "display") {
+        var disabled = disabl ? 'disabled' : '';
         var check = (data === true) ? 'checked' : '';
-        return "<div class='custom-control custom-checkbox'>" +
-            "<input type='checkbox' class='custom-control-input' disabled " + check +">" +
-            "<span class='custom-control-label'>" +
-            "</span></div>";
+        var onclick = !Object.is(oncl, null) ? "onclick='"+ oncl +"'": '';
+        return "<input type='checkbox' class='custom-checkbox' "+disabled+" "+check+" "+onclick+">"
+        // "<div class='custom-control custom-checkbox'>" +
+        //     "<input type='checkbox' class='custom-control-input' "+disabled+" "+check+" "+onclick+">" +
+        //     "<span class='custom-control-label'>" +
+        //     "</span></div>";
     }
 }
 

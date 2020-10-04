@@ -19,7 +19,7 @@ public class ClientService extends AbstractService<Client> {
 
     public Client getByPhone(String phone, int companyId) {
         Assert.notNull(phone, "phone must not be null");
-        return ValidationUtil.checkNotFound(repository.getByPhone(companyId, phone), "phone=" + phone);
+        return ValidationUtil.checkNotFound(repository.getByPhone(companyId, phone), "Номер телефона = " + phone);
     }
 
 }

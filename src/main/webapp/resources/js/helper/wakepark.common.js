@@ -228,7 +228,7 @@ function failNoty(jqXHR, timeout = 2000) {
     closeNoty();
     if (jqXHR.responseText !== '') {
         var errorInfo = JSON.parse(jqXHR.responseText);
-        errorInfo.details = substitution(errorInfo.details);
+        //errorInfo.details = substitution(errorInfo.details);
         failedNote = new Noty({
             text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + errorInfo.typeMessage + "<br>" + errorInfo.details.join("<br>"),
             type: !Object.is(errorInfo.info, undefined) ? errorInfo.info : "error",

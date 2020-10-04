@@ -168,7 +168,7 @@
                             </div>
                             <div class="m-3 modal-body">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col p-0">
                                         <div class="row custom-switch custom-control">
                                             <div class="col-md-12">
                                                 <input type="checkbox" id="filt_actual" name="filt_actual" class="custom-control-input" checked onclick="updateClTickectTable()">
