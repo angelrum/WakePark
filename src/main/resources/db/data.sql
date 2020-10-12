@@ -13,9 +13,9 @@ ALTER SEQUENCE register_seq RESTART WITH 1000;
 INSERT INTO companys (name, contact_name, contact_phone) VALUES
 ('WakeBro', 'ООО ТестКомпани', '+7(911) 111-11-11');
 
-INSERT INTO users (company_id, firstname, lastname, middlename, telnumber, login, password, email, created_by) VALUES
-(10000, 'Иван', 'Иванов', 'Иванович', '+7(911) 111-11-12', 'admin', '12345', 'admin@mail.ru', null),
-(10000, 'Антон', 'Иванов', 'Иванович', '+7(911) 111-11-13', 'manager', '123456', 'manager@mail.ru', 10001);
+INSERT INTO users (company_id, avatar, firstname, lastname, middlename, telnumber, login, password, email, created_by) VALUES
+(10000, 'https://img.icons8.com/bubbles/50/000000/student-male.png', 'Иван', 'Иванов', 'Иванович', '+7(911) 111-11-12', 'admin', '$2a$10$./aq9gPbMpuuzwDtRRPjY.LGRdA4MPnSFWJEf4W/5ehMlWqorvOJm', 'admin@mail.ru', null), /* password = pass */
+(10000, 'https://img.icons8.com/bubbles/50/000000/student-male.png', 'Антон', 'Иванов', 'Иванович', '+7(911) 111-11-13', 'manager', '$2a$10$./aq9gPbMpuuzwDtRRPjY.LGRdA4MPnSFWJEf4W/5ehMlWqorvOJm', 'manager@mail.ru', 10001);
 
 INSERT INTO user_roles (user_id, role) VALUES
 (10001, 'ADMIN'),

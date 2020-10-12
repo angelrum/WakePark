@@ -10,7 +10,7 @@ public class ClientTo extends PersonTo {
 
     @ConstructorProperties({"id","firstname", "lastname", "middlename", "telnumber", "city", "email"})
     public ClientTo(Integer id, String firstname, String lastname, String middlename, String telnumber, String city, String email) {
-        super(id, firstname, lastname, middlename, telnumber, email);
+        super(null, id, firstname, lastname, middlename, telnumber, email);
         this.city = city;
     }
 

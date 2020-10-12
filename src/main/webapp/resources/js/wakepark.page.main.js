@@ -70,7 +70,7 @@ $(function () {
         $('#cl_ticket').modal();
     };
 
-    makeEditable(clientsTable, false);
+    makeEditable(clientsTable);
     makeEditable(clTickets);
     makeEditable(ticketsTable);
     makeEditable(queueTable);
@@ -85,12 +85,19 @@ $(function () {
         queueTable.webSocket.start();
     };
 
-    window.onbeforeunload = function() {
-        //queu.stop();
-        //wsQuqu.stop();
+    window.onunload = function(event) { //выполняется при закрытии страницы
+        //event.preventDefault();
         queueTable.webSocket.stop();
-        return true;
+        $.ajax({url: '/logout', type: 'POST'});
     };
+    // window.onbeforeunload = function(event) {
+    //     event.preventDefault();
+    //     //queu.stop();
+    //     //wsQuqu.stop();
+    //     queueTable.webSocket.stop();
+    //     event.returnValue = 'Что то пишем здесь'; // Chrome requires returnValue to be set
+    //     return;
+    // };
 
     $(document).ajaxError(function (event, jqXHR, options, jsExc) {
         failNoty(jqXHR, 1000);

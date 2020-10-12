@@ -33,7 +33,7 @@ public class UserTestData implements TestData<User> {
 
     @Override
     public User getNew() {
-        return new User(null, CompanyTestData.WAKE_ID1, null, "testNew", "1234567", "Anton", "Ivanov", "Ivanovich", "+7(911)111-11-16", "test4@test.ru", true,
+        return new User(null, CompanyTestData.WAKE_ID1, null, "testNew", "pass", "Anton", "Ivanov", "Ivanovich", "+7(911)111-11-16", "test4@test.ru", true,
                 LocalDateTime.of(2020, Month.JUNE, 2, 10, 0, 0), USER1, null, null, Role.USER);
     }
 

@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.messaging.core.MessageSendingOperations;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ru.project.wakepark.AuthorizedUser;
 import ru.project.wakepark.View;
 import ru.project.wakepark.event.EventManager;
 import ru.project.wakepark.event.MailingOfQueue;
@@ -19,9 +18,9 @@ import ru.project.wakepark.to.ClientTicketTo;
 import ru.project.wakepark.to.ControlQueueRow;
 import ru.project.wakepark.to.QueueRowTo;
 
-import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import static ru.project.wakepark.web.SecurityUtil.*;
 
 @RestController
 @RequestMapping("/ajax/controller/queue")
@@ -50,37 +49,37 @@ public class MainUIController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<QueueRowTo> getAll() {
-        return service.getAll(AuthorizedUser.getCompanyId());
+        return service.getAll(authCompanyId());
     }
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void add(@Validated(View.Web.class) ClientTicketTo to) {
-        service.add(AuthorizedUser.getCompanyId(), to.getClientId(), to.getTicketId(), to.getCount());
-        em.send(AuthorizedUser.getCompanyId());
+        service.add(authCompanyId(), to.getClientId(), to.getTicketId(), to.getCount());
+        em.send(authCompanyId());
     }
 
     @DeleteMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@RequestParam Integer ctId) {
-        service.delete(AuthorizedUser.getCompanyId(), ctId);
-        em.send(AuthorizedUser.getCompanyId());
+        service.delete(authCompanyId(), ctId);
+        em.send(authCompanyId());
     }
 
     @GetMapping(value = "/control")
     public void move(@RequestParam @NotNull ControlQueueRow move, @NotNull Integer ctId) {
         switch (move) {
-            case UP:    service.raiseUp(AuthorizedUser.getCompanyId(), ctId);
+            case UP:    service.raiseUp(authCompanyId(), ctId);
                 break;
-            case DOWN:  service.raiseDown(AuthorizedUser.getCompanyId(), ctId);
+            case DOWN:  service.raiseDown(authCompanyId(), ctId);
                 break;
-            case PLAY:  service.moveToActiveQueue(AuthorizedUser.getCompanyId(), ctId);
+            case PLAY:  service.moveToActiveQueue(authCompanyId(), ctId);
                 break;
-            case PAUSE: service.moveToStoppedQueue(AuthorizedUser.getCompanyId(), ctId);
+            case PAUSE: service.moveToStoppedQueue(authCompanyId(), ctId);
                 break;
-            case DELETE: service.delete(AuthorizedUser.getCompanyId(), ctId);
+            case DELETE: service.delete(authCompanyId(), ctId);
         }
-        em.send(AuthorizedUser.getCompanyId());
+        em.send(authCompanyId());
     }
 
 //    private void sendQueueState() {

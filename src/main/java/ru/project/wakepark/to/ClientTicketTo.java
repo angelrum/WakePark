@@ -1,11 +1,15 @@
 package ru.project.wakepark.to;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.beans.ConstructorProperties;
 import java.time.LocalTime;
 import java.util.Objects;
 
+@Getter @Setter
 public class ClientTicketTo extends BaseTo {
 
     @NotNull
@@ -40,7 +44,7 @@ public class ClientTicketTo extends BaseTo {
     public ClientTicketTo(Integer id, @NotNull Integer clientId, @NotNull Integer ticketId, String pass, String name,
                           Boolean equipment, Boolean countEdit, LocalTime startTime, LocalTime endTime, Integer month,
                           Integer day, Integer duration, @NotNull @Min(value = 1) Integer count) {
-        super(id);
+        super(null, id);
         this.clientId = clientId;
         this.ticketId = ticketId;
         this.pass = pass;
@@ -53,54 +57,6 @@ public class ClientTicketTo extends BaseTo {
         this.day = day;
         this.duration = duration;
         this.count = count;
-    }
-
-    public int getClientId() {
-        return clientId;
-    }
-
-    public int getTicketId() {
-        return ticketId;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public boolean isEquipment() {
-        return equipment;
-    }
-
-    public boolean isCountEdit() {
-        return countEdit;
-    }
-
-    public LocalTime getStartTime() {
-        return startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public Integer getMonth() {
-        return month;
-    }
-
-    public Integer getDay() {
-        return day;
-    }
-
-    public Integer getDuration() {
-        return duration;
     }
 
     @Override
@@ -120,10 +76,6 @@ public class ClientTicketTo extends BaseTo {
                 Objects.equals(day, that.day) &&
                 duration.equals(that.duration) &&
                 count.equals(that.count);
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
     }
 
     @Override

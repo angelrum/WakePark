@@ -1,25 +1,19 @@
 package ru.project.wakepark.to;
 
-import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import ru.project.wakepark.util.HasId;
 
+@Setter @Getter
 public abstract class BaseTo implements HasId {
+
+    protected Integer companyId;
 
     protected Integer id;
 
-    public BaseTo(Integer id) {
+    public BaseTo(Integer companyId, Integer id) {
+        this.companyId = companyId;
         this.id = id;
     }
-
-    @Override
-    public Integer getId() {
-        return this.id;
-    }
-
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
 
 }

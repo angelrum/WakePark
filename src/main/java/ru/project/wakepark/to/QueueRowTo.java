@@ -28,7 +28,7 @@ public class QueueRowTo extends BaseTo {
 
     @ConstructorProperties({"id", "up", "down", "control", "name", "count"})
     public QueueRowTo(Integer id, ControlQueueRow upOrDown, boolean disControl, @NotNull ControlQueueRow control, @NotNull String name, @NotNull Pass pass, @Min(1) int count) {
-        super(id);
+        super(null, id);
         this.upOrDown = upOrDown;
         this.disControl = disControl;
         this.control = control;

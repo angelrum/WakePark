@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.lang.Nullable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ru.project.wakepark.AuthorizedUser;
 import ru.project.wakepark.View;
 import ru.project.wakepark.model.ClientTicket;
 import ru.project.wakepark.service.ClientService;
@@ -21,6 +20,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static ru.project.wakepark.util.ClientTicketUtil.*;
+import static ru.project.wakepark.web.SecurityUtil.*;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -45,14 +45,14 @@ public class ClientTicketUIController {
     @GetMapping(value = "/{clientId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<ClientTicketTo> getClientTickets(@PathVariable Integer clientId) {
         return getInstance()
-                .getTos(service.getWithoutQueue(AuthorizedUser.getCompanyId(), clientId));
+                .getTos(service.getWithoutQueue(authCompanyId(), clientId));
     }
 
     @GetMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<ClientTicketTo> getWithFilter(@RequestParam Integer clientId,
                                               @RequestParam @Nullable LocalTime startTime,
                                               @RequestParam @Nullable LocalTime endTime) {
-        List<ClientTicket> ctl = service.getWithoutQueue(AuthorizedUser.getCompanyId(), clientId);
+        List<ClientTicket> ctl = service.getWithoutQueue(authCompanyId(), clientId);
         if (Objects.nonNull(ctl)) {
             return getInstance().getTosWithFilter(ctl, startTime, endTime);
         }
@@ -63,42 +63,42 @@ public class ClientTicketUIController {
     public ClientTicketTo get(
             @RequestParam @Nullable Integer id,
             @RequestParam @Nullable Integer clientId) {
-        log.info("get client ticket by id {} for client {} and company {}", id, clientId, AuthorizedUser.getCompanyId());
+        log.info("get client ticket by id {} for client {} and company {}", id, clientId, authCompanyId());
         if (Objects.isNull(id) || Objects.isNull(clientId)){
             return null;
         }
-        return getInstance().createTo(service.get(AuthorizedUser.getCompanyId(), id, clientId));
+        return getInstance().createTo(service.get(authCompanyId(), id, clientId));
     }
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void create(@Validated(View.Web.class) ClientTicketTo to) {
-        log.info("add new client ticket by client {}, ticket {} and company {}", to.getClientId(), to.getTicketId(), AuthorizedUser.getCompanyId());
-        ClientTicket ct = getInstance().createModel(to, clService.get(to.getClientId(), AuthorizedUser.getCompanyId()), tService.get(to.getTicketId(), AuthorizedUser.getCompanyId()));
+        log.info("add new client ticket by client {}, ticket {} and company {}", to.getClientId(), to.getTicketId(), authCompanyId());
+        ClientTicket ct = getInstance().createModel(to, clService.get(to.getClientId(), authCompanyId()), tService.get(to.getTicketId(), authCompanyId()));
         if (ct.isNew()) {
-            service.create(ct, AuthorizedUser.getCompanyId(), AuthorizedUser.getId(), to.getCount());
+            service.create(ct, authCompanyId(), authUserId(), to.getCount());
         }
     }
 
     @PutMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void update(@Validated(View.Web.class) ClientTicketTo to) {
-        log.info("update client ticket by client {}, ticket {} and company {}", to.getClientId(), to.getTicketId(), AuthorizedUser.getCompanyId());
+        log.info("update client ticket by client {}, ticket {} and company {}", to.getClientId(), to.getTicketId(), authCompanyId());
 
-        service.createOrDelete(AuthorizedUser.getCompanyId(),
-                clService.get(to.getClientId(), AuthorizedUser.getCompanyId()),
-                tService.get(to.getTicketId(), AuthorizedUser.getCompanyId()),
-                AuthorizedUser.getId(), to.getCount());
+        service.createOrDelete(authCompanyId(),
+                clService.get(to.getClientId(), authCompanyId()),
+                tService.get(to.getTicketId(), authCompanyId()),
+                authUserId(), to.getCount());
     }
 
     @DeleteMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@Validated(View.Web.class) ClientTicketTo to) {
-        log.info("delete all client pass by ticket {}, where client {} and company {}", to.getTicketId(), to.getClientId(), AuthorizedUser.getCompanyId());
-        List<ClientTicket> all = service.getAll(AuthorizedUser.getCompanyId(), to.getClientId());
+        log.info("delete all client pass by ticket {}, where client {} and company {}", to.getTicketId(), to.getClientId(), authCompanyId());
+        List<ClientTicket> all = service.getAll(authCompanyId(), to.getClientId());
         service.delete(
-                getInstance().getByTicket(all, tService.get(to.getTicketId(), AuthorizedUser.getCompanyId())),
-                AuthorizedUser.getCompanyId());
+                getInstance().getByTicket(all, tService.get(to.getTicketId(), authCompanyId())),
+                authCompanyId());
 
     }
 }

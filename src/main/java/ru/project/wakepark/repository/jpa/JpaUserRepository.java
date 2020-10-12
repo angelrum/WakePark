@@ -6,4 +6,7 @@ import ru.project.wakepark.repository.commons.CommonDateRepository;
 import ru.project.wakepark.repository.commons.CommonNamedRepository;
 
 public interface JpaUserRepository extends CommonNamedRepository<User>, CommonDateRepository<User> {
+
+    User findFirstByLogin(String login);
+
 }

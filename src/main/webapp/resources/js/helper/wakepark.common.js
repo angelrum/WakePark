@@ -60,6 +60,12 @@ function makeEditable(ctx, api = true) {
     datatableCustomStyle(ctx.datatable_id);
     // solve problem with cache in IE: https://stackoverflow.com/a/4303862/548473
     $.ajaxSetup({cache: false});
+
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    $(document).ajaxSend(function (e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
 }
 //*** Функции для работы с контекстом ***
 // update row in table
@@ -219,6 +225,15 @@ function successNoty(key) {
     new Noty({
         text: "<span class='fa fa-lg fa-check'></span> &nbsp;" + i18n[key],
         type: 'success',
+        layout: "bottomRight",
+        timeout: 1000
+    }).show();
+}
+
+function failNotyByKey(key, type = 'error') {
+    failedNote = new Noty({
+        text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" +  + i18n[key],
+        type: type,
         layout: "bottomRight",
         timeout: 1000
     }).show();

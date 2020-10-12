@@ -30,7 +30,7 @@ CREATE TABLE users
     middlename  VARCHAR(30)             NOT NULL,
     telnumber   VARCHAR(20)             NOT NULL,
     login       VARCHAR(20)             NOT NULL,
-    password    VARCHAR(20)             NOT NULL,
+    password    VARCHAR                 NOT NULL,
     email       VARCHAR(30),
     enabled     BOOLEAN   DEFAULT TRUE  NOT NULL,
     created_on  TIMESTAMP DEFAULT now() NOT NULL,

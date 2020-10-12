@@ -41,7 +41,7 @@ public class TicketTo extends BaseTo {
     @ConstructorProperties({"id", "pass", "name", "enable", "equipment", "countEdit", "duration", "startDate", "endDate", "startTime", "endTime", "month", "day", "year", "cost", "weekendcost",})
     public TicketTo(Integer id, Pass pass, String name, boolean enable, boolean equipment, boolean countEdit, Integer duration, LocalDate startDate, LocalDate endDate,
                     LocalTime startTime, LocalTime endTime, Integer month, Integer day, Integer year, Double cost, Double weekendcost) {
-        super(id);
+        super(null, id);
         this.pass = pass.toString();
         this.name = name;
         this.enable = enable;

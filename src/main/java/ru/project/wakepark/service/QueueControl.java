@@ -3,6 +3,7 @@ package ru.project.wakepark.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import ru.project.wakepark.AuthorizedUser;
 import ru.project.wakepark.event.EventManager;
 import ru.project.wakepark.model.ClientTicket;
 import ru.project.wakepark.model.ClientTicketStory;
@@ -41,7 +42,7 @@ public class QueueControl {
         log.info("Start queue. Company {}", companyId);
         ClientTicket ct = checkNotFound(repository.getFistTicket(companyId), "Not found first pass from queue");
         ctService.setExpirationDate(companyId, ct, LocalDate.now(), userId);
-        storyService.setStoryStart(companyId, ct);
+        storyService.setStoryStart(companyId, ct, userId);
         return ct;
     }
 
@@ -56,7 +57,7 @@ public class QueueControl {
         ClientTicket ct = repository.getFistTicket(companyId);
         if (Objects.nonNull(ct)) {
             final ClientTicketStory openStory = checkNotFoundWithId(storyService.getOpenStory(companyId, ct.getId()), ct.getId(), companyId);
-            storyService.setStoryCancellation(companyId, ct);
+            storyService.setStoryCancellation(companyId, ct, AuthorizedUser.DEF_USER);
             LocalTime start = openStory.getStartTime();
             LocalTime end = LocalTime.now();
             LocalTime from = LocalTime.ofSecondOfDay(duration);
@@ -69,7 +70,7 @@ public class QueueControl {
 
     private void closeQueueRow(int companyId, int userId) {
         ClientTicket ct = checkNotFound(repository.reedemTicket(companyId), "Not found ticket for cancellation");
-        storyService.setStoryCancellation(companyId, ct);
+        storyService.setStoryCancellation(companyId, ct, userId);
         if (ct.getTicket().getPass().equals(Pass.SINGLE)) {
             ct.setActive(false);
             ctService.update(ct, companyId, userId);

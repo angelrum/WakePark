@@ -11,19 +11,19 @@ import java.beans.ConstructorProperties;
 @Getter @Setter
 public class UserTo extends PersonTo {
 
-    private String avatar;
+    protected String avatar;
 
-    private final String login;
+    protected final String login;
 
-    private final String password;
+    protected final String password;
 
     private final Boolean enabled;
 
     private final Role roles;
 
-    @ConstructorProperties({"id", "avatar", "firstname", "lastname", "middlename", "telnumber", "email", "login", "password", "enabled", "role"})
-    public UserTo(Integer id, String avatar, String firstname, String lastname, String middlename, String telnumber, String email, String login, String password, Boolean enabled, Role role) {
-        super(id, firstname, lastname, middlename, telnumber, email);
+    @ConstructorProperties({"companyId", "id", "avatar", "firstname", "lastname", "middlename", "telnumber", "email", "login", "password", "enabled", "role"})
+    public UserTo(Integer companyId, Integer id, String avatar, String firstname, String lastname, String middlename, String telnumber, String email, String login, String password, Boolean enabled, Role role) {
+        super(companyId, id, firstname, lastname, middlename, telnumber, email);
         this.avatar = avatar;
         this.login = login;
         this.password = password;

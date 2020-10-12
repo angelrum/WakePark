@@ -45,9 +45,10 @@ var queueTable = {
                 "data": "count",
                 "render": function (data, type, row) {
                     if (row.pass==='SEASON') {
-                        return i18n["tickets.type.abonement.short"] }
+                        return i18n['ticket.pass.season'] }
                     return data;
-                }
+                },
+                "defaultContent": ""
             }
         ]
     },
@@ -72,11 +73,11 @@ function addInQueue() {
     } else {
         $.ajax({type: "POST", url: queueAjaxUrl, data: {"client_id" : clientId, "ticket_id" : ticketId, "count" : count}})
             .done(function () {
-                successNoty('Клиент добавлен в очередь');
+                successNoty('queue.add.success');
                 queueTable.updateTable();
                 closeAddInQueueModal();
             }).fail(function () {
-            failNotyWithText('Ошибка добавления');
+            failNotyByKey('queue.add.error');
             closeAddInQueueModal();
         });
     }

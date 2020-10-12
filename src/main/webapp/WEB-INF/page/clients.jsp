@@ -60,7 +60,9 @@
                                         <button class="btn btn-primary" id="btn_cl_ticket" onclick="showTickets()" disabled><spring:message code="ticket.add"/></button>
                                     </div>
                                     <div class="col">
-                                        <jsp:include page="fragments/table/table_client_tickets.jsp"></jsp:include>
+                                        <jsp:include page="fragments/table/table_client_tickets.jsp">
+                                            <jsp:param name="page" value="client"/>
+                                        </jsp:include>
                                     </div>
                                 </div>
                             </div>

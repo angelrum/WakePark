@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <nav class="navbar navbar-expand navbar-theme">
     <a class="sidebar-toggle d-flex mr-2">
@@ -36,6 +37,13 @@
                         <a href="#" class="text-muted">Показать все сообщения</a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item">
+                <form:form class="form-inline" action="logout" method="post">
+                    <button class="btn btn-primary my-1" type="submit">
+                        <span class="fa fa-sign-out"></span>
+                    </button>
+                </form:form>
             </li>
         </ul>
     </div>

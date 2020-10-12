@@ -11,6 +11,7 @@
 <div class="wrapper">
     <jsp:include page="fragments/sidebar.jsp">
         <jsp:param name="page" value="main"/>
+        <jsp:param name="authUser" value="${authUser}"/>
     </jsp:include>
     <div class="main">
         <jsp:include page="fragments/navbar.jsp"></jsp:include>
@@ -143,7 +144,7 @@
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col col-md-auto align-self-center">
-                                            <h5><spring:message code="query.duration"/><span class="timer_common minutes" >00</span>
+                                            <h5><spring:message code="query.duration"/> <span class="timer_common minutes" >00</span>
                                                 <span>:</span>
                                                 <span class="timer_common seconds" >00</span>
                                             </h5>

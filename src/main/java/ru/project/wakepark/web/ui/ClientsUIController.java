@@ -7,6 +7,7 @@ import ru.project.wakepark.model.Client;
 import ru.project.wakepark.service.ClientService;
 import ru.project.wakepark.to.ClientTo;
 import ru.project.wakepark.util.ClientUtil;
+import ru.project.wakepark.web.SecurityUtil;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -23,7 +24,7 @@ public class ClientsUIController extends AbstractUIController<Client, ClientTo> 
     @GetMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)
     public ClientTo getByTelnumber(@RequestParam String telnumber) {
         log.info("get by phone {}", telnumber);
-        return ClientUtil.getInstance().createTo(service.getByPhone(telnumber, AuthorizedUser.getCompanyId()));
+        return ClientUtil.getInstance().createTo(service.getByPhone(telnumber, SecurityUtil.authCompanyId()));
     }
 
 //    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

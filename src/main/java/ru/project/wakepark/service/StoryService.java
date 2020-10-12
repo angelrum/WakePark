@@ -8,6 +8,7 @@ import ru.project.wakepark.model.ClientTicket;
 import ru.project.wakepark.model.ClientTicketStory;
 import ru.project.wakepark.repository.CrudClientTicketRepository;
 import ru.project.wakepark.repository.CrudStoryRepository;
+import ru.project.wakepark.web.SecurityUtil;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -41,7 +42,7 @@ public class StoryService extends AbstractService<ClientTicketStory> {
         return repository.getOpenStory(companyId, ctId);
     }
 
-    public void setStoryCancellation(int companyId, ClientTicket ct) {
+    public void setStoryCancellation(int companyId, ClientTicket ct, int userId) {
         log.info("Set story cancellation for company {} and client ticket {}", companyId, ct.getId());
         ClientTicketStory story = getOpenStory(companyId, ct.getId());
         if (Objects.nonNull(story)) {
@@ -50,12 +51,12 @@ public class StoryService extends AbstractService<ClientTicketStory> {
             story = getNewStory(companyId, ct);
             story.setEndTime(LocalTime.now());
         }
-        repository.save(story, companyId, AuthorizedUser.getId());
+        repository.save(story, companyId, userId);
     }
 
-    public void setStoryStart(int companyId, ClientTicket ct) {
+    public void setStoryStart(int companyId, ClientTicket ct, int userId) {
         log.info("Create new story for company {} and client ticket {}", companyId, ct.getId());
-        repository.save(getNewStory(companyId, ct), companyId, AuthorizedUser.getId());
+        repository.save(getNewStory(companyId, ct), companyId, userId);
     }
 
     private ClientTicketStory getNewStory(int companyId, ClientTicket ct) {

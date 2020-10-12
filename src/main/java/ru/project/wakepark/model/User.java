@@ -3,6 +3,7 @@ package ru.project.wakepark.model;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
@@ -11,10 +12,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.EnumSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "users")
@@ -81,6 +79,7 @@ public class User extends AbstractNamedEntity implements Serializable {
     public Set<Role> getRoles() {
         return roles;
     }
+
 
     @Override
     public String toString() {

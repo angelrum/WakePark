@@ -24,6 +24,7 @@
         <webjars-noty.version>3.1.4</webjars-noty.version>
         <webjars-datatables.version>1.10.20</webjars-datatables.version>
         <lombok.version>1.18.12</lombok.version>
+        <spring.security.version>5.3.1.RELEASE</spring.security.version>
 
         <jackson-json.version>2.10.2</jackson-json.version>
         <tomcat.version>9.0.31</tomcat.version>
@@ -37,6 +38,18 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
         <!-- websocket -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
