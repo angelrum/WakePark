@@ -138,7 +138,7 @@ public class TimerService {
                 }
             } catch (InterruptedException e) {
                 log.info("error in watch task");
-                e.printStackTrace();
+                //e.printStackTrace();
             } finally {
                 log.info("Watch stop. Company {}", companyId);
             }

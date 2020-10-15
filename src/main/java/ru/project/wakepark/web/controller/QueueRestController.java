@@ -40,16 +40,17 @@ public class QueueRestController {
     @MessageMapping({"/event"})
     @SendTo("/topic/state")
     public QueueState processEvent(@RequestBody QueueState state) throws Exception {
-        log.info("queue change, click control button {}. Company {}", state.getState(), AuthorizedUser.DEF_COMPANY); //authCompanyId() пока не работает
+        log.info("queue change, click control button {}. Company {}", state.getState(), authCompanyId()); //authCompanyId() пока не работает
+
         switch (state.getState()) {
-            case PLAY: service.queueStart(AuthorizedUser.DEF_COMPANY, AuthorizedUser.DEF_USER);
+            case PLAY: service.queueStart(authCompanyId(), authUserId());
                 break;
-            case PAUSE: service.queuePause(AuthorizedUser.DEF_COMPANY, AuthorizedUser.DEF_USER);
+            case PAUSE: service.queuePause(authCompanyId(), authUserId());
                 break;
-            case STOP: service.queueStop(AuthorizedUser.DEF_COMPANY, AuthorizedUser.DEF_USER);
+            case STOP: service.queueStop(authCompanyId(), authUserId());
                 break;
         }
-        em.send(AuthorizedUser.DEF_COMPANY, "queue");
-        return stateService.getState(AuthorizedUser.DEF_COMPANY);
+        em.send(authCompanyId(), "queue");
+        return stateService.getState(authCompanyId());
     }
 }

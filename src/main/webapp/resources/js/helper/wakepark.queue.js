@@ -170,8 +170,12 @@ function wsQueue() {
     var stompClient = null;
 
     this.start = function() {
+        var token = $("meta[name='_csrf']").attr("content");
+        var header = $("meta[name='_csrf_header']").attr("content");
+        var headers = {};
+        headers[header] = token;
         stompClient = Stomp.over(new SockJS('/event'));
-        stompClient.connect({}, function(frame) {
+        stompClient.connect(headers, function(frame) {
             console.log('Connected: ' + frame);
 
             stompClient.subscribe('/topic/state', function(messageOutput) {
