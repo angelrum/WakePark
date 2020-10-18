@@ -8,7 +8,6 @@ import ru.project.wakepark.service.UserService;
 import ru.project.wakepark.to.UserTo;
 import ru.project.wakepark.util.UserUtil;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/ajax/controller/users")
 public class UserUIController extends AbstractUIController<User, UserTo> {

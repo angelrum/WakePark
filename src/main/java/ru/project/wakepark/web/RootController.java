@@ -38,6 +38,11 @@ public class RootController {
         return "users";
     }
 
+    @GetMapping("/queue/screen")
+    public String getQueueScreen(Model model) {
+        return "screen";
+    }
+
     @GetMapping(value = "/login")
     public String login() {
         return "login";

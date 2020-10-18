@@ -17,6 +17,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.messaging.core.MessageSendingOperations;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.project.wakepark.event.EventManager;
 import ru.project.wakepark.event.MailingOfQueue;
 import ru.project.wakepark.event.MailingOfStateQueue;
@@ -127,6 +129,9 @@ public class WakeParkApplication extends SpringBootServletInitializer {
         return em;
     }
 
-
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
 }

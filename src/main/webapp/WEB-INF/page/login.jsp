@@ -54,6 +54,7 @@
                                     </div>
                                 </form:form>
                             </div>
+                            <div><button type="button" class="btn btn-info" onclick="clickRegistration()">Auto registration</button></div>
                         </div>
                     </div>
                 </div>
@@ -62,4 +63,11 @@
     </div>
 </main>
 </body>
+<script>
+    function clickRegistration() {
+        $('input[name="username"]').val('admin');
+        $('input[name="password"]').val('pass');
+        $('button[type=submit]').click();
+    }
+</script>
 </html>

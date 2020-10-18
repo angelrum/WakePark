@@ -66,6 +66,14 @@ public class QueueService {
         return result;
     }
 
+    public List<QueueRowTo> getOnlyActive(int companyId) {
+        log.info("get active queue list for company {}", companyId);
+        List<QueueRowTo> result = new ArrayList<>();
+        LinkedList<Set<ClientTicket>> activeQueue = repository.getActiveQueue(companyId);
+        if (!CollectionUtils.isEmpty(activeQueue)) result.addAll(createTos(activeQueue, watch.isStart(companyId)));
+        return result;
+    }
+
     public boolean raiseUp(int companyId, int ctId) {
         log.info("raise the line up. Client ticket {} and company {}", ctId, companyId);
         ClientTicket ct = checkNotFoundWithId(ctService.get(ctId, companyId), ctId, companyId);

@@ -41,6 +41,12 @@
                         </a>
                     </li>
                 </sec:authorize>
+                <li class="sidebar-header"><spring:message code="menu.output"/></li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/queue/screen" target="_blank">
+                        <span class='align-middle mr-2 fas fa fa-television'></span>
+                        <span class="align-middle"><spring:message code="menu.screen"/></span>
+                    </a></li>
             </ul>
         </div>
     </div>

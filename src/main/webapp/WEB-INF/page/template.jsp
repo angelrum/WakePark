@@ -24,4 +24,7 @@
 <script src="resources/js/helper/wakepark.render.js"></script>
 <script src="resources/js/helper/wakepark.common.js"></script>
 </body>
+<jsp:include page="fragments/i18n.jsp">
+    <jsp:param name="page" value="client"/>
+</jsp:include>
 </html>

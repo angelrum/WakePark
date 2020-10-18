@@ -9,7 +9,6 @@ import ru.project.wakepark.to.ClientTo;
 import ru.project.wakepark.util.ClientUtil;
 import ru.project.wakepark.web.SecurityUtil;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/ajax/controller/clients")
 public class ClientsUIController extends AbstractUIController<Client, ClientTo> {

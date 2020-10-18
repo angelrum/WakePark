@@ -70,9 +70,9 @@ $(function () {
         $('#cl_ticket').modal();
     };
 
-    makeEditable(clientsTable);
-    makeEditable(clTickets);
-    makeEditable(ticketsTable);
+    makeEditable(clientsTable, false);
+    makeEditable(clTickets, false);
+    makeEditable(ticketsTable, false);
     makeEditable(queueTable);
     //обновляем статус таймера
     updateTimerState();
@@ -82,7 +82,10 @@ $(function () {
 
     window.onload = function() {
         //queu.start();
-        queueTable.webSocket.start();
+        queueTable.webSocket.start('/topic/queue', function (messageOutput) {
+                var data = JSON.parse(messageOutput.body);
+                queueTable.updateTableByData(data);
+            });
     };
 
     window.onunload = function(event) { //выполняется при закрытии страницы
@@ -205,22 +208,5 @@ function loadQueue() {
     this.stop = function() {
         $.get(urlGetQueue + "/stream/remove?uuid=" + this.uuid);
         this.source.close();
-    }
-}
-
-function updateTimerState() {
-    $.get(urlGetQueue + "/state").done(function (data) {
-        updateTimer(data);
-    });
-}
-
-function updateTimer(data) {
-    clearInterval(intervalVariable);
-    if (data.state === QueueControl.PAUSE) {
-        startTimer(data);
-    } else {
-        stopTimer();
-        renderTimerNums(data.time);
-        renderCommonTimer(data.queueTime);
     }
 }

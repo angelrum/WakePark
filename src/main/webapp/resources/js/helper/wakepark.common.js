@@ -20,11 +20,12 @@ $('.sidebar-toggle').on('click touch', (function() {
 }));
 
 function makeEditable(ctx, api = true) {
-    if (api) {
-        ctx.datatableApi = $(ctx.datatable_id).DataTable (
-            $.extend(true, ctx.datatableOpts, ctx.datatableParam, languageDatatable)
-        );
+    if(!api) { //удаляем ajax св-во
+        delete ctx.datatableParam.ajax;
     }
+    ctx.datatableApi = $(ctx.datatable_id).DataTable (
+        $.extend(true, ctx.datatableOpts, ctx.datatableParam, languageDatatable)
+    );
     // update table
     if (typeof ctx.updateTable === "undefined") {
         ctx.updateTable = function () {

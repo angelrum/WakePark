@@ -10,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.project.wakepark.View;
 import ru.project.wakepark.event.EventManager;
+import ru.project.wakepark.event.MailingOfActiveQueue;
 import ru.project.wakepark.event.MailingOfQueue;
 import ru.project.wakepark.event.MailingOfStateQueue;
 import ru.project.wakepark.service.QueueService;
@@ -38,6 +39,7 @@ public class MainUIController {
         this.em = em;
         em.subscribe("queue", new MailingOfQueue(message, service));
         em.subscribe("state", new MailingOfStateQueue(message, stateService));
+        em.subscribe("queue/active", new MailingOfActiveQueue(message, service));
     }
 
 //    @PostConstruct

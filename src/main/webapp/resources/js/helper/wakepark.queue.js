@@ -168,12 +168,12 @@ function queueClick(control = '') {
 function wsQueue() {
 
     var stompClient = null;
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    var headers = {};
+    headers[header] = token;
 
-    this.start = function() {
-        var token = $("meta[name='_csrf']").attr("content");
-        var header = $("meta[name='_csrf_header']").attr("content");
-        var headers = {};
-        headers[header] = token;
+    this.start = function(destination = null, callback) {
         stompClient = Stomp.over(new SockJS('/event'));
         stompClient.connect(headers, function(frame) {
             console.log('Connected: ' + frame);
@@ -183,10 +183,13 @@ function wsQueue() {
                 updateTimer(data);
             });
 
-            stompClient.subscribe('/topic/queue', function (messageOutput) {
-                var data = JSON.parse(messageOutput.body);
-                queueTable.updateTableByData(data);
-            })
+            // stompClient.subscribe('/topic/queue', function (messageOutput) {
+            //     var data = JSON.parse(messageOutput.body);
+            //     queueTable.updateTableByData(data);
+            // });
+            if (!Object.is(destination, null)) {
+                stompClient.subscribe(destination, callback);
+            }
         });
     };
 
@@ -198,6 +201,6 @@ function wsQueue() {
     };
 
     this.send = function (data) {
-        stompClient.send("/app/event", {}, data);
+        stompClient.send('/app/event', {}, data);
     }
 }

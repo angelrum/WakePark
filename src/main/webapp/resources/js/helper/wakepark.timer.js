@@ -1,3 +1,4 @@
+var urlGetQueue = "/queue";
 // переменная, которая отслеживает, сколько секунд прошло
 var now_seconds = 0;
 // ставим начальные зачение счётчиков
@@ -114,5 +115,22 @@ function timerTick(type, timer_params) {
         //queueClick(QueueControl.STOP); //принудительно завершаем очередь
         //stopTimer();
         playToUpdate();
+    }
+}
+
+function updateTimerState() {
+    $.get(urlGetQueue + "/state").done(function (data) {
+        updateTimer(data);
+    });
+}
+
+function updateTimer(data) {
+    clearInterval(intervalVariable);
+    if (data.state === QueueControl.PAUSE) {
+        startTimer(data);
+    } else {
+        stopTimer();
+        renderTimerNums(data.time);
+        renderCommonTimer(data.queueTime);
     }
 }

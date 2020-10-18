@@ -6,7 +6,6 @@ import org.springframework.http.MediaType;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.*;
-import ru.project.wakepark.AuthorizedUser;
 import ru.project.wakepark.event.EventManager;
 import ru.project.wakepark.service.QueueService;
 import ru.project.wakepark.service.QueueStateService;

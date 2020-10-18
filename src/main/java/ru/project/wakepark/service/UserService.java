@@ -1,5 +1,8 @@
 package ru.project.wakepark.service;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
+import org.springframework.lang.Nullable;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -38,6 +41,9 @@ public class UserService extends AbstractService<User> implements UserDetailsSer
     public User create(User user, int companyId, int userId) {
         checkNotNull(user);
         checkNew(user);
+        if (Objects.isNull(this.passwordEncoder)) {
+            return repository.save(user, companyId, userId);
+        }
         return repository.save(prepareToSave(user, this.passwordEncoder), companyId, userId);
     }
 
