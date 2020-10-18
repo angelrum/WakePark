@@ -56,6 +56,7 @@ var clTickets = {
     },
     datatableParam: {
         "info": false,
+        "scrollX": true,
         "ajax": {
             "url": clTicketAjaxUrl,
             "dataSrc": '',

@@ -9,6 +9,7 @@ function datatableCustomStyle(dt_id) {
     $('.dataTables_length').addClass('bs-select');
     $(dt_id + '_length label').addClass('text-muted');
     $(dt_id + '_paginate ul').addClass('text-muted');
+    $(dt_id + '_paginate').addClass('mt-2');
     $(dt_id).on( 'draw.dt', function () {
         $('.page-item.active > .page-link').css('background-color', '#4FC3A1');
         $('.page-item.active > .page-link').css('border-color', '#4FC3A1');

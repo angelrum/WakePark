@@ -109,23 +109,21 @@ public class WakeParkApplication extends SpringBootServletInitializer {
 
     @Bean(name = "activeQueue")
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-    public Map<Integer, LinkedList<Set<ClientTicket>>> getActiveQueue() {
-        Map<Integer, LinkedList<Set<ClientTicket>>> activeQueue = new HashMap<>();
+    public ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> getActiveQueue() {
+        ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> activeQueue = new ConcurrentHashMap<>();
         return activeQueue;
     }
 
     @Bean(name = "stoppedQueue")
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-    public Map<Integer, LinkedList<Set<ClientTicket>>> getStoppedQueue() {
-        Map<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue = new HashMap<>();
+    public ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> getStoppedQueue() {
+        ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue = new ConcurrentHashMap<>();
         return stoppedQueue;
     }
 
     @Bean
     public EventManager getEventManager() {
-        EventManager em = new EventManager(); //снова циркуляция
-        //em.subscribe("queue", new MailingOfQueue(message, service));
-        //em.subscribe("state", new MailingOfStateQueue(message, stateService));
+        EventManager em = new EventManager();
         return em;
     }
 

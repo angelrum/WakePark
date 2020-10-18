@@ -9,8 +9,14 @@ import ru.project.wakepark.repository.commons.AbstractDateChangedRepository;
 import ru.project.wakepark.repository.jpa.JpaClientTicketRepository;
 import ru.project.wakepark.repository.jpa.JpaCompanyRepository;
 import ru.project.wakepark.repository.jpa.JpaUserRepository;
+import ru.project.wakepark.util.DateTimeUtil;
+import ru.project.wakepark.util.TicketUtil;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Repository
 @Transactional(readOnly = true)
@@ -30,14 +36,20 @@ public class CrudClientTicketRepository extends AbstractDateChangedRepository <C
     }
 
     public List<ClientTicket> getAllActive(int companyId, int clientId) {
-        return repository.findWithClientAndTicketByClientAndActive(companyId, clientId);
+        return filterByDate(repository.findWithClientAndTicketByClientAndActive(companyId, clientId));
     }
 
     public List<ClientTicket> getAllActive(int companyId, int clientId, int ticketId) {
-        return repository.findByClientAndTicket(companyId, clientId, ticketId);
+        return filterByDate(repository.findByClientAndTicket(companyId, clientId, ticketId));
     }
 
     public ClientTicket getOneByIdAndClient(int companyId, int id, int clientId) {
         return DataAccessUtils.singleResult(repository.findByIdAndClient(companyId, clientId, id));
+    }
+
+    private List<ClientTicket> filterByDate(List<ClientTicket> clientTickets) {
+        return clientTickets.stream()
+                .filter(cl->TicketUtil.getInstance().checkActualByDate(cl.getTicket()))
+                .collect(Collectors.toList());
     }
 }

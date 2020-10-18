@@ -8,17 +8,19 @@ import ru.project.wakepark.model.ClientTicket;
 import ru.project.wakepark.model.Pass;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @Repository
 public class QueueRepository {
 
-    private Map<Integer, LinkedList<Set<ClientTicket>>> activeQueue;
+    private ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> activeQueue;
 
-    private Map<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue;
+    private ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue;
 
     @Autowired
-    public QueueRepository(Map<Integer, LinkedList<Set<ClientTicket>>> activeQueue, Map<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue) {
+    public QueueRepository(ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> activeQueue,
+                           ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue) {
         this.activeQueue = activeQueue;
         this.stoppedQueue = stoppedQueue;
     }

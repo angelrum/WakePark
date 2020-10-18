@@ -3,7 +3,7 @@
 <%@ taglib prefix="fn" uri="http://topjava.javawebinar.ru/functions" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<table class="dataTables_wrapper dt-bootstrap4 fl-table" id="dt_tickets">
+<table class="dataTables_wrapper dt-bootstrap4 my-table" id="dt_tickets"> <!--fl-table стиль для таблицы-->
     <thead>
     <tr>
         <th scope="col" rowspan="2"><spring:message code="ticket.pass"/></th>

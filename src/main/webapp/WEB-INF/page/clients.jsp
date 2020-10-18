@@ -29,7 +29,7 @@
                                     <button class="btn btn-primary" onclick="clientsTable.add()" ><spring:message code="common.add"/></button>
                                 </div>
                                 <div class="col">
-                                    <table class="dataTables_wrapper dt-bootstrap4 fl-table table-hover" id="dt_clients" style="width: 100%">
+                                    <table class="dataTables_wrapper dt-bootstrap4 my-table table-hover" id="dt_clients" style="width: 100%">
                                         <thead>
                                         <tr>
                                             <th scope="col">#</th>

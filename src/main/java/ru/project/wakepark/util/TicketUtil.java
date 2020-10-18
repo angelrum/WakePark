@@ -4,16 +4,15 @@ import ru.project.wakepark.model.Pass;
 import ru.project.wakepark.model.Ticket;
 import ru.project.wakepark.to.TicketTo;
 import ru.project.wakepark.util.exception.ValidationInputDataException;
-
-import static ru.project.wakepark.util.exception.ValidationInputDataException.*;
-
-import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import static ru.project.wakepark.util.exception.ValidationInputDataException.*;
+import static ru.project.wakepark.util.DateTimeUtil.*;
 
 public class TicketUtil extends AbstractUtil<Ticket, TicketTo> implements ValidationInputData<Ticket> {
 
@@ -50,6 +49,12 @@ public class TicketUtil extends AbstractUtil<Ticket, TicketTo> implements Valida
                 .filter(t -> (Objects.isNull(t.getStartTime()) && Objects.isNull(t.getEndTime())) || (t.getStartTime().isBefore(time) && t.getEndTime().isAfter(time)))
                 .collect(Collectors.toList());
 
+    }
+
+    public boolean checkActualByDate(Ticket t) {
+        LocalDate today = LocalDate.now();
+        return atStartOfDayOrMin(t.getStartDate()).isBefore(today)
+                && atStartOfNextDayOrMax(t.getEndDate()).isAfter(today);
     }
 
     public static boolean countEdit(Pass pass) {

@@ -15,7 +15,7 @@
                 <div class="m-3 modal-body">
                     <div class="row">
                         <div class="col p-0">
-                            <table class="dataTables_wrapper dt-bootstrap4 fl-table table-hover" id="dt_tickets" style="width: 100%">
+                            <table class="dataTables_wrapper dt-bootstrap4 my-table" id="dt_tickets" style="width: 100%">
                                 <thead>
                                 <tr>
                                     <th scope="col" rowspan="2"></th>

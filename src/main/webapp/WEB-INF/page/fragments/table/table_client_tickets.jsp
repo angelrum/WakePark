@@ -3,7 +3,7 @@
 <%@ taglib prefix="fn" uri="http://topjava.javawebinar.ru/functions" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<table class="dataTables_wrapper dt-bootstrap4 fl-table table-hover" id="dt_cl_tickets" style="width:100%">
+<table class="dataTables_wrapper dt-bootstrap4 my-table table-hover" id="dt_cl_tickets" style="width:100%">
     <thead>
     <tr>
         <c:choose>

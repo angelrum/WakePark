@@ -9,6 +9,7 @@ import ru.project.wakepark.AuthorizedUser;
 import ru.project.wakepark.model.Ticket;
 import ru.project.wakepark.service.TicketService;
 import ru.project.wakepark.to.TicketTo;
+import ru.project.wakepark.util.TicketUtil;
 import ru.project.wakepark.web.SecurityUtil;
 
 import java.time.LocalDate;
@@ -27,6 +28,12 @@ public class TicketsUIController extends AbstractUIController<Ticket, TicketTo> 
     public TicketsUIController(TicketService service) {
         super(service, getInstance());
         this.service = service;
+    }
+
+    @GetMapping(value = "/actual", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<TicketTo> getAllActual() {
+        return getInstance()
+                .getTos(service.getAllEnable(SecurityUtil.authCompanyId()));
     }
 
     @GetMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)

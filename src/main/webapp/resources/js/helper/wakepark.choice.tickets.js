@@ -1,4 +1,4 @@
-var ticketAjaxUrl = "/ajax/controller/tickets/";
+var ticketAjaxUrl = "/ajax/controller/tickets/actual";
 //"/wakepark/ajax/controller/tickets/"
 
 var ticketsTable = {
@@ -66,6 +66,7 @@ var ticketsTable = {
     datatableParam: {
         "info": false,
         "autoWidth": true,
+        "scrollX": true,
         "ajax": {
             "url": ticketAjaxUrl,
             "dataSrc": ''
