@@ -2,6 +2,7 @@ package ru.project.wakepark.util;
 
 import org.springframework.lang.Nullable;
 
+@Deprecated
 public class Util {
     private Util() {
     }

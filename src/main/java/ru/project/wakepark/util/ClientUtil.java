@@ -14,8 +14,12 @@ public class ClientUtil extends AbstractUtil<Client, ClientTo> implements Valida
     }
 
     public static ClientUtil getInstance() {
-        if (Objects.isNull(instance))
-            instance = new ClientUtil();
+        if (instance == null) {
+            synchronized (ClientUtil.class) {
+                if (instance == null)
+                    instance = new ClientUtil();
+            }
+        }
         return instance;
     }
 

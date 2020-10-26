@@ -27,7 +27,7 @@ public abstract class AbstractBaseRepository <T extends AbstractDateEntity> {
     }
 
     @Transactional
-    public T save(T t, int companyId, int createdBy) {
+    public synchronized T save(T t, int companyId, int createdBy) {
         if (!t.isNew() && repository.findOneByCompanyIdAndId(companyId, t.id()) == null)
             return null;
 
@@ -49,7 +49,7 @@ public abstract class AbstractBaseRepository <T extends AbstractDateEntity> {
     }
 
     @Transactional
-    public boolean delete(int id, int companyId) {
+    public synchronized boolean delete(int id, int companyId) {
         return repository.delete(id, companyId) !=0;
     }
 

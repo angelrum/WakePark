@@ -26,7 +26,7 @@ public class TimerService {
         this.timers = new ConcurrentHashMap<>();
     }
 
-    public void startTimer(int companyId, int userId, int duration) {
+    void startTimer(int companyId, int userId, int duration) {
         if (timers.containsKey(companyId)) {
             Task task = timers.remove(companyId);
             if (task.isPause()) {
@@ -44,7 +44,7 @@ public class TimerService {
         }
     }
 
-    public void stopTimer(int companyId) {
+    void stopTimer(int companyId) {
         Task task = timers.remove(companyId);
         if (Objects.nonNull(task)) {
             log.info("timer was interrupt");
@@ -52,13 +52,14 @@ public class TimerService {
         }
     }
 
-    public void pauseTimer(int companyId, int time) {
+    void pauseTimer(int companyId, int time) {
         Task task = timers.get(companyId);
-        if (Objects.nonNull(task) && !task.isPause()) {
-            task.setPause(true);
-            task.setDuration(time);
-        } else if (Objects.nonNull(task) && task.isPause()) {
-            log.info("the timer is already paused. Company {}", companyId);
+        if (Objects.nonNull(task)) {
+            if (!task.isPause()) {
+                task.setPause(true);
+                task.setDuration(time);
+            } else
+                log.info("the timer is already paused. Company {}", companyId);
         } else
             log.info("timer not started. Company {}", companyId);
     }
@@ -69,16 +70,16 @@ public class TimerService {
         timers.put(task.companyId, task);
     }
 
-    public boolean onPause(int companyId) {
+    boolean onPause(int companyId) {
         final Task task = timers.get(companyId);
         return Objects.nonNull(task) && task.isPause();
     }
 
-    public boolean isStart(int companyId) {
+    boolean isStart(int companyId) {
         return timers.containsKey(companyId);
     }
 
-    public int getDuration(int companyId) {
+    int getDuration(int companyId) {
         Task task = timers.get(companyId);
         return Objects.nonNull(task) ? task.getDuration() : 0;
     }
@@ -89,15 +90,16 @@ public class TimerService {
     }
     class Task implements Runnable {
 
-        protected int companyId;
-        private int userId;
-        private Future future;
+        private final int companyId;
+        private final int userId;
+
+        volatile private Future future;
         //продолжительность отсчета в сек.
         //если ставится на паузу, то переписывается
-        private int duration;
-        private boolean pause = false;
+        volatile private int duration;
+        volatile private boolean pause = false;
 
-        public Task(int companyId, int userId, int duration) {
+        Task(int companyId, int userId, int duration) {
             this.companyId = companyId;
             this.userId = userId;
             this.duration = duration;
@@ -119,11 +121,11 @@ public class TimerService {
             this.pause = pause;
         }
 
-        public Future getFuture() {
+        Future getFuture() {
             return future;
         }
 
-        public void setFuture(Future future) {
+        void setFuture(Future future) {
             this.future = future;
         }
 

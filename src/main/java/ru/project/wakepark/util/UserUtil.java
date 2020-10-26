@@ -13,9 +13,16 @@ public class UserUtil extends AbstractUtil<User, UserTo> {
 
     private static UserUtil instance;
 
+    private UserUtil() {
+    }
+
     public static UserUtil getInstance() {
-        if (Objects.isNull(instance))
-            instance = new UserUtil();
+        if (instance == null) {
+            synchronized (UserUtil.class) {
+                if (instance == null)
+                    instance = new UserUtil();
+            }
+        }
         return instance;
     }
 

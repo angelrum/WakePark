@@ -22,8 +22,12 @@ public class TicketUtil extends AbstractUtil<Ticket, TicketTo> implements Valida
     }
 
     public static TicketUtil getInstance() {
-        if (Objects.isNull(instance))
-            instance = new TicketUtil();
+        if (instance == null) {
+            synchronized (TicketUtil.class) {
+                if (instance == null)
+                    instance = new TicketUtil();
+            }
+        }
         return instance;
     }
 
@@ -63,7 +67,7 @@ public class TicketUtil extends AbstractUtil<Ticket, TicketTo> implements Valida
 
     public List<Ticket> getFiltered(Collection<Ticket> tickets, LocalTime startTime, LocalTime endTime, boolean active, boolean equipment) {
         return tickets.stream().filter(
-                t -> (Util.isBetweenHalfOpen(t.getStartTime(), startTime, endTime) || Util.isBetweenHalfOpen(t.getEndTime(), startTime, endTime))
+                t -> (DateTimeUtil.isBetweenHalfOpen(t.getStartTime(), startTime, endTime) || DateTimeUtil.isBetweenHalfOpen(t.getEndTime(), startTime, endTime))
                         && (!active || t.isEnable())
                         && (!equipment || t.isEquipment()))
                 .collect(Collectors.toList());

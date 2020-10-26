@@ -33,9 +33,9 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">+7</span>
                                                 </div>
-                                                <input type="text" id="search_telnumber" name="telnumber" class="form-control" onblur="phoneblur(this.id)" placeholder="(9XX) XXX-XX-XX">
+                                                <input type="text" id="search_telnumber" name="telnumber" class="form-control shadow-none" onblur="phoneblur(this.id)" placeholder="(9XX) XXX-XX-XX">
                                                 <span class="input-group-append">
-                                            <button class="btn btn-outline-info" onclick="removeField('search_telnumber', clearClientValue())" type="button">X</button>
+                                            <button class="btn btn-outline-info shadow-none" onclick="removeField('search_telnumber', clearClientValue())" type="button">X</button>
                                         </span>
                                             </div>
                                         </div>

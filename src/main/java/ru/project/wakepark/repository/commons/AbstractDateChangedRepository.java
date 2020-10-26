@@ -27,7 +27,7 @@ public abstract class AbstractDateChangedRepository <T extends AbstractDateChang
     }
 
     @Transactional
-    public T save(T t, int companyId, int changedBy) {
+    public synchronized T save(T t, int companyId, int changedBy) {
         if (!t.isNew()) {
             User chBy = userRepository.findOneByCompanyIdAndId(companyId, changedBy);
             if (Objects.isNull(chBy))

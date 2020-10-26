@@ -28,14 +28,14 @@ public class CrudCompanyRepository {
 
 
     @Transactional
-    public Company save(Company company) {
+    public synchronized Company save(Company company) {
         if (!company.isNew() && get(company.id()) == null)
             return null;
         return repository.save(company);
     }
 
     @Transactional
-    public boolean delete(int id) {
+    public synchronized boolean delete(int id) {
         return repository.delete(id)!=0;
     }
 

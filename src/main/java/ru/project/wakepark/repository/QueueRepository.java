@@ -9,6 +9,8 @@ import ru.project.wakepark.model.Pass;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 
 @Repository
@@ -17,6 +19,10 @@ public class QueueRepository {
     private ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> activeQueue;
 
     private ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> stoppedQueue;
+
+    //изменение может выполняться только одно, параллельно удаления и добавления данных быть не может
+    //нужно пересмотреть реализацию перед работой с несколькими компаниями
+    private ReadWriteLock lock = new ReentrantReadWriteLock();
 
     @Autowired
     public QueueRepository(ConcurrentHashMap<Integer, LinkedList<Set<ClientTicket>>> activeQueue,
@@ -36,23 +42,34 @@ public class QueueRepository {
     //Добавляем в конец или наполняем текуший список
     public void add(int companyId, Set<ClientTicket> ctl) {
         ClientTicket ct = ctl.iterator().next();
-        Set<ClientTicket> list = get(companyId, ct, true);
-        if (CollectionUtils.isEmpty(list))
-            getActiveQueue(companyId).addLast(ctl);
-        else
-            list.addAll(ctl);
+
+        lock.writeLock().lock();
+        try {
+            Set<ClientTicket> list = get(companyId, ct, true);
+            if (CollectionUtils.isEmpty(list))
+                getActiveQueue(companyId).addLast(ctl);
+            else
+                list.addAll(ctl);
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
     /*
     * Переносим данные из активной очереди в очередь остановленных.
     * Если в активной очререди билетов клиента нет, то возвращаем false
      */
     public boolean moveToStopped(int companyId, ClientTicket ct) {
-        Set<ClientTicket> list = get(companyId, ct, true);
-        if (!CollectionUtils.isEmpty(list)
-                && getActiveQueue(companyId).remove(list))
-            return getStoppedQueue(companyId).add(list);
+        lock.writeLock().lock();
+        try {
+            Set<ClientTicket> list = get(companyId, ct, true);
+            if (!CollectionUtils.isEmpty(list)
+                    && getActiveQueue(companyId).remove(list))
+                return getStoppedQueue(companyId).add(list);
 
-        return false;
+            return false;
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     /*
@@ -60,11 +77,16 @@ public class QueueRepository {
     * Если в очереди остановленных билетов клиента нет, то возвращаем false
      */
     public boolean moveToActive(int companyId, ClientTicket ct) {
-        Set<ClientTicket> list = get(companyId, ct, false);
-        if (!CollectionUtils.isEmpty(list)
-                && getStoppedQueue(companyId).remove(list))
-            return getActiveQueue(companyId).add(list);
-        return false;
+        lock.writeLock().lock();
+        try {
+            Set<ClientTicket> list = get(companyId, ct, false);
+            if (!CollectionUtils.isEmpty(list)
+                    && getStoppedQueue(companyId).remove(list))
+                return getActiveQueue(companyId).add(list);
+            return false;
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     //если установлен active = true, то смотрим activeQueue, иначе stoppedQueue
@@ -79,46 +101,65 @@ public class QueueRepository {
 
     //удаляем все записи, которые относятся к этому билету
     public boolean removeFromActive(int companyId, ClientTicket ct) {
-        Set<ClientTicket> list = get(companyId, ct, true);
-        if (!CollectionUtils.isEmpty(list))
-            return getActiveQueue(companyId).remove(list);
+        lock.writeLock().lock();
+        try {
+            Set<ClientTicket> list = get(companyId, ct, true);
+            if (!CollectionUtils.isEmpty(list))
+                return getActiveQueue(companyId).remove(list);
 
-        return false;
+            return false;
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     public boolean removeFromStopped(int companyId, ClientTicket ct) {
-        Set<ClientTicket> list = get(companyId, ct, false);
-        if (!CollectionUtils.isEmpty(list))
-            return getStoppedQueue(companyId).remove(list);
+        lock.writeLock().lock();
+        try {
+            Set<ClientTicket> list = get(companyId, ct, false);
+            if (!CollectionUtils.isEmpty(list))
+                return getStoppedQueue(companyId).remove(list);
 
-        return false;
+            return false;
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     public boolean moveUp(int companyId, ClientTicket ct) {
-        Set<ClientTicket> list = get(companyId, ct, true);
-        LinkedList<Set<ClientTicket>> active = getActiveQueue(companyId);
-
-        if (!CollectionUtils.isEmpty(list)) {
-            int index = active.indexOf(list);
-            if (index!=0) {
-                active.remove(list);
-                active.add(index-1, list);
-                return true;
+        lock.writeLock().lock();
+        try {
+            Set<ClientTicket> list = get(companyId, ct, true);
+            LinkedList<Set<ClientTicket>> active = getActiveQueue(companyId);
+            if (!CollectionUtils.isEmpty(list)) {
+                int index = active.indexOf(list);
+                if (index!=0) {
+                    active.remove(list);
+                    active.add(index-1, list);
+                    return true;
+                }
             }
+        } finally {
+            lock.writeLock().unlock();
         }
         return false;
     }
 
     public boolean moveDown(int companyId, ClientTicket ct) {
-        Set<ClientTicket> list = get(companyId, ct, true);
-        LinkedList<Set<ClientTicket>> active = getActiveQueue(companyId);
-        if (!CollectionUtils.isEmpty(list)) {
-            int index = active.indexOf(list);
-            if (index != active.size() - 1) {
-                active.remove(list);
-                active.add(index + 1, list);
-                return true;
+        lock.writeLock().lock();
+        try {
+            Set<ClientTicket> list = get(companyId, ct, true);
+            LinkedList<Set<ClientTicket>> active = getActiveQueue(companyId);
+            if (!CollectionUtils.isEmpty(list)) {
+                int index = active.indexOf(list);
+                if (index != active.size() - 1) {
+                    active.remove(list);
+                    active.add(index + 1, list);
+                    return true;
+                }
             }
+        } finally {
+            lock.writeLock().unlock();
         }
         return false;
     }
@@ -128,14 +169,19 @@ public class QueueRepository {
     * Списываем первый билет и блок возвращаем в список, в самый конец
     ***/
     public ClientTicket reedemTicket(int companyId) {
-        LinkedList<Set<ClientTicket>> active = getActiveQueue(companyId);
-        Set<ClientTicket> list = active.pollFirst();
-        if (!CollectionUtils.isEmpty(list)) {
-            Iterator<ClientTicket> iterator = list.iterator();
-            ClientTicket ct = iterator.next();
-            if (ct.getTicket().getPass().equals(Pass.SINGLE)) iterator.remove();
-            if (!list.isEmpty()) active.addLast(list);
-            return ct;
+        lock.writeLock().lock();
+        try {
+            LinkedList<Set<ClientTicket>> active = getActiveQueue(companyId);
+            Set<ClientTicket> list = active.pollFirst();
+            if (!CollectionUtils.isEmpty(list)) {
+                Iterator<ClientTicket> iterator = list.iterator();
+                ClientTicket ct = iterator.next();
+                if (ct.getTicket().getPass().equals(Pass.SINGLE)) iterator.remove();
+                if (!list.isEmpty()) active.addLast(list);
+                return ct;
+            }
+        } finally {
+            lock.writeLock().unlock();
         }
         return null;
     }
@@ -150,7 +196,7 @@ public class QueueRepository {
     }
 
     //Удаляем только одну запись и ее возвращаем
-    public ClientTicket remove(int companyId, ClientTicket ct) {
+    private ClientTicket remove(int companyId, ClientTicket ct) {
         Set<ClientTicket> list = get(companyId, ct, true);
         if (!CollectionUtils.isEmpty(list)) {
             if (list.size() == 1) {
@@ -162,7 +208,8 @@ public class QueueRepository {
                 list.remove(ctt);
                 return ctt;
             }
-        } else
-            return null;
+        }
+
+        return null;
     }
 }

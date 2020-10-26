@@ -14,10 +14,18 @@ public class ClientTicketUtil extends AbstractUtil<ClientTicket, ClientTicketTo>
 
     private static ClientTicketUtil instance;
 
+    //Double checked locking
     public static ClientTicketUtil getInstance() {
-        if (Objects.isNull(instance))
-            instance = new ClientTicketUtil();
+        if (instance == null) {
+            synchronized (ClientTicketUtil.class) {
+                if (instance == null)
+                    instance = new ClientTicketUtil();
+            }
+        }
         return instance;
+    }
+
+    private ClientTicketUtil() {
     }
 
     @Override
@@ -56,7 +64,7 @@ public class ClientTicketUtil extends AbstractUtil<ClientTicket, ClientTicketTo>
     public List<ClientTicketTo> getTosWithFilter(List<ClientTicket> ctl, LocalTime startTime, LocalTime endTime) {
         return getTos(ctl)
                 .stream()
-                .filter(ct -> Util.isBetweenHalfOpen(ct.getStartTime(), startTime, endTime) || Util.isBetweenHalfOpen(ct.getEndTime(), startTime, endTime))
+                .filter(ct -> DateTimeUtil.isBetweenHalfOpen(ct.getStartTime(), startTime, endTime) || DateTimeUtil.isBetweenHalfOpen(ct.getEndTime(), startTime, endTime))
                 .collect(Collectors.toList());
     }
 
