@@ -65,9 +65,9 @@ function makeEditable(ctx, api = true) {
 
     var token = $("meta[name='_csrf']").attr("content");
     var header = $("meta[name='_csrf_header']").attr("content");
-    $(document).ajaxSend(function (e, xhr, options) {
-        xhr.setRequestHeader(header, token);
-    });
+    // $(document).ajaxSend(function (e, xhr, options) {
+    //     xhr.setRequestHeader(header, token);
+    // });
 }
 //*** Функции для работы с контекстом ***
 // update row in table
@@ -243,8 +243,10 @@ function failNotyByKey(key, type = 'error') {
 
 function failNoty(jqXHR, timeout = 2000) {
     closeNoty();
-    if (jqXHR.responseText !== '') {
-        var errorInfo = JSON.parse(jqXHR.responseText);
+    var errorInfo = (jqXHR.responseText !== undefined && jqXHR.responseText !== '')
+        ? JSON.parse(jqXHR.responseText)
+        : 'Ошибка! Обратитесь к администратору';
+
         //errorInfo.details = substitution(errorInfo.details);
         failedNote = new Noty({
             text: "<span class='fa fa-lg fa-exclamation-circle'></span> &nbsp;" + errorInfo.typeMessage + "<br>" + errorInfo.details.join("<br>"),
@@ -252,7 +254,6 @@ function failNoty(jqXHR, timeout = 2000) {
             layout: "bottomRight",
             timeout: timeout
         }).show();
-    }
 }
 
 function substitution(details) {

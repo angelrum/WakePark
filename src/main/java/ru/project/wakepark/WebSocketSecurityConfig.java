@@ -12,8 +12,14 @@ public class WebSocketSecurityConfig extends AbstractSecurityWebSocketMessageBro
     @Override
     protected void configureInbound(MessageSecurityMetadataSourceRegistry messages) {
         messages.simpTypeMatchers(CONNECT, UNSUBSCRIBE, DISCONNECT, HEARTBEAT).permitAll()
-                .simpDestMatchers("/app/**", "/topic/**").authenticated().simpSubscribeDestMatchers("/topic/**").authenticated()
+                .simpDestMatchers("/app/**", "/topic/**").authenticated()
+                .simpSubscribeDestMatchers("/topic/**").authenticated()
                 .anyMessage().denyAll();
+    }
+
+    @Override
+    protected boolean sameOriginDisabled() {
+        return true;
     }
 
     // Determines if a CSRF token is required for connecting.

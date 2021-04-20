@@ -61,7 +61,8 @@ var clTickets = {
             "url": clTicketAjaxUrl,
             "dataSrc": '',
             "error": function (xhr, error, thrown) {
-                clTickets.datatableApi.draw(); // в случае пустых данных, чистим таблицу
+                if (clTickets.datatableApi !== undefined)
+                    clTickets.datatableApi.draw(); // в случае пустых данных, чистим таблицу
             }
         }
     },
