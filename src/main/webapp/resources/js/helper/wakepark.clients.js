@@ -49,7 +49,7 @@ var clientsTable = {
             "url": clientAjaxUrl,
             "dataSrc": '',
             "error": function (xhr, error, thrown) {
-                this.datatableApi.draw(); // в случае пустых данных, чистим таблицу
+                clientsTable.datatableApi.draw(); // в случае пустых данных, чистим таблицу
             }
         }
     },

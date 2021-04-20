@@ -243,7 +243,7 @@ function failNotyByKey(key, type = 'error') {
 
 function failNoty(jqXHR, timeout = 2000) {
     closeNoty();
-    if (jqXHR.responseText !== '') {
+    if (jqXHR.responseText !== undefined && jqXHR.responseText !== '') {
         var errorInfo = JSON.parse(jqXHR.responseText);
         //errorInfo.details = substitution(errorInfo.details);
         failedNote = new Noty({
