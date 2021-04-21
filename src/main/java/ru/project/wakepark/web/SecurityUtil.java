@@ -28,7 +28,6 @@ public class SecurityUtil {
     public static AuthorizedUser get() {
         AuthorizedUser user = safeGet();
         requireNonNull(user, "No authorized user found");
-        log.debug("Get auth user {}", user.getUserTo().getLogin());
         return user;
     }
 

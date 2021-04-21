@@ -68,6 +68,7 @@ var usersTable = {
     },
     datatableParam: {
         "info": false,
+        "scrollX": true,
         "ajax": {
             "url": userAjaxUrl,
             "dataSrc": '',

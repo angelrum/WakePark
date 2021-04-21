@@ -17,15 +17,11 @@ public class WebSocketSecurityConfig extends AbstractSecurityWebSocketMessageBro
                 .anyMessage().denyAll();
     }
 
+    // Determines if a CSRF token is required for connecting.
+    // The default is false (the token is required).
     @Override
     protected boolean sameOriginDisabled() {
         return true;
     }
 
-    // Determines if a CSRF token is required for connecting.
-// The default is false (the token is required).
-//    @Override
-//    protected boolean sameOriginDisabled() {
-//        return true;
-//    }
 }
