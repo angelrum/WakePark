@@ -10,7 +10,7 @@ import static java.util.Objects.requireNonNull;
 
 public class SecurityUtil {
 
-    protected static final Logger log = LoggerFactory.getLogger("SecurityUtil");
+    protected static final Logger log = LoggerFactory.getLogger(SecurityUtil.class);
 
     private SecurityUtil() {
     }
@@ -18,7 +18,7 @@ public class SecurityUtil {
     public static AuthorizedUser safeGet() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null) {
-            log.warn("No authorized user found");
+            log.debug("No authorized user found");
             return null;
         }
         Object principal = auth.getPrincipal();
@@ -28,6 +28,7 @@ public class SecurityUtil {
     public static AuthorizedUser get() {
         AuthorizedUser user = safeGet();
         requireNonNull(user, "No authorized user found");
+        log.debug("Get auth user {}", user.getUserTo().getLogin());
         return user;
     }
 
