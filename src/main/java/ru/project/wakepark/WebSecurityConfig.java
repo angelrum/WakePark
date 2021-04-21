@@ -104,6 +104,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
+        config.setAllowedOrigins(List.of("*"));
         config.setAllowedHeaders(List.of(ACCESS_CONTROL_ALLOW_HEADERS, ACCESS_CONTROL_ALLOW_ORIGIN, ACCESS_CONTROL_REQUEST_METHOD,
                 ACCESS_CONTROL_REQUEST_HEADERS, ORIGIN, CACHE_CONTROL, CONTENT_TYPE, AUTHORIZATION));
         config.setAllowedMethods(Arrays.stream(HttpMethod.values()).map(Enum::name).collect(Collectors.toList()));
