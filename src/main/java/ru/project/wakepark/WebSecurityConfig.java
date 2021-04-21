@@ -56,6 +56,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
                 .and()
+                    .authorizeRequests()
+                    .antMatchers("/users").hasRole("ADMIN")
+                    .antMatchers("/login", "/resources/**", "/webjars/**").permitAll()
+                    .anyRequest().authenticated()
+                .and()
                     .formLogin()
                     .loginPage("/login")
                     .defaultSuccessUrl("/main", true)
