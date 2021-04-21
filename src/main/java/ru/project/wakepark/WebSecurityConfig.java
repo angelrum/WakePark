@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 import ru.project.wakepark.service.UserService;
+import ru.project.wakepark.util.AuthenticationSuccessHandler;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -55,13 +56,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginPage("/login")
                     .defaultSuccessUrl("/main", true)
                     .failureUrl("/login?error=true")
-                    .loginProcessingUrl("/spring_security_check")
-                    .successHandler(new SimpleUrlAuthenticationSuccessHandler(){
-                        @Override
-                        protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-                            //super.handle(request, response, authentication);
-                        }
-                    })
+                    //.successHandler(new AuthenticationSuccessHandler())
+                    .loginProcessingUrl("/perform_login")
                 .and()
                     .logout()
                     .logoutSuccessUrl("/login").deleteCookies("JSESSIONID");

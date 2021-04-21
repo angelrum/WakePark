@@ -28,7 +28,7 @@
                                 <div class="text-center">
                                     <img src="//img.icons8.com/officel/100/000000/xbox-l.png" alt="Wakepark" class="img-fluid rounded-circle" width="132" height="132">
                                 </div>
-                                <form:form id="login_form" action="spring_security_check" method="post">
+                                <form:form id="login_form" action="perform_login" method="post">
                                     <div class="form-group">
                                         <label>Логин</label>
                                         <input class="form-control form-control-lg" type="text" name="username" placeholder="Enter your login">
