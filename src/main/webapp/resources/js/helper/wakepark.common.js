@@ -65,9 +65,9 @@ function makeEditable(ctx, api = true) {
 
     var token = $("meta[name='_csrf']").attr("content");
     var header = $("meta[name='_csrf_header']").attr("content");
-    // $(document).ajaxSend(function (e, xhr, options) {
-    //     xhr.setRequestHeader(header, token);
-    // });
+    $(document).ajaxSend(function (e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
 }
 //*** Функции для работы с контекстом ***
 // update row in table
