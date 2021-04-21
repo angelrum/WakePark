@@ -16,7 +16,7 @@ public class RootController {
     @GetMapping("/clients")
     public String getClientsPage(Model model) {
         model.addAttribute("thead", ClientUtil.getTableName());
-        model.addAttribute("authUser", SecurityUtil.get().getUserTo());
+        //model.addAttribute("authUser", SecurityUtil.get().getUserTo());
         return "clients";
     }
 
