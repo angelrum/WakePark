@@ -10,7 +10,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
 import ru.project.wakepark.service.UserService;
 
 import javax.annotation.Resource;
@@ -35,27 +37,32 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .authorizeRequests().antMatchers("/users").hasRole("ADMIN")
 //                .anyRequest().authenticated();
         http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/users").hasRole("ADMIN")
-                .antMatchers("/login", "/users").permitAll()
-                .anyRequest().authenticated()
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/main", true)
-                .failureUrl("/login?error=true")
-                .loginProcessingUrl("/spring_security_check")
+                    .csrf().disable()
+                    .authorizeRequests()
+                    .antMatchers("/users").hasRole("ADMIN")
+                    .antMatchers("/login", "/users").permitAll()
+                    .anyRequest().authenticated()
                 .and()
-                .logout()
-                .logoutSuccessUrl("/login").deleteCookies("JSESSIONID");
-        //http.csrf().disable();
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/main", true)
+                    .failureUrl("/login?error=true")
+                    .loginProcessingUrl("/spring_security_check")
+                .and()
+                    .logout()
+                    .logoutSuccessUrl("/login").deleteCookies("JSESSIONID");
+    }
+    //
+    @Bean
+    public HttpSessionEventPublisher httpSessionEventPublisher() {
+        return new HttpSessionEventPublisher();
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web
-                .ignoring().antMatchers("/resources/**", "/webjars/**", "/ws-endpoint/**");
+        web.ignoring().antMatchers("/resources/**", "/webjars/**", "/ws-endpoint/**");
     }
 
     @Override
