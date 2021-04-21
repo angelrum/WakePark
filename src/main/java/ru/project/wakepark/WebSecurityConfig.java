@@ -65,7 +65,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginProcessingUrl("/perform_login")
                 .and()
                     .logout()
-                    .logoutSuccessUrl("/login").deleteCookies("JSESSIONID");
+                    .logoutSuccessUrl("/login")
+                    .deleteCookies("JSESSIONID");
     }
     //
     @Bean

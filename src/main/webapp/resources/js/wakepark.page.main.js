@@ -91,7 +91,7 @@ $(function () {
     window.onunload = function(event) { //выполняется при закрытии страницы
         //event.preventDefault();
         queueTable.webSocket.stop();
-        $.ajax({url: '/logout', type: 'POST'});
+        //$.ajax({url: '/logout', type: 'POST'});
     };
     // window.onbeforeunload = function(event) {
     //     event.preventDefault();
