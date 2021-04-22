@@ -7,6 +7,7 @@
 <div class="modal fade" id="clientCreate" role="dialog" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form class="" id="clientForm">
+            <input type="hidden" id="id" name="id"> <!--id-->
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalTitle"></h5>

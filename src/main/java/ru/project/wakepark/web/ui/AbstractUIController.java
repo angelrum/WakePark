@@ -31,7 +31,6 @@ public abstract class AbstractUIController <S extends AbstractDateChangedEntity,
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<To> getAll() {
-        log.debug("Get all method in class {}", getClass());
         log.info("user {} getAll for company id {} from {}", authUserId(), authCompanyId(), this.getClass().getSimpleName());
         return util.getTos(service.getAll(authCompanyId()));
     }

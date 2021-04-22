@@ -58,7 +58,8 @@ public class TicketUtil extends AbstractUtil<Ticket, TicketTo> implements Valida
     public boolean checkActualByDate(Ticket t) {
         LocalDate today = LocalDate.now();
         return atStartOfDayOrMin(t.getStartDate()).isBefore(today)
-                && atStartOfNextDayOrMax(t.getEndDate()).isAfter(today);
+                && atStartOfNextDayOrMax(t.getEndDate()).isAfter(today)
+                || atStartOfNextDayOrMax(t.getStartDate()).isAfter(today);
     }
 
     public static boolean countEdit(Pass pass) {

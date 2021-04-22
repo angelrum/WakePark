@@ -16,7 +16,7 @@
                     <div class="col h-100">
                         <div class="flex-fill w-100 card h-75">
                             <div class="card-header">
-                                <p style="font-size: 2em"><spring:message code="queue.timer"/></p>
+<%--                                <p style="font-size: 2em"><spring:message code="queue.timer"/></p>--%>
                             </div>
                             <div class="d-flex card-body">
                                 <div class="col align-self-center text-center" style="font-size: 4em">
