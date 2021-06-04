@@ -13,7 +13,7 @@
         <java.version>11</java.version>
         <postgresql.version>42.2.10</postgresql.version>
         <hibernate.version>5.4.12.Final</hibernate.version>
-        <hibernate-validator.version>6.1.2.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
