@@ -26,7 +26,7 @@
         <lombok.version>1.18.12</lombok.version>
         <spring.security.version>5.3.1.RELEASE</spring.security.version>
 
-        <jackson-json.version>2.10.2</jackson-json.version>
+        <jackson-json.version>2.12.6.1</jackson-json.version>
         <tomcat.version>9.0.31</tomcat.version>
         <start-class>ru.project.wakepark.WakeParkApplication</start-class> <!-- Для Tomcat необходимо указать путь к главному файлу (замена xml)-->
     </properties>
